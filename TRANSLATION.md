@@ -17,7 +17,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | bundler | bandler |
 | callback | kolbek |
 | camelCase | *camelCase* |
-| class component | sinf komponentasi, class komponent |
+| class component | class komponent |
 | (un)controlled component | boshqaril(may)adigan komponent |
 | debugging | debag qilish |
 | DOM container | DOM-konteyner |
@@ -27,7 +27,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | development mode | dasturlash rejimi |
 | framework | freymvork |
 | function component | funksiyali komponent |
-| hook | ho'k, ilgak |
+| hook | ho'k |
 | incapsulation | inkapsulyatsiya |
 | incapsulated | inkapsulyatsiya qilingan |
 | key | kalit |
