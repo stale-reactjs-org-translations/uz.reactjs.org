@@ -1,7 +1,7 @@
 ---
-title: An Application
+title: Ilova
 order: 2
 domid: todos-example
 ---
 
-Using `props` and `state`, we can put together a small Todo application. This example uses `state` to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.
+`props` va `state` dan foydalanib, biz kichik Todo ilovasida birlashtiramiz. Ushbu misol mavjud ro'yxatni hamda foydalanuvchi tomonidan kiritilgan matnlarni kuzatishda  `state` dan foydalanadi. Event hendler lar chizish qismida ko'ringani bilan, aslida ular event devegation orqali to'planadi va amalga oshiriladi.

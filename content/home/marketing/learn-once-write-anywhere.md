@@ -1,8 +1,8 @@
 ---
-title: Learn Once, Write Anywhere
+title: Bir marta o'rganib, har yerda yozavering
 order: 2
 ---
 
-We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
+Biz sizning boshqa texnologiya to'plamingiz haqida har xil taxminlar qilmaymiz, shuning uchun mavjud kodni qayta yozmasdan React da yangi imkoniylarni dasturlashingiz mumkin.
 
-React can also render on the server using Node and power mobile apps using [React Native](https://facebook.github.io/react-native/).
+Shuningdek React Node dan foydalangan holda server da va [React Native](https://facebook.github.io/react-native/) dan foydalangan holda mobil ilovalarda  ishlatiladi.
