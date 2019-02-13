@@ -51,23 +51,24 @@ React Conf 2018 da, Ryan Florence, qanday qilib ulardan foydalanib ilovani refak
   * **100% backwards-compatible.** Ho'klarda hech qanaqa buzilgan o'zgarishlar yo'q.Hooks don't contain any breaking changes.
   * **Hozir yaroqli.** v16.8.0 release bilan Ho'klar hozir ishlatishga tayyot.
 
-  **React dan class larni o'chirib tashlash rejasi yo'q.** You can read more about the gradual adoption strategy for Hooks in the [bottom section](#gradual-adoption-strategy) of this page.
+  **React dan class larni o'chirib tashlash rejasi yo'q.** Ushbu sahifaning [quyi qismida](#gradual-adoption-strategy) Ho'klar uchun bosqichma-bosqich qabul qilinadigan strategiyasi haqida bilib olishingiz mumkin.
 
-  **Ho'k lar React konsiyasi haqidagi bilimlaringizni o'zgartirmaydi.** Instead, Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle. As we will show later, Hooks also offer a new powerful way to combine them.
+  **Ho'k lar React konsepsiyasi haqidagi bilimlaringizni o'zgartirmaydi.** Balki, Ho'klar o'zingiz avval bilgan React konsepsiyalarga yanada ko'proq bevosita API lar bilan ta'minlaydi: props, state, context, refs, va lifecycle.  Ho'klar ularni kombinatsiya qiluvchi yangi kuchliroq yo'llarni taklif qilishini ham ko'rib chiqamiz.
 
-  **Agar Ho'k ni o'rganishni xohlayotgan bo'lsagniz, [keyingi sahifaga o'tib ketish](/docs/hooks-overview.html)ingiz mumkin!** You can also keep reading this page to learn more about why we're adding Hooks, and how we're going to start using them without rewriting our applications.
+  **Agar Ho'k ni o'rganishni xohlayotgan bo'lsagniz, [keyingi sahifaga o'tib ketish](/docs/hooks-overview.html)ingiz mumkin!** Ho'klarni nimaga qo'shganimiz va ilovalarimizni qayta yozib chiqmasdan qanday qilib ho'klar dan foydalanib boshlash mumkinligi haqida ko'proq bilib olish uchun ushbu sahifani o'qishni davom ettirishingiz mumkin.
 
 ## Motivatsiya {#motivation}
 
-Hooks solve a wide variety of seemingly unconnected problems in React that we've encountered over five years of writing and maintaining tens of thousands of components. Whether you're learning React, use it daily, or even prefer a different library with a similar component model, you might recognize some of these problems.
+Ho'klar Reactdagi chamasi aloqasi bo'lmagan turli xildagi muammolarni hal qiladi, qaysiki 5 yil ichida o'n minglab komponentlarni yozish va tuzatishlar davomida duch kelayotgan muammolar. Reactni o'rganyapsiz, undan kuniga foydalanyapsizmi yoki o'xshash komponent model bilan turli kutubxonalarni ishlatishni afzal ko'ryapsizmi, aytgan muammolarimizdan ba'zilarini bilib olgan bo'lishingiz mumkin.
 
-### Komponentlar orasida holatli logikalardan  qayta foydalanish qiyin. {#its-hard-to-reuse-stateful-logic-between-components}
+### Komponentlar orasida holatli logikalardan qayta foydalanish qiyin. {#its-hard-to-reuse-stateful-logic-between-components}
 
-React doesn't offer a way to "attach" reusable behavior to a component (for example, connecting it to a store). If you've worked with React for a while, you may be familiar with patterns like [render props](/docs/render-props.html) and [higher-order components](/docs/higher-order-components.html) that try to solve this. But these patterns require you to restructure your components when you use them, which can be cumbersome and make code harder to follow. If you look at a typical React application in React DevTools, you will likely find a "wrapper hell" of components surrounded by layers of providers, consumers, higher-order components, render props, and other abstractions. While we could [filter them out in DevTools](https://github.com/facebook/react-devtools/pull/503), this points to a deeper underlying problem: React needs a better primitive for sharing stateful logic.
+React komponentga qayta foydalaniladigan hatti-harakat(behavior)ni "biriktirish" uchun yo'l taklif qilmaydi(misol uchun, komponentni store ga bog'lash behaviori). Agar React bilan bir muddat ishlab ko'rgan bo'lsangiz, buni hal qilish uchun [props ni chizish](/docs/render-props.html) and [yuqori-darajadagi komponentlar](/docs/higher-order-components.html) kabi pattern lar bilan tanish bo'lishingiz mumkin. Lekin bu pattern lar ulardan foydalanganingizda komponentlarni qayta strukturalab chiqishingizni talab qiladi, qaysiki patternlar bilan ketganizda beso'naqay va kodingiz yanada qiyinroq bo'lib qoladi. Agar tipik React ilovani React DevTools da qarasangiz, "wrapper hell" komponetlarning provider lar, consumer lar, higher-order koponentlar, render props va boshqa mavhumliklar bilan o'ralganini topishingiz ehtimoli bor. Biz [ularni DevTools da filter](https://github.com/facebook/react-devtools/pull/503) qila olsakda, bu tub muammoga chuqurroq ishora qiladi, ya'ni: holatli logika(statefull logic)  almashish uchun Reactga yaxshiroq primitiv kerak.
 
-With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. **Hooks allow you to reuse stateful logic without changing your component hierarchy.** This makes it easy to share Hooks among many components or with the community.
 
-We'll discuss this more in [Building Your Own Hooks](/docs/hooks-custom.html).
+Ho'klar bilan, mustaqil ravishda testlana oladigan va qayta foydalaniladigan bo'lishi uchun holatli logikani komponentdan ajratib olishingiz mumkin. **Ho'klar sizning komponentlar irarhiyangizni o'zgartirmasdan turib, holatli logikangizni qayta foydalanishga imkon beradi.** Bu Ho'klarni ko'pgina komponentlar yoki jamoa lar orasida almashish(yoki ulashish)ni osonlashtiradi.
+
+Bu haqida batafsil [O'zingizni Ho'klaringizni qurish](/docs/hooks-custom.html) da muhokama qilamiz.
 
 ### Murakkab komponentlar tushunishga qiyin bo'lib qoladi  {#complex-components-become-hard-to-understand}
 
