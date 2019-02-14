@@ -72,13 +72,16 @@ Bu haqida batafsil [O'zingizni Ho'klaringizni qurish](/docs/hooks-custom.html) d
 
 ### Murakkab komponentlar tushunishga qiyin bo'lib qoladi  {#complex-components-become-hard-to-understand}
 
-We've often had to maintain components that started out simple but grew into an unmanageable mess of stateful logic and side effects. Each lifecycle method often contains a mix of unrelated logic. For example, components might perform some data fetching in `componentDidMount` and `componentDidUpdate`. However, the same `componentDidMount` method might also contain some unrelated logic that sets up event listeners, with cleanup performed in `componentWillUnmount`. Mutually related code that changes together gets split apart, but completely unrelated code ends up combined in a single method. This makes it too easy to introduce bugs and inconsistencies.
+Ko'pincha biz oddiy boshlagan komponentlarimizga tez-tez tuzatishlar qilib turishimiz kerak bo'ladi, lekin holatli logika(statefull logic) va kutilmagan ta'sirlarning(side-effects) boshqarib bo'lmaydigan chalkashliklari ko'payib ketadi. 
+Har bir hayotiy sikl metodi  ko'pincha aloqasi bo'lmagan logikaning aralashmasini o'z ichiga oladi. Misol uchun, komponentlar `componentDidMount` va `componentDidUpdate` larni ichida ba'zi bir m'alumotlar uzatishlarni amalga oshirishi mumkin.   Ammo, bir xildagi  `componentDidMount` metod eventListener larni sozlash(qaysiki, `componentWillUnmount` da listenerlarni tozalashi bilan)ga o'xshash ba'zi bog'liq bo'lmagan logikalarni o'z ichiga olishi mumkin.  Birgalikda o'zgaradigan o'zaro bog'liq kodlar alohida-alohida qilib ajratiladi, ammo umuman bo'gliq bo'lmagan kodlar yagona metodda birlashtiriladi. Bu esa buglar va nomutanosibliklarni kelib chiqishino osonlashtiradi.
 
-In many cases it's not possible to break these components into smaller ones because the stateful logic is all over the place. It's also difficult to test them. This is one of the reasons many people prefer to combine React with a separate state management library. However, that often introduces too much abstraction, requires you to jump between different files, and makes reusing components more difficult.
+Ko'p hollarda ushbu komponentlarni kichiklariga ajratib chiqish imkonsiz bo'lib qoladi, chunki, holatli logika hamma joyda bo'ladi. Shuningdek ularni testlash ham qiyin kechadi. Bu ko'pchilik odamlarni React ni alohida holatlarni boshqarish kutubxonasini bilan kombinatsiya qilib ishlatishni afzal ko'rish sabablaridan biridir. Biroq, bu ko'pincha juda ham ko'p mavhumliklarni keltirib chiqaradi, turli fayllar orasida sakrab  yurishingizga majbur qiladi va komponentlardan qayda foydalanishni yanada qiyinlashtiradi.
 
-To solve this, **Hooks let you split one component into smaller functions based on what pieces are related (such as setting up a subscription or fetching data)**, rather than forcing a split based on lifecycle methods. You may also opt into managing the component's local state with a reducer to make it more predictable.
+Buni hal qilish uchun, **Ho'klar bitta koponentni ko'proq qaysi qismlarga bog'liqligiga ko'ra(ma'lumot uzatish yoki obunalarni sozlash kabilar) kichikroq funksiyalarga ajratishga imkon beradi**, hayotiy sikl metodlariga asoslangan holda ajratishga majburlashga qaragandi. 
 
-We'll discuss this more in [Using the Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns).
+To solve this, **Hooks let you split one component into smaller functions based on what pieces are related (such as setting up a subscription or fetching data)**, rather than forcing a split based on lifecycle methods. Komponentning lokal holatini uni yanada oldindan ko'ra oladigan bo'lishi uchun reducer bilan boshqarishga tanlashingingiz mumkin.
+
+Biz bu haqida batafsil [Ho'k Effektlardan Foydalanish](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) da muhokama qilamiz.
 
 ### Class lar odamlarni ham, mashinalarni ham chalg'itadi {#classes-confuse-both-people-and-machines}
 
