@@ -97,20 +97,20 @@ Ushbu muammolarni hal qilish uchun, **Ho'klar sizga Reactning ko'pgina classlars
 
 >**TLDR: Bu yerda React dan class larni o'chirish haqida rejalar yo'q.**
 
-We know that React developers are focused on shipping products and don't have time to look into every new API that's being released. Hooks are very new, and it might be better to wait for more examples and tutorials before considering learning or adopting them.
+Biz Reakt dasturchilari mahsulotlarni etkazib berishga yo'naltirilganligini bilamiz va ular chiqarilayotgan har qanday yangi APIni ko'rib chiqish uchun vaqt topa olmaydilar. Ho'klar hali juda yangi va  o'rganish yoki ularni qabul qilishdan avval ko'proq misollarni va darslarni kutish yaxshiroq bo'lishi mumkin.
 
-We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a [detailed RFC](https://github.com/reactjs/rfcs/pull/68) that dives into motivation with more details, and provides extra perspective on the specific design decisions and related prior art.
+Biz shuni ham tushunishimiz kerakki, Reactga yangi primitiv qo'shish uchun katta-talab juda yuqori bo'ladi. Qiziquvchan o'quvchilar uchun, [batafsil qilingan RFC](https://github.com/reactjs/rfcs/pull/68)ni tayyorladik, qaysiki motivatsiyaga ko'proq tafsilotlari bilan kiradigan va o'ziga xos dizayn qarorlarida va ilgarigi sanat bilan bog'liqlikdagi qo'shimcha perspektiva lar bilan ta'minlaydigan.
 
-**Eng muhimi, Ho'k lar mavjud kod bilan yonma-yon ishlaydi,  shuning uchun aste-sekinlik bilan moslashib borasiz.** We are sharing this experimental API to get early feedback from those in the community who are interested in shaping the future of React — and we will iterate on Hooks in the open.
+**Eng muhimi, Ho'k lar mavjud kod bilan yonma-yon ishlaydi, shuning uchun aste-sekinlik bilan moslashib borasiz.** Biz experimental API ni jamoada kim Reactning kelajagini shakllantirishga qiziqsa, o'shalarga ertaroq fikr-mulohazalarini olish uchun ulashyamiz. Barcha dasturlashlar ochiq holda amalga oshiriladi.
 
-Finally, there is no rush to migrate to Hooks. We recommend avoiding any "big rewrites", especially for existing, complex class components. It takes a bit of a mindshift to start "thinking in Hooks". In our experience, it's best to practice using Hooks in new and non-critical components first, and ensure that everybody on your team feels comfortable with them. After you give Hooks a try, please feel free to [send us feedback](https://github.com/facebook/react/issues/new), positive or negative.
+Nihoyat, Ho'klarga o'tkazishga shoshish yo'q. Biz, har qanday "keng ko'lamda qayta yozishlar"dan qochishingizni tavsiya qilamiz, ayniqsa mavjud, murakkab class komponentlar uchun. "Ho'klarda o'ylash"ni boshlashga biroz fikr-mulohaza qilib olish kerak. Bizning tajribamizda, Ho'klardan foydalanishda birinchi yangi va juda muhim bo'lmagan komponentlarda tajriba qilib ko'rish yaxshiroqdir, va jamoangizdagi hamma Ho'klar bilan yaxshi ishlay olishini ta'minlashingiz kerak. Ho'klarni sinab ko'rganingizda keyin, iltimos [fikr-mulohazalaringizni bizga jo'nating](https://github.com/facebook/react/issues/new), ijobiy yoki salbiy bo'lsa ham.
 
-We intend for Hooks to cover all existing use cases for classes, but **we will keep supporting class components for the foreseeable future.** At Facebook, we have tens of thousands of components written as classes, and we have absolutely no plans to rewrite them. Instead, we are starting to use Hooks in the new code side by side with classes.
+Biz Ho'klarni classlardagi barcha mavjud bo'lgan holatlar uchun qamrab olishi niyatidamiz, lekin **biz class komponentlarni yaqin kelajak uchun qo'llab-quvvatlashni davom ettiramiz.** Facebook da 10 minglab komponentlar class lar sifatida yozilgan va biz ularni qayta yozishni rejalashtirmayapmiz. Balki, class lar bilan yonma-yon tarzda yangi kodlarni Ho'klar bilan yozishni boshlayapmiz.
 
 ## Ko'p beriladigan Savol-Javoblar {#frequently-asked-questions}
 
-We've prepared a [Hooks FAQ page](/docs/hooks-faq.html) that answers the most common questions about Hooks.
+Biz Ho'k haqidagi ko'p beriladigan umumiy savollarga javoblari uchun [Ho'klar FAQ sahifasi](/docs/hooks-faq.html)ni tayyorladik .
 
 ## Keyingi Qadamlar {#next-steps}
 
-By the end of this page, you should have a rough idea of what problems Hooks are solving, but many details are probably unclear. Don't worry! **Let's now go to [the next page](/docs/hooks-overview.html) where we start learning about Hooks by example.**
+Bu sahifaning yakuni sifatida, siz Ho'klar qanday muammolarni hal qilish haqdia ishlov berilmagan fikrlar bo'lishi kerak, lekin ko'p detallar ehtimol noaniq bo'lishi mumkin. Xavotir olmang! **Keling hoziroq Ho'k haqida misollar bilan o'rganishni boshlash uchun [keyingi sahifa](/docs/hooks-overview.html)ga o'tamiz.**
