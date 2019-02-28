@@ -1,12 +1,13 @@
 # reactjs.org saytining O'zbek tilidagi tarjimasi
 
-## Github contribution ga qo'shilish
+## Github contribution ga qo'shilish bo'yicha qisqa yo'riqnoma
 1. O'ngdagi Fork buttonini bosing. Shunda sizni accountizga fork bo'ladi.
 2. Accountizga fork qilinganini komputerizga clone qilib olasiz.
 3. Birorta o'zgarish qilish uchun task yoki issue mos nom bilan branch yaratasiz.
 4. Qilingan o'zgarishlarni push qilasiz.
-5. Githubga o'tib, forked projectizda **Pull Request** hosil qilasiz. Ruxsati bor user yoki o'zingiz review qilinib, accept qilinadi.
-6. Endi upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi.
+5. Githubga o'tib, asosiy github projectda (sizni accountizga fork qilinganida emas) **Pull Request(PR)** hosil qilasiz. PR review qilinib, accept qilinadi. Shunda keyin qilgan ishlaringiz master ga chiqadi.
+6. Endi kompizdagi projectga upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi. Va uni accountizga fork qilingan projectga push qilasiz. Shunda Upstream repository bilan origin repo da bir xil changelar bo'ladi.
+7. Yaratgan branchizni o'chirib tashlasangiz ham bo'ladi.
 
 Screenshotlari bilan batafsil bu yerda: https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940 
 
