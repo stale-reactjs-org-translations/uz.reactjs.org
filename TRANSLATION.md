@@ -1,6 +1,17 @@
 # reactjs.org saytining O'zbek tilidagi tarjimasi
 
-Hozirgi jarayon: 
+## Github contribution ga qo'shilish
+1. O'ngdagi Fork buttonini bosing. Shunda sizni accountizga fork bo'ladi.
+2. Accountizga fork qilinganini komputerizga clone qilib olasiz.
+3. Birorta o'zgarish qilish uchun task yoki issue mos nom bilan branch yaratasiz.
+4. Qilingan o'zgarishlarni push qilasiz.
+5. Githubga o'tib, forked projectizda **Pull Request** hosil qilasiz. Ruxsati bor user yoki o'zingiz review qilinib, accept qilinadi.
+6. Endi upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi.
+
+Screenshotlari bilan batafsil bu yerda: https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940 
+
+
+## Tarjima qilinayotgan hozirgi jarayon: 
 https://github.com/reactjs/uz.reactjs.org/issues/1
 
 ## Tarjima bo'yicha kelishuv
