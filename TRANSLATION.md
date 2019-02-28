@@ -3,7 +3,7 @@
 ## Github open-source projectga contribution qilish bo'yicha qisqa yo'riqnoma
 1. O'ngdagi Fork buttonini bosing. Shunda sizni accountizga fork bo'ladi.
 2. Accountizga fork qilinganini komputerizga clone qilib olasiz.
-3. Birorta o'zgarish qilish uchun task yoki issue mos nom bilan branch yaratasiz.
+3. Birorta o'zgarish qilish uchun mos nom bilan branch yaratasiz.
 4. Qilingan o'zgarishlarni push qilasiz.
 5. Githubga o'tib, asosiy github projectda (sizni accountizga fork qilinganida emas) **Pull Request(PR)** hosil qilasiz. PR review qilinib, accept qilinadi. Shunda keyin qilgan ishlaringiz master ga chiqadi.
 6. Endi kompizdagi projectga upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi. Va uni accountizga fork qilingan projectga push qilasiz. Shunda Upstream repository bilan origin repo da bir xil changelar bo'ladi.
