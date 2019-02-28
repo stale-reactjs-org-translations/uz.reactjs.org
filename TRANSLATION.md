@@ -1,6 +1,6 @@
 # reactjs.org saytining O'zbek tilidagi tarjimasi
 
-## Github contribution ga qo'shilish bo'yicha qisqa yo'riqnoma
+## Github open-source projectga contribution qilish bo'yicha qisqa yo'riqnoma
 1. O'ngdagi Fork buttonini bosing. Shunda sizni accountizga fork bo'ladi.
 2. Accountizga fork qilinganini komputerizga clone qilib olasiz.
 3. Birorta o'zgarish qilish uchun task yoki issue mos nom bilan branch yaratasiz.
