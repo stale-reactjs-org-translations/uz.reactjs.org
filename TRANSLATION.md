@@ -8,6 +8,7 @@
 5. Githubga o'tib, asosiy github projectda (sizni accountizga fork qilinganida emas) **Pull Request(PR)** hosil qilasiz. PR review qilinib, accept qilinadi. Shunda keyin qilgan ishlaringiz master ga chiqadi.
 6. Endi kompizdagi projectga upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi. Va uni accountizga fork qilingan projectga push qilasiz. Shunda Upstream repository bilan origin repo da bir xil changelar bo'ladi.
 7. Yaratgan branchizni o'chirib tashlasangiz ham bo'ladi.
+8. Ba'zi hollarda, react jamoasi siz qilayotgan fayllar o'zgartirib yuborgan paytlarda, ishlab turgan joyizga sync qivolishingiz uchun bu yerga kiring: https://help.github.com/en/articles/syncing-a-fork
 
 Screenshotlari bilan batafsil bu yerda: https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940 
 
