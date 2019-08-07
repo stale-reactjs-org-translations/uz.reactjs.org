@@ -13,7 +13,7 @@ class TodoApp extends React.Component {
         <TodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="new-todo">
-            What needs to be done?
+            Nima bajarilishi kerak?
           </label>
           <input
             id="new-todo"
@@ -21,7 +21,7 @@ class TodoApp extends React.Component {
             value={this.state.text}
           />
           <button>
-            Add #{this.state.items.length + 1}
+            Qo'shish #{this.state.items.length + 1}
           </button>
         </form>
       </div>
