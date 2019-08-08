@@ -1,85 +1,85 @@
-- title: Installation
+- title: O'rnatish
   items:
     - id: getting-started
-      title: Getting Started
+      title: Boshlash
     - id: add-react-to-a-website
-      title: Add React to a Website
+      title: Reactni Veb-saytga qo'shing
     - id: create-a-new-react-app
-      title: Create a New React App
+      title: Yangi React Ilova yaratish
     - id: cdn-links
-      title: CDN Links
-- title: Main Concepts
+      title: CDN zanjirlar
+- title: Asosiy tushunchalar
   isOrdered: true
   items:
     - id: hello-world
       title: Hello World
     - id: introducing-jsx
-      title: Introducing JSX
+      title: JSX kirish
     - id: rendering-elements
-      title: Rendering Elements
+      title: Elementlarni Renderlash
     - id: components-and-props
-      title: Components and Props
+      title: Komponentlar va Props
     - id: state-and-lifecycle
-      title: State and Lifecycle
+      title: State va Lifecycle metodlari
     - id: handling-events
-      title: Handling Events
+      title: Hodisalar(Events)ni boshqarish
     - id: conditional-rendering
-      title: Conditional Rendering
+      title: Shartli Renderlash
     - id: lists-and-keys
-      title: Lists and Keys
+      title: Ro'yxatlar va kalitlar(Keys) 
     - id: forms
-      title: Forms
+      title: Formalar
     - id: lifting-state-up
-      title: Lifting State Up
+      title: State ni yangilash
     - id: composition-vs-inheritance
-      title: Composition vs Inheritance
+      title: Kompozitsiya meros qilib olish(Inheritance) qarshi
     - id: thinking-in-react
-      title: Thinking In React
-- title: Advanced Guides
+      title: React da fikirlash
+- title: Murakkab qo'llanmalar
   items:
     - id: accessibility
       title: Accessibility
     - id: code-splitting
-      title: Code-Splitting
+      title: Kodni ajratish
     - id: context
-      title: Context
+      title: Kontekst
     - id: error-boundaries
-      title: Error Boundaries
+      title: Xato chegaralari
     - id: forwarding-refs
-      title: Forwarding Refs
+      title: Ref larni qo'llash
     - id: fragments
-      title: Fragments
+      title: Parchalar(Fragmentlar)
     - id: higher-order-components
-      title: Higher-Order Components
+      title: Yuqori tartibli komponentlari(HOC)
     - id: integrating-with-other-libraries
-      title: Integrating with Other Libraries
+      title: Boshqa kutubxonalar bilan integratsiyalash
     - id: jsx-in-depth
-      title: JSX In Depth
+      title: JSX haqida batfsil
     - id: optimizing-performance
-      title: Optimizing Performance
+      title: Ish faoliyatini optimallashtirish
     - id: portals
-      title: Portals
+      title: Portallar
     - id: react-without-es6
-      title: React Without ES6
+      title: React ES6 bilan
     - id: react-without-jsx
-      title: React Without JSX
+      title: React JSX siz
     - id: reconciliation
-      title: Reconciliation
+      title: Murosaga keltirish
     - id: refs-and-the-dom
-      title: Refs and the DOM
+      title: Ref lar va DOM
     - id: render-props
-      title: Render Props
+      title: Props ni renderlash
     - id: static-type-checking
-      title: Static Type Checking
+      title: Statik turni tekshirish
     - id: strict-mode
-      title: Strict Mode
+      title: Qattiq rejim
     - id: typechecking-with-proptypes
-      title: Typechecking With PropTypes
+      title: PropTypes yordamida turni tekshirish
     - id: uncontrolled-components
-      title: Uncontrolled Components
+      title: Nazorat qilinmaydigan komponentlar
     - id: web-components
-      title: Web Components
-- title: API Reference
+      title: Veb-komponentlar
+- title: API Ma'lumot
   items:
     - id: react-api
       title: React
@@ -97,57 +97,57 @@
     - id: test-utils
       title: Test Utilities
     - id: shallow-renderer
-      title: Shallow Renderer
+      title: Yuzaki Renderlash
     - id: test-renderer
-      title: Test Renderer
+      title: Test Renderlash
     - id: javascript-environment-requirements
-      title: JS Environment Requirements
+      title: JS dasturiy muhitiga qo'yiladigan talablar
     - id: glossary
-      title: Glossary
-- title: Hooks (New)
+      title: Lug'at
+- title: Ilgaklar(Hooks) (Yangi)
   isOrdered: true
   items:
       - id: hooks-intro
-        title: Introducing Hooks
+        title: Hooks ga kirish
       - id: hooks-overview
-        title: Hooks at a Glance
+        title: Hooks ga umumiy nazar
       - id: hooks-state
-        title: Using the State Hook
+        title: State Hook ni qo'llash
       - id: hooks-effect
-        title: Using the Effect Hook
+        title: Effect Hook larini qo'llash
       - id: hooks-rules
-        title: Rules of Hooks
+        title: Hooks qoidalari
       - id: hooks-custom
-        title: Building Your Own Hooks
+        title: O'z Hook ingizni yaratish
       - id: hooks-reference
-        title: Hooks API Reference
+        title: Hooks API Ma'lumotlari
       - id: hooks-faq
         title: Hooks FAQ
-- title: Contributing
+- title: Hissa qo'shish
   items:
   - id: how-to-contribute
-    title: How to Contribute
+    title: Qanday hissa qo'shish kerak
   - id: codebase-overview
-    title: Codebase Overview
+    title: Kod bazasi haqida umumiy ma'lumot
   - id: implementation-notes
-    title: Implementation Notes
+    title: Bajarish bo'yicha eslatmalar
   - id: design-principles
-    title: Design Principles
+    title: Dizayn asoslari
 - title: FAQ
   items:
     - id: faq-ajax
-      title: AJAX and APIs
+      title: AJAX va API
     - id: faq-build
-      title: Babel, JSX, and Build Steps
+      title: Babel, JSX, va Yaratish bosqichlari
     - id: faq-functions
-      title: Passing Functions to Components
+      title: Komponentlarga funktsiyalarni uzatish
     - id: faq-state
-      title: Component State
+      title: Komponent state(holat)i
     - id: faq-styling
-      title: Styling and CSS
+      title: Uslublash va CSS
     - id: faq-structure
-      title: File Structure
+      title: Fayl tarkibi
     - id: faq-versioning
-      title: Versioning Policy
+      title: Versiya siyosati
     - id: faq-internals
-      title: Virtual DOM and Internals
+      title: Virtual DOM va ichki obyektlar

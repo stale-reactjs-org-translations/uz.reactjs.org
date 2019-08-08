@@ -11,12 +11,12 @@ import FooterLink from './FooterLink';
 import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
 import React from 'react';
-import {colors, media} from 'theme';
-import {sectionListCommunity, sectionListDocs} from 'utils/sectionList';
+import { colors, media } from 'theme';
+import { sectionListCommunity, sectionListDocs } from 'utils/sectionList';
 
 import ossLogoPng from 'images/oss_logo.png';
 
-const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
+const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => (
   <footer
     css={{
       backgroundColor: colors.darker,
@@ -60,7 +60,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             },
           }}>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Docs</MetaTitle>
+            <MetaTitle onDark={true}>Xujjatlar</MetaTitle>
             {sectionListDocs.map(section => {
               const defaultItem = section.items[0];
               return (
@@ -73,7 +73,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             })}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Channels</MetaTitle>
+            <MetaTitle onDark={true}>Kanallar</MetaTitle>
             <ExternalFooterLink
               href="https://github.com/facebook/react"
               target="_blank"
@@ -90,19 +90,19 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               href="https://discuss.reactjs.org"
               target="_blank"
               rel="noopener">
-              Discussion Forum
+              Muhokama forumi
             </ExternalFooterLink>
             <ExternalFooterLink
               href="https://discord.gg/0ZcbPKXt5bZjGY5n"
               target="_blank"
               rel="noopener">
-              Reactiflux Chat
+              Reactiflux Suhbat
             </ExternalFooterLink>
             <ExternalFooterLink
               href="https://dev.to/t/react"
               target="_blank"
               rel="noopener">
-              DEV Community
+              Dasturchilar Jamiyati
             </ExternalFooterLink>
             <ExternalFooterLink
               href="https://www.facebook.com/react"
@@ -118,7 +118,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             </ExternalFooterLink>
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Community</MetaTitle>
+            <MetaTitle onDark={true}>Jamiyat</MetaTitle>
             {sectionListCommunity.map(section => (
               <FooterLink
                 to={`/community/${section.items[0].id}.html`}
@@ -128,11 +128,11 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             ))}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>More</MetaTitle>
-            <FooterLink to="/tutorial/tutorial.html">Tutorial</FooterLink>
+            <MetaTitle onDark={true}>Ko'piroq</MetaTitle>
+            <FooterLink to="/tutorial/tutorial.html">Qo'llanma</FooterLink>
             <FooterLink to="/blog/">Blog</FooterLink>
             <FooterLink to="/acknowledgements.html">
-              Acknowledgements
+              Minnatdorchilik
             </FooterLink>
             <ExternalFooterLink
               href="https://facebook.github.io/react-native/"

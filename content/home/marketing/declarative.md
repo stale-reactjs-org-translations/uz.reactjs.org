@@ -3,6 +3,6 @@ title: Deklarativ
 order: 0
 ---
 
-Reakt interaktiv interfeyslarni yaratish uchun qiyinchiliksiz bajaradi. Ilovangizdagi oddiy ko'rinishlarni har bir holat uchun tuzib chiqing, va React sizning ma'lumotlaringiz o'zgartirilganda faqat to'g'ri tarkibiy qismlarni chizadi va samarali ravishda yangilaydi.
+Reakt interfaol foydalanuvchi interfeyslar(UI)ni qiyinchiliksiz yaratish imkoni beradi. Ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va React sizning ma'lumotlaringizni  faqat o'zgartirgan  tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
 
-Deklarativ ko'rinishlar sizning kodingizni yanada aniqroq va debag qilishni osonlashtiradi.
+Deklarativ ko'rinishlar sizning kodingizni oldindan bashorat qilish va hatoliklarni onsonroq aniqlashga yordam beradi.
