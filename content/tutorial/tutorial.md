@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "O'quv qo'llanma: Reactga kirish"
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,40 +12,41 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+Ushbu o'quv qo'llanma hech qanday mavjud React bilimlarni o'z ichiga olmaydi.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## Darlikni boshlashdan oldin {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+Ushbu dars davomida biz kichik o'yin yaratamiz. **Siz o'yinlar yaratmaganiz uchun xavotirga tushib darslikni o'tkazib yuborishingiz mumkin, ammo bunga imkoniyat bering.** 
+Qo'llanmada o'rganadigan usullaringiz har qanday React ilovasini yaratish uchun asos bo'lib xizmat qiladi va uni o'zlashtirish sizga Reactni chuqur tushunishga yordam beradi.
 
->Tip
+>Maslahat
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>Ushbu darslik **bajarish orqali o'rganish**ni afzal ko'ruvchilar uchun mo'ljallangan . Agar siz tushunchalarni no'ldan boshlab o'rganishni xohlasangiz, unda siz bizning [qadam ba qadam qo'llanmamizni](/docs/hello-world.html) tekshirin ko'ring. Siz ushbu darslik va yuqoridagi qo'llanmani bir-birini to'ldirib keluvchi deb ham hisoblashingiz mumkin.
 
-The tutorial is divided into several sections:
+Ushbu qo'llanma bir qancha bo'limlardan iborat:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [Darslik uchun sozlamalarni sozlash](#setup-for-the-tutorial) bo'limi siz uchun darslikni kuzatib borish uchun **boshlang'ich nuqta** bo'lib hisoblanadi.
+* [Umumiy nazar](#overview) bo'limi sizga React **fundamental asoslari**: komponentlar, props va state nima ekanligini o'rgatadi.
+* [O'yinni tamomlash](#completing-the-game) bo'limi esa React dasturlashda keng qo'llaniladigan **dasturlash texnikalarini** o'rgatadi.
+* [Vaqt bo'ylab sayohatni qo'shish](#adding-time-travel) u sizga Reactning noyob kuchli tomonlarini **chuqurroq tushunishga** imkon beradi.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+Ushbu o'quv qo'llanmaning foydasini bilish  uchun barcha bo'limlarni birdaniga tugatishingiz shart emas. Iloji boricha ko'proq o'rganishga harakat qiling -- garchan u bir yoki ikkita bo'limdan iborat bo'lsa ham.
 
-### What Are We Building? {#what-are-we-building}
+### Biz nima yaratmoqchimiz?{#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+Ushbu qo'llanmada biz, React yordamida qanday interfaol "tic-tac-toe" o'yinini  yaratishni ko'rsatamiz.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+Siz bu yerda nimani yaratayotganimizni ko'rishingiz mumkin: **[Yakuniy natija](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Agar kod siz uchun tushunarsiz bo'lsa yoki kodning sintaksisidan bexabar bo'lsangiz, xavotirga o'rin yo'q! Ushbu darslikning maqsadi React va uning sintaksisini tushunishga yordam berishdir.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+Qo'llanmani davom ettirishdan oldin, "tic-tac-toe" o'yinini tekshirib ko'rishingizni maslahat beramiz. Sizning etiboringizni tortadigan xususiyatlardan biri shundaki, o'yin stolining o'ng tomonida raqamlangan ro'yxat mavjud. Ushbu ro'yxat o'yinda sodir bo'lgan barcha harakatlarning tarixini ko'rsatib turadi va o'yin davom etib borgan sari yangilanadi.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+"Tic-tac-toe" o'yini bilan tanishib chiqganingizdan so'ng uni yopishingiz mumkin. Biz ushbu darslikni sodda shablondan boshlaymiz. Bizning keyingi qadamimiz sizni o'yinni yaratishni boshlashingiz uchun sozlamaralni sozlashdan iborat.
 
-### Prerequisites {#prerequisites}
+### Talablar {#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+Biz sizni HTML va JavaScript bilan ozgina tanishsiz deb taxmin qilamiz, ammo boshqa dasturlash tilidan kelgan bo'lsangiz ham, darslikni kuzatib borishingiz mumkin. Shuningdek siz funktsiyalar, ob'ektlar, massivlar va kamroq darajada bo'lsaham class kabi dasturiy tushunchalar bilishligingizni taxmin qilamiz.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+Agar siz JavaScript-ni ko'rib chiqmoqchi bo'lsangiz, [ushbu qo'llanmani](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) o'qishni tavsiya etamiz. Yodda tutingki, biz JavaScript-ning so'nggi versiyasi - ES6-ning ba'zi xususiyatlaridan foydalanmoqdamiz. Ushbu darslikda biz [arrow funksiyalar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classlar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), va [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) kabi ifodalardan foydalanamiz. ES6 kodi kompilyatsiya qilingandan keyingi kodni tekshirish uchun siz [Babel REPL](babel://es5-syntax-example)-dan foydalanishingiz mumkin.
 
 ## Setup for the Tutorial {#setup-for-the-tutorial}
 
