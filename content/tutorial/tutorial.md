@@ -48,62 +48,63 @@ Biz sizni HTML va JavaScript bilan ozgina tanishsiz deb taxmin qilamiz, ammo bos
 
 Agar siz JavaScript-ni ko'rib chiqmoqchi bo'lsangiz, [ushbu qo'llanmani](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) o'qishni tavsiya etamiz. Yodda tutingki, biz JavaScript-ning so'nggi versiyasi - ES6-ning ba'zi xususiyatlaridan foydalanmoqdamiz. Ushbu darslikda biz [arrow funksiyalar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classlar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), va [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) kabi ifodalardan foydalanamiz. ES6 kodi kompilyatsiya qilingandan keyingi kodni tekshirish uchun siz [Babel REPL](babel://es5-syntax-example)-dan foydalanishingiz mumkin.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## Darslik uchun sozlamalarni sozlash {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+Ushbu qo'llanmani tamomlashning ikkita usuli bor: kodni brauzeringizda yozishingiz yoki kompyuteringizda dasturlash muhitini o'rnatish orqali.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### Sozlashning 1 turi: Kodni brauzerda yozing {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+Bu boshlashning eng tezkor usuli!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+Birinchi, bu **[Boshlang'ich kod](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** ni yangi brauzer sahifa oching. Yangi sahifa bo'sh "tic-to-toe" o'yini va React kodi ni ko'rsatishii kerak va ushbu qo'llanmada biz React kodini tahrirlaymiz.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+Endi siz sozlashning ikkinchi turini o'tkazib yuborishingiz va React haqidagi umumiy ma'lumot olish uchun [Umumiy ma'lumot](#overview) bo'limiga o'ting.
 
-This is completely optional and not required for this tutorial!
+### Sozlashning 2 turi: Komputeringizda dasturlash muhitini yaratish{#setup-option-2-local-development-environment}
+
+Bu mutlaqo ixtiyoriy va ushbu darslik uchun talab qilinmaydi!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>Siz tanlagan matn muharriridan foydalanib, mahalliy dasturlash muhitida kuzatib borish bo'yicha ko'rsatmalar</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+Ushbu sozlash ko'proq mehnatni talab qiladi, ammo darslikni o'zingiz xohlagan matn muharriridan foydalanib yakunlashga imkon beradi. Quyida amallarni bajarish bosqichlari berilgan:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. Sizda so'nggi versiyasidi [Node.js](https://nodejs.org/en/) o'rnatilganligiga ishonch hosil qiling.
+2. Yangi loyiha yaratish uchun [Create React App](/docs/create-a-new-react-app.html#create-react-app) ni o'rnatish bo'yicha ko'rsatmalarni bajaring.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. Yangi loyihaning `src /` papkasidagi barcha fayllarni o'chiring
 
-> Note:
+> Eslatma:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**To'liq `src` papkasini o'chirmang, faqat uning ichidagi asl fayllarni o'chiring.** Keyingi bosqichda biz standart loyiha fayllarini ushbu qo'llanmaning misollar bilan almashtiramiz.
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# Agar Mac yoki Linux-dan foydalanayotgan bo'lsangiz:
 rm -f *
 
-# Or, if you're on Windows:
+# Yoki, agar siz Windows-da bo'lsangiz:
 del *
 
-# Then, switch back to the project folder
+# Keyin, loyiha papkasiga qaytib o'ting
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. `src/` papkasiga  quydagi [CSS kodlari](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) bilan `index.css` nomli fayl qo'shing.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. `src/` papkasiga  quydagi [JS kodlari](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)  bilan `index.js` nomli fayl qo'shing.
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. Ushbu uchta qatorni kodni `src /` papkasidagi `index.js` fayilining yuqori qismiga qo'shing:
 
 ```js
 import React from 'react';
@@ -111,9 +112,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+Endi siz loyiha papkasida `npm start` buyruqni ishga tushirsangiz va `http://localhost:3000` ni brauzerda ochsangiz, bo'sh "tic-to-toe" maydonini ko'rishingiz mumkin.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+Muharriringiz uchun sintaksisni ajratib ko'rsatishni sozlash uchun [ushbu ko'rsatmalarga](https://babeljs.io/docs/editors/) amal qilishni maslahat beramiz.
 
 </details>
 
