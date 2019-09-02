@@ -33,7 +33,12 @@ Ushbu yangi `useState` funksiyasi Ho'k haqida o'rganmoqchi bo'lgan birinchi "Ho'
 
 >Eslatma
 >
+<<<<<<< HEAD
 >React 16.8.0 Ho'kni qo'llab-quvvatlaydigan birinchi release dir. Yangilaganizda, hamma paketlarini yangilashni unutmang, qaysiki React DOM ni ham. React Native Ho'kni keyingi barqaror release da qo'llab quvvatlaydi.
+=======
+>React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
+>React Native supports Hooks since [the 0.59 release of React Native](https://facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059).
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
 
 ## Video Tanishtiruv {#video-introduction}
 
