@@ -58,7 +58,13 @@
     - id: optimizing-performance
       title: Ish faoliyatini optimallashtirish
     - id: portals
+<<<<<<< HEAD
       title: Portallar
+=======
+      title: Portals
+    - id: profiler
+      title: Profiler
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
     - id: react-without-es6
       title: React ES6 bilan
     - id: react-without-jsx
@@ -123,7 +129,19 @@
         title: Hooks API Ma'lumotlari
       - id: hooks-faq
         title: Hooks FAQ
+<<<<<<< HEAD
 - title: Hissa qo'shish
+=======
+- title: Testing
+  items:
+    - id: testing 
+      title: Testing Overview
+    - id: testing-recipes
+      title: Testing Recipes
+    - id: testing-environments
+      title: Testing Environments
+- title: Contributing
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
   items:
   - id: how-to-contribute
     title: Qanday hissa qo'shish kerak
