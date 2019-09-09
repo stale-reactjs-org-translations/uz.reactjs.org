@@ -118,19 +118,19 @@ Muharriringiz uchun sintaksisni ajratib ko'rsatishni sozlash uchun [ushbu ko'rsa
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### Yordam bering, boshim qotdi! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+Agar sizning boshingiz qotsa [jamiyat qo'llab-quvvatlash manbalarini](/community/support.html) tekshiring. Xususan, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) tez yordam olishning ajoyib usuli. Agar siz hech qanday javob olmasangiz yoki boshingiz qotishda davom etsa, iltimos, muammo yarating va biz sizga yordam beramiz.
 
-## Overview {#overview}
+## Umumiy nazar {#overview}
 
-Now that you're set up, let's get an overview of React!
+Endi siz tayyorsiz, qani end React haqida qisqacha ma'lumotga ega bo'lsak!
 
-### What Is React? {#what-is-react}
+### React nima? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+React bu foydalanuvchi interfeyslarini yaratish uchun deklarativ, samarali va moslashuvchan JavaScript kutubxonasidir. Bu sizga "komponentlar" deb nomlangan kichik va ajratilgan kod qismlaridan murakkab UI tuzish imkonini beradi.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React bir necha xil tarkibiy qismlarga ega, ammo biz `React.Component` kichik sinflaridan boshlaymiz:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -148,14 +148,14 @@ class ShoppingList extends React.Component {
   }
 }
 
-// Example usage: <ShoppingList name="Mark" />
+// Yuqoridagi komponetning qo'llanilishi: <ShoppingList name="Mark" />
 ```
+Tez orada biz XML-ga o'xshash teglar bilan tanishamiz. Biz komponetlardan foydalanib, Reactga ekranda nimani ko'rishni istayotganimizni aytamiz. Bizning ma'lumotlarimiz o'zgarganda, React bizning komponetlarni samarali ravishda yangilaydi va qayta namoyish etadi.
 
-We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
-
-Here, ShoppingList is a **React component class**, or **React component type**. A component takes in parameters, called `props` (short for "properties"), and returns a hierarchy of views to display via the `render` method.
+Bu yerda ShoppingList bu **React komponent class** yoki **React komponent turi**. Komponent `props` ("xususiyatlar" uchun qisqa) deb nomlangan parametrlarni oladi  va` render` metodi orqali ko`rish uchun ko`rinishlar ketma-ketligini amalga oshiradi.
 
 The `render` method returns a *description* of what you want to see on the screen. React takes the description and displays the result. In particular, `render` returns a **React element**, which is a lightweight description of what to render. Most React developers use a special syntax called "JSX" which makes these structures easier to write. The `<div />` syntax is transformed at build time to `React.createElement('div')`. The example above is equivalent to:
+`render` usuli ekranda nima ko`rmoqchi bo`lganingizning **tavsifini** qaytaradi. React bu tavsifni oladi va natijani ko'rsatadi. Xususan, `render` ko'rsatadigan narsaning soddagina tavsifi bo'lgan **React elementini** qaytaradi. Aksariyat React dasturchilari "JSX" deb nomlangan maxsus sintaksisdan foydalanadilar, bu esa ushbu tuzilmalarni yozishni osonlashtiradi. `<div />` sintaksisi yaratilish vaqtida `React.createElement('div')`ga o'zgartiriladi. Yuqoridagi misol quyidagi bilan bir-xil:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -164,35 +164,35 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[To'liq kengaytirilgan versiyasini ko'ring.](babel://tutorial-expanded-version)
 
-If you're curious, `createElement()` is described in more detail in the [API reference](/docs/react-api.html#createelement), but we won't be using it in this tutorial. Instead, we will keep using JSX.
+Agar qiziqsangiz, `createElement()` [API ma'lumotnomasida](/docs/react-api.html#createelement) batafsilroq tasvirlangan, ammo biz ushbu qo'llanmada undan foydalanmaymiz. Buning o'rniga, biz JSX-dan foydalanishda davom etamiz.
 
-JSX comes with the full power of JavaScript. You can put *any* JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+JSX da JavaScriptdan to'liq foydalanishingiz mumkin. JSX da jingalak  qavs ichiga **har qanday** JavaScript iboralarini(kodlarini) qo'yishingiz mumkin. Har bir React elementi - bu JavaScript ob'ekti bo'lib siz uni o'zgaruvchiga saqlashingiz yoki dasturingizda undan foydalanishingiz mumkin.
 
-The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
+Yuqoridagi `ShoppingList` komponenti faqat DOM ga oid `<div/>` va `<li /> `kabi elementlarni ko'rsatadi. Ammo siz maxsus React elementlarni yaratishingiz va namoyish etishingiz ham mumkin. Masalan, endi biz hamma xaridlar ro'yxatiga komponentiga `<ShoppingList />` yozib murojaat qilishimiz mumkin. Reaktning har bir komponenti inkapsulyatsiya qilingan va mustaqil ravishda ishlay oladi; bu oddiy komponentlardan murakkab ifoydalanuvchi interfeyslarini yaratishga imkon beradi.
 
-## Inspecting the Starter Code {#inspecting-the-starter-code}
+## Boshlang'ich kodni ko'zdan kechirish {#inspecting-the-starter-code}
 
-If you're going to work on the tutorial **in your browser,** open this code in a new tab: **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. If you're going to work on the tutorial **locally,** instead open `src/index.js` in your project folder (you have already touched this file during the [setup](#setup-option-2-local-development-environment)).
+Agar siz darslikni **brauzerda** ishlamoqchi bo'lsangiz, ushbu kodni yangi ichki oynada oching: **[Boshlang'ich kod](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Agar siz darslik ustida **mahalliy dasturlashlash muhiti** orqali ishlamoqchi bo'lsangiz, o'rniga `src/index.js`-ni loyiha papkangizda oching (sozlash paytida siz ushbu faylni o'zgartirgan edingiz).
 
-This Starter Code is the base of what we're building. We've provided the CSS styling so that you only need to focus on learning React and programming the tic-tac-toe game.
+Ushbu Boshlang'ich Kod biz yaratmoqchi bo'lgan o'yinning asosidir. Biz CSS stillarini sizga taqdim etdik, chunki siz e'tiboringizni faqat Reactni o'rganishga va tic-tac-toe o'yinini dasturlashga qaratishingiz kerak.
 
-By inspecting the code, you'll notice that we have three React components:
+Kodni tekshirganda, siz quydagi uchta React komponetlari borligini ko'rasiz:
 
 * Square
 * Board
 * Game
 
-The Square component renders a single `<button>` and the Board renders 9 squares. The Game component renders a board with placeholder values which we'll modify later. There are currently no interactive components.
+`Square` komponent faqat bitta `<button>` va `Board` 9 ta kvadratni ko'rsatadi. `Game` komponenti keyinchalik to'ldiriladigan to'ldiruvchi qiymatiga ega katakchalarni namoyish etadi va biz ularni keyinchalik o'zgartiramiz. Hozirda hech qanday interfaol komponentlar mavjud emas.
 
-### Passing Data Through Props {#passing-data-through-props}
+### Props orqali ma'lumot uzatish {#passing-data-through-props}
 
-To get our feet wet, let's try passing some data from our Board component to our Square component.
+O'zimizni sinab ko'rish uchun qandanydir ma'lumotni `Board` komponetdan `Square` komponetiga uzatishga harakat qilamiz.
 
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
+Ushbu darslik bilan ishlayotgan paytida nusxa ko'chirib olgandan ko'ra o'zingiz qo'lda kodlarni yozishingizni maslahat beramiz. Bu mushakli xotira va yaxshiroq tushunishni rivojlantirishga yordam beradi.
 
-In Board's `renderSquare` method, change the code to pass a prop called `value` to the Square:
+`Board`ning `renderSquare` metodiga `value` deb nomlangan propni yuborish uchun kodni o'zgartiring:
 
 ```js{3}
 class Board extends React.Component {
@@ -201,7 +201,7 @@ class Board extends React.Component {
   }
 ```
 
-Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+Square komponentining `render` metodi yuqoridagi qiymatni ko'rsatish uchun quydagi `{/* TODO */}` kodni `{this.props.value}` bilan almashtiring:
 
 ```js{5}
 class Square extends React.Component {
@@ -215,22 +215,21 @@ class Square extends React.Component {
 }
 ```
 
-Before:
+Oldin:
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-After: You should see a number in each square in the rendered output.
+Keyin: So'ngi natijamizning har bir kvadratda raqamni ko'rishingiz mumkin.
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[To'liq kodni ko'rishingiz mumkin](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+Tabriklaymiz! Siz hozirgina ona `Board` komponentidan bola `Square` komponentiga ma'lumot o'tkazdingiz. Ma'lumotni o'tkazish - bu Rect ilovalardagi ma'lumotlarning onadan bolaga qanday o'tishidir.
 
-### Making an Interactive Component {#making-an-interactive-component}
+### Interfaol komponentlar yaratish {#making-an-interactive-component}
 
-Let's fill the Square component with an "X" when we click it.
-First, change the button tag that is returned from the Square component's `render()` function to this:
+Keling Square komponentini bosganimizda "X" harfi bilan to'ldiramiz. Birinchi, Square komponentining `render () 'funktsiyasidan qaytarilgan button tegini quyidagicha o'zgartiring:
 
 ```javascript{4}
 class Square extends React.Component {
@@ -244,11 +243,12 @@ class Square extends React.Component {
 }
 ```
 
-If you click on a Square now, you should see an alert in your browser.
+Agar hozir kvadratni bossangiz, brauzeringizda ogohlantirish(alert)ni ko'rasiz.
 
->Note
+Kamiroq yozish va chalkash xatti-harakatlarning oldini olish uchun biz bu erda va quyida voqea ishlovchilari uchun strelka funktsiyasi sintaksisidan foydalanamiz:
+>Eslatma
 >
->To save typing and avoid the [confusing behavior of `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), we will use the [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for event handlers here and further below:
+>Kamiroq yozish va [`this`ning chalkash xatti-harakatlarning](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) oldini olish maqsadida biz [arrow funktsiyasi sintaksisidan](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) eventlar uchun quydagicha foydalanamiz:
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -262,7 +262,7 @@ If you click on a Square now, you should see an alert in your browser.
 >}
 >```
 >
->Notice how with `onClick={() => alert('click')}`, we're passing *a function* as the `onClick` prop. React will only call this function after a click. Forgetting `() =>` and writing `onClick={alert('click')}` is a common mistake, and would fire the alert every time the component re-renders.
+>Qanday qilib biz `onClick={() => alert('click')}` orqali biz button bosilganda funktsiyadan foydalanayotganimizga e'tibor bering. React bu tugmachani bosgandan keyingina bu funktsiyani ishga tushiradi. `() =>` unutish va `onClick={() => alert('click')}` ni yozish odatiy xatodir va bizning komponent yangilanganda bu funktsiyani qayta-qayta ishga tushiradi.
 
 As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
 
