@@ -7,8 +7,15 @@
     - id: create-a-new-react-app
       title: Yangi React Ilova yaratish
     - id: cdn-links
+<<<<<<< HEAD
       title: CDN zanjirlar
 - title: Asosiy tushunchalar
+=======
+      title: CDN Links
+    - id: release-channels
+      title: Release Channels
+- title: Main Concepts
+>>>>>>> 081bb31226919062938ef924472ba1b4170facfc
   isOrdered: true
   items:
     - id: hello-world
@@ -109,6 +116,7 @@
     - id: javascript-environment-requirements
       title: JS dasturiy muhitiga qo'yiladigan talablar
     - id: glossary
+<<<<<<< HEAD
       title: Lug'at
 - title: Ilgaklar(Hooks) (Yangi)
   isOrdered: true
@@ -132,17 +140,53 @@
 <<<<<<< HEAD
 - title: Hissa qo'shish
 =======
+=======
+      title: Glossary
+- title: Hooks
+  isOrdered: true
+  items:
+    - id: hooks-intro
+      title: Introducing Hooks
+    - id: hooks-overview
+      title: Hooks at a Glance
+    - id: hooks-state
+      title: Using the State Hook
+    - id: hooks-effect
+      title: Using the Effect Hook
+    - id: hooks-rules
+      title: Rules of Hooks
+    - id: hooks-custom
+      title: Building Your Own Hooks
+    - id: hooks-reference
+      title: Hooks API Reference
+    - id: hooks-faq
+      title: Hooks FAQ
+>>>>>>> 081bb31226919062938ef924472ba1b4170facfc
 - title: Testing
   items:
-    - id: testing 
+    - id: testing
       title: Testing Overview
     - id: testing-recipes
       title: Testing Recipes
     - id: testing-environments
       title: Testing Environments
+- title: Concurrent Mode (Experimental)
+  isOrdered: true
+  items:
+    - id: concurrent-mode-intro
+      title: Introducing Concurrent Mode
+    - id: concurrent-mode-suspense
+      title: Suspense for Data Fetching
+    - id: concurrent-mode-patterns
+      title: Concurrent UI Patterns
+    - id: concurrent-mode-adoption
+      title: Adopting Concurrent Mode
+    - id: concurrent-mode-reference
+      title: Concurrent Mode API Reference
 - title: Contributing
 >>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
   items:
+<<<<<<< HEAD
   - id: how-to-contribute
     title: Qanday hissa qo'shish kerak
   - id: codebase-overview
@@ -151,6 +195,16 @@
     title: Bajarish bo'yicha eslatmalar
   - id: design-principles
     title: Dizayn asoslari
+=======
+    - id: how-to-contribute
+      title: How to Contribute
+    - id: codebase-overview
+      title: Codebase Overview
+    - id: implementation-notes
+      title: Implementation Notes
+    - id: design-principles
+      title: Design Principles
+>>>>>>> 081bb31226919062938ef924472ba1b4170facfc
 - title: FAQ
   items:
     - id: faq-ajax
@@ -168,4 +222,8 @@
     - id: faq-versioning
       title: Versiya siyosati
     - id: faq-internals
+<<<<<<< HEAD
       title: Virtual DOM va ichki obyektlar
+=======
+      title: Virtual DOM and Internals
+>>>>>>> 081bb31226919062938ef924472ba1b4170facfc
