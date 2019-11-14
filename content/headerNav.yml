@@ -1,13 +1,13 @@
 items:
-  - title: Docs
+  - title: Hujjatlar
     to: /docs/getting-started.html
     activeSelector: /docs/
-  - title: Tutorial
+  - title: Qo'llanma
     to: /tutorial/tutorial.html
     activeSelector: /tutorial
   - title: Blog
     to: /blog/
     activeSelector: /blog
-  - title: Community
+  - title: Jamiyat
     to: /community/support.html
     activeSelector: /community
