@@ -5,7 +5,7 @@
 
 This repo contains the source code and documentation powering [uz.reactjs.org](https://uz.reactjs.org/).
 
-[Uzbek Version](https://github.com/reactjs/uz.reactjs.org/blob/master/README.uz.md) | 📖 [Glossary](https://github.com/reactjs/uz.reactjs.org/blob/master/TRANSLATION.md) | ✅ [Progress: 3% Core, 3% Other](https://www.isreacttranslatedyet.com/)
+[Uzbek Version](https://github.com/reactjs/uz.reactjs.org/blob/master/README.uz.md) | 📖 [Glossary](https://github.com/reactjs/uz.reactjs.org/blob/master/TRANSLATION.md) | ✅ [Progress: 3% Core, 1% Other](https://www.isreacttranslatedyet.com/)
 </div>
 
 ## Getting started
