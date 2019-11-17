@@ -129,7 +129,7 @@
         title: Hooks FAQ
 - title: Test sinovlari
   items:
-    - id: testing 
+    - id: testing
       title: Test sinovlarining asoslari
     - id: testing-recipes
       title: Test sinovlarining retseptlari
@@ -148,7 +148,7 @@
       title: Adopting Concurrent Mode
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
-- title: Contributing
+- title: Hissa qo'shish
   items:
   - id: how-to-contribute
     title: Qanday hissa qo'shish kerak

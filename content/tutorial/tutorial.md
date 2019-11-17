@@ -199,6 +199,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
   }
+}
 ```
 
 Square komponentining `render` metodi yuqoridagi qiymatni ko'rsatish uchun quydagi `{/* TODO */}` kodni `{this.props.value}` bilan almashtiring:
