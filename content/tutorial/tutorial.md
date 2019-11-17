@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "O'quv qo'llanma: Reactga kirish"
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,97 +12,99 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+Ushbu o'quv qo'llanma hech qanday mavjud React bilimlarni o'z ichiga olmaydi.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## Darlikni boshlashdan oldin {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+Ushbu dars davomida biz kichik o'yin yaratamiz. **Siz o'yinlar yaratmaganiz uchun xavotirga tushib darslikni o'tkazib yuborishingiz mumkin, ammo bunga imkoniyat bering.** 
+Qo'llanmada o'rganadigan usullaringiz har qanday React ilovasini yaratish uchun asos bo'lib xizmat qiladi va uni o'zlashtirish sizga Reactni chuqur tushunishga yordam beradi.
 
->Tip
+>Maslahat
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>Ushbu darslik **bajarish orqali o'rganish**ni afzal ko'ruvchilar uchun mo'ljallangan . Agar siz tushunchalarni no'ldan boshlab o'rganishni xohlasangiz, unda siz bizning [qadam ba qadam qo'llanmamizni](/docs/hello-world.html) tekshirin ko'ring. Siz ushbu darslik va yuqoridagi qo'llanmani bir-birini to'ldirib keluvchi deb ham hisoblashingiz mumkin.
 
-The tutorial is divided into several sections:
+Ushbu qo'llanma bir qancha bo'limlardan iborat:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [Darslik uchun sozlamalarni sozlash](#setup-for-the-tutorial) bo'limi siz uchun darslikni kuzatib borish uchun **boshlang'ich nuqta** bo'lib hisoblanadi.
+* [Umumiy nazar](#overview) bo'limi sizga React **fundamental asoslari**: komponentlar, props va state nima ekanligini o'rgatadi.
+* [O'yinni tamomlash](#completing-the-game) bo'limi esa React dasturlashda keng qo'llaniladigan **dasturlash texnikalarini** o'rgatadi.
+* [Vaqt bo'ylab sayohatni qo'shish](#adding-time-travel) u sizga Reactning noyob kuchli tomonlarini **chuqurroq tushunishga** imkon beradi.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+Ushbu o'quv qo'llanmaning foydasini bilish  uchun barcha bo'limlarni birdaniga tugatishingiz shart emas. Iloji boricha ko'proq o'rganishga harakat qiling -- garchan u bir yoki ikkita bo'limdan iborat bo'lsa ham.
 
-### What Are We Building? {#what-are-we-building}
+### Biz nima yaratmoqchimiz?{#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+Ushbu qo'llanmada biz, React yordamida qanday interfaol "tic-tac-toe" o'yinini  yaratishni ko'rsatamiz.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+Siz bu yerda nimani yaratayotganimizni ko'rishingiz mumkin: **[Yakuniy natija](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Agar kod siz uchun tushunarsiz bo'lsa yoki kodning sintaksisidan bexabar bo'lsangiz, xavotirga o'rin yo'q! Ushbu darslikning maqsadi React va uning sintaksisini tushunishga yordam berishdir.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+Qo'llanmani davom ettirishdan oldin, "tic-tac-toe" o'yinini tekshirib ko'rishingizni maslahat beramiz. Sizning etiboringizni tortadigan xususiyatlardan biri shundaki, o'yin stolining o'ng tomonida raqamlangan ro'yxat mavjud. Ushbu ro'yxat o'yinda sodir bo'lgan barcha harakatlarning tarixini ko'rsatib turadi va o'yin davom etib borgan sari yangilanadi.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+"Tic-tac-toe" o'yini bilan tanishib chiqganingizdan so'ng uni yopishingiz mumkin. Biz ushbu darslikni sodda shablondan boshlaymiz. Bizning keyingi qadamimiz sizni o'yinni yaratishni boshlashingiz uchun sozlamaralni sozlashdan iborat.
 
-### Prerequisites {#prerequisites}
+### Talablar {#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+Biz sizni HTML va JavaScript bilan ozgina tanishsiz deb taxmin qilamiz, ammo boshqa dasturlash tilidan kelgan bo'lsangiz ham, darslikni kuzatib borishingiz mumkin. Shuningdek siz funktsiyalar, ob'ektlar, massivlar va kamroq darajada bo'lsaham class kabi dasturiy tushunchalar bilishligingizni taxmin qilamiz.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+Agar siz JavaScript-ni ko'rib chiqmoqchi bo'lsangiz, [ushbu qo'llanmani](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) o'qishni tavsiya etamiz. Yodda tutingki, biz JavaScript-ning so'nggi versiyasi - ES6-ning ba'zi xususiyatlaridan foydalanmoqdamiz. Ushbu darslikda biz [arrow funksiyalar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classlar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), va [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) kabi ifodalardan foydalanamiz. ES6 kodi kompilyatsiya qilingandan keyingi kodni tekshirish uchun siz [Babel REPL](babel://es5-syntax-example)-dan foydalanishingiz mumkin.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## Darslik uchun sozlamalarni sozlash {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+Ushbu qo'llanmani tamomlashning ikkita usuli bor: kodni brauzeringizda yozishingiz yoki kompyuteringizda dasturlash muhitini o'rnatish orqali.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### Sozlashning 1 turi: Kodni brauzerda yozing {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+Bu boshlashning eng tezkor usuli!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+Birinchi, bu **[Boshlang'ich kod](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** ni yangi brauzer sahifa oching. Yangi sahifa bo'sh "tic-to-toe" o'yini va React kodi ni ko'rsatishii kerak va ushbu qo'llanmada biz React kodini tahrirlaymiz.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+Endi siz sozlashning ikkinchi turini o'tkazib yuborishingiz va React haqidagi umumiy ma'lumot olish uchun [Umumiy ma'lumot](#overview) bo'limiga o'ting.
 
-This is completely optional and not required for this tutorial!
+### Sozlashning 2 turi: Komputeringizda dasturlash muhitini yaratish{#setup-option-2-local-development-environment}
+
+Bu mutlaqo ixtiyoriy va ushbu darslik uchun talab qilinmaydi!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>Siz tanlagan matn muharriridan foydalanib, mahalliy dasturlash muhitida kuzatib borish bo'yicha ko'rsatmalar</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+Ushbu sozlash ko'proq mehnatni talab qiladi, ammo darslikni o'zingiz xohlagan matn muharriridan foydalanib yakunlashga imkon beradi. Quyida amallarni bajarish bosqichlari berilgan:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. Sizda so'nggi versiyasidi [Node.js](https://nodejs.org/en/) o'rnatilganligiga ishonch hosil qiling.
+2. Yangi loyiha yaratish uchun [Create React App](/docs/create-a-new-react-app.html#create-react-app) ni o'rnatish bo'yicha ko'rsatmalarni bajaring.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. Yangi loyihaning `src /` papkasidagi barcha fayllarni o'chiring
 
-> Note:
+> Eslatma:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**To'liq `src` papkasini o'chirmang, faqat uning ichidagi asl fayllarni o'chiring.** Keyingi bosqichda biz standart loyiha fayllarini ushbu qo'llanmaning misollar bilan almashtiramiz.
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# Agar Mac yoki Linux-dan foydalanayotgan bo'lsangiz:
 rm -f *
 
-# Or, if you're on Windows:
+# Yoki, agar siz Windows-da bo'lsangiz:
 del *
 
-# Then, switch back to the project folder
+# Keyin, loyiha papkasiga qaytib o'ting
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. `src/` papkasiga  quydagi [CSS kodlari](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) bilan `index.css` nomli fayl qo'shing.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. `src/` papkasiga  quydagi [JS kodlari](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)  bilan `index.js` nomli fayl qo'shing.
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. Ushbu uchta qatorni kodni `src /` papkasidagi `index.js` fayilining yuqori qismiga qo'shing:
 
 ```js
 import React from 'react';
@@ -110,25 +112,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+Endi siz loyiha papkasida `npm start` buyruqni ishga tushirsangiz va `http://localhost:3000` ni brauzerda ochsangiz, bo'sh "tic-to-toe" maydonini ko'rishingiz mumkin.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+Muharriringiz uchun sintaksisni ajratib ko'rsatishni sozlash uchun [ushbu ko'rsatmalarga](https://babeljs.io/docs/editors/) amal qilishni maslahat beramiz.
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### Yordam bering, boshim qotdi! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+Agar sizning boshingiz qotsa [jamiyat qo'llab-quvvatlash manbalarini](/community/support.html) tekshiring. Xususan, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) tez yordam olishning ajoyib usuli. Agar siz hech qanday javob olmasangiz yoki boshingiz qotishda davom etsa, iltimos, muammo yarating va biz sizga yordam beramiz.
 
-## Overview {#overview}
+## Umumiy nazar {#overview}
 
-Now that you're set up, let's get an overview of React!
+Endi siz tayyorsiz, qani end React haqida qisqacha ma'lumotga ega bo'lsak!
 
-### What Is React? {#what-is-react}
+### React nima? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+React bu foydalanuvchi interfeyslarini yaratish uchun deklarativ, samarali va moslashuvchan JavaScript kutubxonasidir. Bu sizga "komponentlar" deb nomlangan kichik va ajratilgan kod qismlaridan murakkab UI tuzish imkonini beradi.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React bir necha xil tarkibiy qismlarga ega, ammo biz `React.Component` kichik sinflaridan boshlaymiz:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -146,14 +148,14 @@ class ShoppingList extends React.Component {
   }
 }
 
-// Example usage: <ShoppingList name="Mark" />
+// Yuqoridagi komponetning qo'llanilishi: <ShoppingList name="Mark" />
 ```
+Tez orada biz XML-ga o'xshash teglar bilan tanishamiz. Biz komponetlardan foydalanib, Reactga ekranda nimani ko'rishni istayotganimizni aytamiz. Bizning ma'lumotlarimiz o'zgarganda, React bizning komponetlarni samarali ravishda yangilaydi va qayta namoyish etadi.
 
-We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
-
-Here, ShoppingList is a **React component class**, or **React component type**. A component takes in parameters, called `props` (short for "properties"), and returns a hierarchy of views to display via the `render` method.
+Bu yerda ShoppingList bu **React komponent class** yoki **React komponent turi**. Komponent `props` ("xususiyatlar" uchun qisqa) deb nomlangan parametrlarni oladi  va` render` metodi orqali ko`rish uchun ko`rinishlar ketma-ketligini amalga oshiradi.
 
 The `render` method returns a *description* of what you want to see on the screen. React takes the description and displays the result. In particular, `render` returns a **React element**, which is a lightweight description of what to render. Most React developers use a special syntax called "JSX" which makes these structures easier to write. The `<div />` syntax is transformed at build time to `React.createElement('div')`. The example above is equivalent to:
+`render` usuli ekranda nima ko`rmoqchi bo`lganingizning **tavsifini** qaytaradi. React bu tavsifni oladi va natijani ko'rsatadi. Xususan, `render` ko'rsatadigan narsaning soddagina tavsifi bo'lgan **React elementini** qaytaradi. Aksariyat React dasturchilari "JSX" deb nomlangan maxsus sintaksisdan foydalanadilar, bu esa ushbu tuzilmalarni yozishni osonlashtiradi. `<div />` sintaksisi yaratilish vaqtida `React.createElement('div')`ga o'zgartiriladi. Yuqoridagi misol quyidagi bilan bir-xil:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -162,35 +164,35 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[To'liq kengaytirilgan versiyasini ko'ring.](babel://tutorial-expanded-version)
 
-If you're curious, `createElement()` is described in more detail in the [API reference](/docs/react-api.html#createelement), but we won't be using it in this tutorial. Instead, we will keep using JSX.
+Agar qiziqsangiz, `createElement()` [API ma'lumotnomasida](/docs/react-api.html#createelement) batafsilroq tasvirlangan, ammo biz ushbu qo'llanmada undan foydalanmaymiz. Buning o'rniga, biz JSX-dan foydalanishda davom etamiz.
 
-JSX comes with the full power of JavaScript. You can put *any* JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+JSX da JavaScriptdan to'liq foydalanishingiz mumkin. JSX da jingalak  qavs ichiga **har qanday** JavaScript iboralarini(kodlarini) qo'yishingiz mumkin. Har bir React elementi - bu JavaScript ob'ekti bo'lib siz uni o'zgaruvchiga saqlashingiz yoki dasturingizda undan foydalanishingiz mumkin.
 
-The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
+Yuqoridagi `ShoppingList` komponenti faqat DOM ga oid `<div/>` va `<li /> `kabi elementlarni ko'rsatadi. Ammo siz maxsus React elementlarni yaratishingiz va namoyish etishingiz ham mumkin. Masalan, endi biz hamma xaridlar ro'yxatiga komponentiga `<ShoppingList />` yozib murojaat qilishimiz mumkin. Reaktning har bir komponenti inkapsulyatsiya qilingan va mustaqil ravishda ishlay oladi; bu oddiy komponentlardan murakkab ifoydalanuvchi interfeyslarini yaratishga imkon beradi.
 
-## Inspecting the Starter Code {#inspecting-the-starter-code}
+## Boshlang'ich kodni ko'zdan kechirish {#inspecting-the-starter-code}
 
-If you're going to work on the tutorial **in your browser,** open this code in a new tab: **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. If you're going to work on the tutorial **locally,** instead open `src/index.js` in your project folder (you have already touched this file during the [setup](#setup-option-2-local-development-environment)).
+Agar siz darslikni **brauzerda** ishlamoqchi bo'lsangiz, ushbu kodni yangi ichki oynada oching: **[Boshlang'ich kod](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Agar siz darslik ustida **mahalliy dasturlashlash muhiti** orqali ishlamoqchi bo'lsangiz, o'rniga `src/index.js`-ni loyiha papkangizda oching (sozlash paytida siz ushbu faylni o'zgartirgan edingiz).
 
-This Starter Code is the base of what we're building. We've provided the CSS styling so that you only need to focus on learning React and programming the tic-tac-toe game.
+Ushbu Boshlang'ich Kod biz yaratmoqchi bo'lgan o'yinning asosidir. Biz CSS stillarini sizga taqdim etdik, chunki siz e'tiboringizni faqat Reactni o'rganishga va tic-tac-toe o'yinini dasturlashga qaratishingiz kerak.
 
-By inspecting the code, you'll notice that we have three React components:
+Kodni tekshirganda, siz quydagi uchta React komponetlari borligini ko'rasiz:
 
 * Square
 * Board
 * Game
 
-The Square component renders a single `<button>` and the Board renders 9 squares. The Game component renders a board with placeholder values which we'll modify later. There are currently no interactive components.
+`Square` komponent faqat bitta `<button>` va `Board` 9 ta kvadratni ko'rsatadi. `Game` komponenti keyinchalik to'ldiriladigan to'ldiruvchi qiymatiga ega katakchalarni namoyish etadi va biz ularni keyinchalik o'zgartiramiz. Hozirda hech qanday interfaol komponentlar mavjud emas.
 
-### Passing Data Through Props {#passing-data-through-props}
+### Props orqali ma'lumot uzatish {#passing-data-through-props}
 
-To get our feet wet, let's try passing some data from our Board component to our Square component.
+O'zimizni sinab ko'rish uchun qandanydir ma'lumotni `Board` komponetdan `Square` komponetiga uzatishga harakat qilamiz.
 
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
+Ushbu darslik bilan ishlayotgan paytida nusxa ko'chirib olgandan ko'ra o'zingiz qo'lda kodlarni yozishingizni maslahat beramiz. Bu mushakli xotira va yaxshiroq tushunishni rivojlantirishga yordam beradi.
 
-In Board's `renderSquare` method, change the code to pass a prop called `value` to the Square:
+`Board`ning `renderSquare` metodiga `value` deb nomlangan propni yuborish uchun kodni o'zgartiring:
 
 ```js{3}
 class Board extends React.Component {
@@ -200,7 +202,7 @@ class Board extends React.Component {
 }
 ```
 
-Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+Square komponentining `render` metodi yuqoridagi qiymatni ko'rsatish uchun quydagi `{/* TODO */}` kodni `{this.props.value}` bilan almashtiring:
 
 ```js{5}
 class Square extends React.Component {
@@ -214,22 +216,21 @@ class Square extends React.Component {
 }
 ```
 
-Before:
+Oldin:
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-After: You should see a number in each square in the rendered output.
+Keyin: So'ngi natijamizning har bir kvadratda raqamni ko'rishingiz mumkin.
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[To'liq kodni ko'rishingiz mumkin](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+Tabriklaymiz! Siz hozirgina ona `Board` komponentidan bola `Square` komponentiga ma'lumot o'tkazdingiz. Ma'lumotni o'tkazish - bu Rect ilovalardagi ma'lumotlarning onadan bolaga qanday o'tishidir.
 
-### Making an Interactive Component {#making-an-interactive-component}
+### Interfaol komponentlar yaratish {#making-an-interactive-component}
 
-Let's fill the Square component with an "X" when we click it.
-First, change the button tag that is returned from the Square component's `render()` function to this:
+Keling Square komponentini bosganimizda "X" harfi bilan to'ldiramiz. Birinchi, Square komponentining `render () 'funktsiyasidan qaytarilgan button tegini quyidagicha o'zgartiring:
 
 ```javascript{4}
 class Square extends React.Component {
@@ -243,11 +244,12 @@ class Square extends React.Component {
 }
 ```
 
-If you click on a Square now, you should see an alert in your browser.
+Agar hozir kvadratni bossangiz, brauzeringizda ogohlantirish(alert)ni ko'rasiz.
 
->Note
+Kamiroq yozish va chalkash xatti-harakatlarning oldini olish uchun biz bu erda va quyida voqea ishlovchilari uchun strelka funktsiyasi sintaksisidan foydalanamiz:
+>Eslatma
 >
->To save typing and avoid the [confusing behavior of `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), we will use the [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for event handlers here and further below:
+>Kamiroq yozish va [`this`ning chalkash xatti-harakatlarning](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) oldini olish maqsadida biz [arrow funktsiyasi sintaksisidan](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) eventlar uchun quydagicha foydalanamiz:
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -261,7 +263,7 @@ If you click on a Square now, you should see an alert in your browser.
 >}
 >```
 >
->Notice how with `onClick={() => alert('click')}`, we're passing *a function* as the `onClick` prop. React will only call this function after a click. Forgetting `() =>` and writing `onClick={alert('click')}` is a common mistake, and would fire the alert every time the component re-renders.
+>Qanday qilib biz `onClick={() => alert('click')}` orqali biz button bosilganda funktsiyadan foydalanayotganimizga e'tibor bering. React bu tugmachani bosgandan keyingina bu funktsiyani ishga tushiradi. `() =>` unutish va `onClick={() => alert('click')}` ni yozish odatiy xatodir va bizning komponent yangilanganda bu funktsiyani qayta-qayta ishga tushiradi.
 
 As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
 
