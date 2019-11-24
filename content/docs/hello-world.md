@@ -22,17 +22,17 @@ Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
 Tepadagi havolaga bosib onlayn muharrirni ochishiz mumkin. Kodga o'zgartirishlar kiritib ko'ring va naitija qanday o'zgarishini ko'ring. Ushbu qo'llanmadagi ko'p sahifalarda shunga o'xshash tahrirlanadigan misollar mavjud.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## Ushbu qo'llanmani qanday o'qish kerak {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+Bu qo'llanmada biz Reactni quruvchi blocklarini ko'rib chiqamiz: elementlar va komponentlar. Ularni o'zlashtirib qiyin ilovalarni kichik va qayta ishlatiladigan qismlardan yarata olasiz
 
->Tip
+>Maslahat
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>Bu qo'llanma **tushunchalarni qadam ba qadam o'rganishni** afzal ko'radigan odamlar uchun mo'ljallangan. Agar siz amalda o'rganishni xoxlasangiz bizning [amaliy qo'llanma](/tutorial/tutorial.html) bilan tanishing. Bu qo'llanma va darslik bir birini to'ldiradi.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+Bu Reactning asosiy tushunchalari to'g'risidagi qadam-ba-qadam qo'llanmaning birinchi bobi. Uning barcha boblari ro'yxatini navigatsiya panelida topishingiz mumkin. Agar siz buni mobil qurilmadan o'qiyotgan bo'lsangiz, navigatsiyaga ekranning pastki o'ng burchagidagi tugmachani bosib kirishingiz mumkin.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Ushbu qo'llanmadagi har bir bob oldingi boblarda berilgan bilimlarga asoslanadi. **Reactning ko'p qismini "Asosiy tushunchalar" qo'llanmasi boblarini yon panelda ko'rsatilgan tartibda o'qib o'rganish mumkin.** Misol uchun, [“JSX bilan tanishish”](/docs/introducing-jsx.html) bundan keyingi bob.
 
 ## Knowledge Level Assumptions {#knowledge-level-assumptions}
 
