@@ -1,25 +1,25 @@
 ---
 id: hello-world
-title: Hello World
+title: Salom Dunyo
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+Reactdagi eng kichik namuna shu kabi ko'rinadi:
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Salom, dunyo!</h1>,
   document.getElementById('root')
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+Tepadagi havolaga bosib onlayn muharrirni ochishiz mumkin. Kodga o'zgartirishlar kiritib ko'ring va naitija qanday o'zgarishini ko'ring. Ushbu qo'llanmadagi ko'p sahifalarda shunga o'xshash tahrirlanadigan misollar mavjud.
 
 
 ## How to Read This Guide {#how-to-read-this-guide}
