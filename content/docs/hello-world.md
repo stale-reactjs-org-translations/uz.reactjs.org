@@ -28,7 +28,7 @@ Bu qo'llanmada biz Reactni quruvchi blocklarini ko'rib chiqamiz: elementlar va k
 
 >Maslahat
 >
->Bu qo'llanma **tushunchalarni qadam ba qadam o'rganishni** afzal ko'radigan odamlar uchun mo'ljallangan. Agar siz amalda o'rganishni xoxlasangiz bizning [amaliy qo'llanma](/tutorial/tutorial.html) bilan tanishing. Bu qo'llanma va darslik bir birini to'ldiradi.
+>Bu qo'llanma **tushunchalarni qadam ba qadam o'rganishni** afzal ko'radigan odamlar uchun mo'ljallangan. Agar siz amalda o'rganishni xoxlasangiz bizning [amaliy o'quv qo'llanma](/tutorial/tutorial.html) bilan tanishing. Bu qo'llanma va amaliy o'quv qo'llanma bir birini to'ldiradi.
 
 Bu Reactning asosiy tushunchalari to'g'risidagi qadam-ba-qadam qo'llanmaning birinchi bobi. Uning barcha boblari ro'yxatini navigatsiya panelida topishingiz mumkin. Agar siz buni mobil qurilmadan o'qiyotgan bo'lsangiz, navigatsiyaga ekranning pastki o'ng burchagidagi tugmachani bosib kirishingiz mumkin.
 
