@@ -34,13 +34,13 @@ Bu Reactning asosiy tushunchalari to'g'risidagi qadam-ba-qadam qo'llanmaning bir
 
 Ushbu qo'llanmadagi har bir bob oldingi boblarda berilgan bilimlarga asoslanadi. **Reactning ko'p qismini "Asosiy tushunchalar" qo'llanmasi boblarini yon panelda ko'rsatilgan tartibda o'qib o'rganish mumkin.** Misol uchun, [“JSX bilan tanishish”](/docs/introducing-jsx.html) bundan keyingi bob.
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## Kerakli bilim darajasi {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+React JavaScript kutubxonasi xisoblanadi, shuning uchun biz sizni JavaScript tili haqida asosiy tushunchangiz bor deb taxmin qilamiz. **Agar o'zingizni ishonchsiz his qilsangiz, bilimlaringizni sinab ko'rish uchun [JavaScriptga kirish darsini o'qish](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ni maslahat beramiz** u sizni bu qo'llanmani o'qishni osonlashtiradi. Bu 30 daqiqadan bir soatgacha vaqtni olishi mumkin, ammo natijada bir vaqtning o'zida React va JavaScriptni o'rganayotgandek his qilishingiz kerak bo'lmaydi.
 
->Note
+>Eslatma
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>Bu qo'llanmaning bazi misollarida Javascriptning yangi sintaksisi ishlatilgan. Agar siz oxirgi bir necha yil Javascript bilan ishlamagan bo'lsangiz, [shu uchta punkt](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) sizga yordam berishi kerak.
 
 
 ## Let's Get Started! {#lets-get-started}
