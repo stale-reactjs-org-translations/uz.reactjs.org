@@ -43,8 +43,8 @@ React JavaScript kutubxonasi xisoblanadi, shuning uchun biz sizni JavaScript til
 >Bu qo'llanmaning bazi misollarida Javascriptning yangi sintaksisi ishlatilgan. Agar siz oxirgi bir necha yil Javascript bilan ishlamagan bo'lsangiz, [shu uchta punkt](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) sizga yordam berishi kerak.
 
 
-## Let's Get Started! {#lets-get-started}
+## Qani boshladik! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
+[Qo'llanmani keyingi bob](/docs/introducing-jsx.html)iga o'tish uchun sahifani pastga aylantiring.
 
 
