@@ -1,50 +1,50 @@
 ---
 id: hello-world
-title: Hello World
+title: Salom Dunyo
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+Reactdagi eng kichik namuna shu kabi ko'rinadi:
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Salom, dunyo!</h1>,
   document.getElementById('root')
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+Tepadagi havolaga bosib onlayn muharrirni ochishiz mumkin. Kodga o'zgartirishlar kiritib ko'ring va naitija qanday o'zgarishini ko'ring. Ushbu qo'llanmadagi ko'p sahifalarda shunga o'xshash tahrirlanadigan misollar mavjud.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## Ushbu qo'llanmani qanday o'qish kerak {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+Bu qo'llanmada biz Reactni quruvchi blocklarini ko'rib chiqamiz: elementlar va komponentlar. Ularni o'zlashtirib qiyin ilovalarni kichik va qayta ishlatiladigan qismlardan yarata olasiz
 
->Tip
+>Maslahat
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>Bu qo'llanma **tushunchalarni qadam ba qadam o'rganishni** afzal ko'radigan odamlar uchun mo'ljallangan. Agar siz amalda o'rganishni xoxlasangiz bizning [amaliy o'quv qo'llanma](/tutorial/tutorial.html) bilan tanishing. Bu qo'llanma va amaliy o'quv qo'llanma bir birini to'ldiradi.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+Bu Reactning asosiy tushunchalari to'g'risidagi qadam-ba-qadam qo'llanmaning birinchi bobi. Uning barcha boblari ro'yxatini navigatsiya panelida topishingiz mumkin. Agar siz buni mobil qurilmadan o'qiyotgan bo'lsangiz, navigatsiyaga ekranning pastki o'ng burchagidagi tugmachani bosib kirishingiz mumkin.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Ushbu qo'llanmadagi har bir bob oldingi boblarda berilgan bilimlarga asoslanadi. **Reactning ko'p qismini "Asosiy tushunchalar" qo'llanmasi boblarini yon panelda ko'rsatilgan tartibda o'qib o'rganish mumkin.** Misol uchun, [“JSX bilan tanishish”](/docs/introducing-jsx.html) bundan keyingi bob.
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## Kerakli bilim darajasi {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+React JavaScript kutubxonasi xisoblanadi, shuning uchun biz sizni JavaScript tili haqida asosiy tushunchangiz bor deb taxmin qilamiz. **Agar o'zingizni ishonchsiz his qilsangiz, bilimlaringizni sinab ko'rish uchun [JavaScriptga kirish darsini o'qish](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)ni maslahat beramiz** u sizni bu qo'llanmani o'qishni osonlashtiradi. Bu 30 daqiqadan bir soatgacha vaqtni olishi mumkin, ammo natijada bir vaqtning o'zida React va JavaScriptni o'rganayotgandek his qilishingiz kerak bo'lmaydi.
 
->Note
+>Eslatma
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>Bu qo'llanmaning bazi misollarida Javascriptning yangi sintaksisi ishlatilgan. Agar siz oxirgi bir necha yil Javascript bilan ishlamagan bo'lsangiz, [shu uchta punkt](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) sizga yordam berishi kerak.
 
 
-## Let's Get Started! {#lets-get-started}
+## Qani boshladik! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
+[Qo'llanmani keyingi bob](/docs/introducing-jsx.html)iga o'tish uchun sahifani pastga aylantiring.
 
 
