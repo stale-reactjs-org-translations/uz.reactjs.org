@@ -253,29 +253,30 @@ Declaring state variables as a pair of `[something, setSomething]` is also handy
 
 ```js
 function ExampleWithManyStates() {
-  // Declare multiple state variables!
+  // Bir necha holat o'zgaruvchilarini yaratamiz!
   const [age, setAge] = useState(42);
   const [fruit, setFruit] = useState('banana');
   const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 ```
 
-In the above component, we have `age`, `fruit`, and `todos` as local variables, and we can update them individually:
+Yuqoridagi komponentda, bida `age`, `fruit` va `todos` ichki o'zgaruvchilar bor va ularni birma bir yangilay olamiz:
 
 ```js
   function handleOrangeClick() {
-    // Similar to this.setState({ fruit: 'orange' })
+    // this.setState ga o'xshash ({ fruit: 'orange' })
     setFruit('orange');
   }
 ```
 
-You **don't have to** use many state variables. State variables can hold objects and arrays just fine, so you can still group related data together. However, unlike `this.setState` in a class, updating a state variable always *replaces* it instead of merging it.
+Bir nechta holat o'zgaruvchilarini ishlatishingiz **shart emas**. Holat o'zgaruvchilari obyekt yoki massivlarni o'zida saqlay oladi, anglashiladiki bir-biriga bo'gliq ma'lumotlarni guruhlasangiz bo'ladi. Biroq bunda, o'zgaruvchini klasslardagi `this.setState` kabi chapishtirilmaydi, balki *almashtiriladi*.
 
-We provide more recommendations on splitting independent state variables [in the FAQ](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables).
+Holat o'zgaruvchilarini bir-biridan ajratish to'g'risida maslahatlarga [FAQ'da](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables) to'xtalib o'tganmiz.
 
-## Next Steps {#next-steps}
+## Keyingi qadamlar {#next-steps}
 
-On this page we've learned about one of the Hooks provided by React, called `useState`. We're also sometimes going to refer to it as the "State Hook". It lets us add local state to React function components -- which we did for the first time ever!
+Ushbu sahifada React tomonidan taqdim etilayotgan `useState` nomli huk haqida o'rgandik. Yana ba'zi paytlarda uni "holat huki" deb ham nomlaymiz. U React'ning fungsiyaviy komponentlariga ichki holat qo'shib beradi -- bunaqasi hali bo'lmagan.
 
-We also learned a little bit more about what Hooks are. Hooks are functions that let you "hook into" React features from function components. Their names always start with `use`, and there are more Hooks we haven't seen yet.
+Biz yana huklar o'zi nima ekanligi haqida ham birqancha bilimlarga ega bo'ldik. Huk maxsus fungsiya bo'lib, React'ning afzalliklarini fungsiyaviy komponentlarda ishlatishga yordam beradi. Ularning nomlari `use` bilan boshlanadi, hali biz ko'rmagan huklar ham bor.
 
-**Now let's continue by [learning the next Hook: `useEffect`.](/docs/hooks-effect.html)** It lets you perform side effects in components, and is similar to lifecycle methods in classes.
+**Qani endi [`useEffect` hukini o'rganish](/docs/hooks-effect.html)ga kirishamiz** It lets you perform side effects in components, and is similar to lifecycle methods in classes.
+You sizga komponent ichida tashqi ta'sir ko'rsatishga yordam beradi, yana klasslardagi hayotiy jarayon metodlariga o'xshaydi.
