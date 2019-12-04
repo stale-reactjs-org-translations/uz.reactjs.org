@@ -116,7 +116,7 @@
       - id: hooks-overview
         title: Hooks ga umumiy nazar
       - id: hooks-state
-        title: State Hook ni qo'llash
+        title: Holat hukini ishlatish
       - id: hooks-effect
         title: Effect Hook larini qo'llash
       - id: hooks-rules

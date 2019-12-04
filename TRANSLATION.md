@@ -22,48 +22,48 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | ------------------ | ---------- |
 | API reference | API ma'lumotnoma |
 | array | massiv |
-| arrow function |  arrow funksiya, strelka funksiya  |
+| arrow function |  arrow funksiya, yoylik funksiya  |
 | attribute | atribut |
 | batch | yangilash guruhi |
 | batching | guruhlash |
 | bug | bag, xatolik  |
 | bundler | bandler |
 | callback | kolbek |
-| camelCase | *camelCase* |
-| class component | class komponent |
+| camelCase | *camelCase*, tuyasimon yozuv |
+| class component | klass komponent |
 | (un)controlled component | boshqaril(may)adigan komponent |
 | debugging | debag qilish |
-| DOM container | DOM-konteyner |
-| error | xatolik |
+| DOM container | DOM konteyner |
+| error | xato |
 | feature | imkoniyat |
 | development | dasturlash |
 | development mode | dasturlash rejimi |
 | framework | freymvork |
-| function component | funksiyali komponent |
-| hook | ho'k |
+| function component | funksiyaviy komponent |
+| hook | huk |
 | incapsulation | inkapsulyatsiya |
 | incapsulated | inkapsulyatsiya qilingan |
 | key | kalit |
 | lazy initialization | lezy boshlanish, dangasa boshlanish |
 | library | kutubxona |
-| lifecycle | hayotiy sikl |
+| lifecycle | hayotiy jarayon/ketma-ketlik |
 | lifecycle method | hayotiy jarayon metodi |
-| lifting state up | ko'tarish holati |
+| lifting state up | holatini ko'tarish |
 | local state | ichki holat, lokal holat |
 | lowercase | kichik harf, *lowercase* |
 | mock | mok, hayoliy |
 | (im)mutable | (o'zgarmas)/o'zgaruvchan |
 | (im)mutability | (o'zgarmaslik)/o'zgaruvchanlik |
 | (un)mount | mount (qilmaslik)/qilish |
-| mutate | mutatsiya qilmoq, o'zgartirmoq |
+| mutate | o'zgartish |
 | Note | Eslatma |
 | online | onlayn |
 | online playground | onlayn maydon |
 | paint | chizmoq, chizish, bo'yash |
-| prop | prop *(birlik)* |
-| props | props *(ko'plik)* |
-| production | prodakshin |
-| production mode | prodakshin rejim |
+| prop | prop, kiritma *(birlik)* |
+| props | props, kiritmalar *(ko'plik)* |
+| production | prodakshin, foydalavish |
+| production mode | prodakshin rejimi, ishlatuv rejimi |
 | reuse | qayta ishlatish, qayta foydalanish |
 | React | React |
 | React element | React element |
@@ -71,7 +71,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | render(ing) | chizmoq (chizish) |
 | re-render(ing) | qayta chizmoq (qayta chizish) |
 | render prop | prop ni chizish *(birlik)* |
-| render props | props ni chizish |
+| render props | props larni chizish |
 | ref | ref, ko'rsatgich *(birlik)* |
 | refs | refs, ko'rsatgichlar *(ko'plik)* |
 | (previous/next) section | (oldingi/keyingi) bo'lim |
@@ -81,10 +81,10 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | tag | teg |
 | template literals | qolipli matn, shablonli yozuv |
 | tutorial | o'quv qo'llanma, dars |
-| Try it on CodePen | CodePen da sinab ko'ring |
+| Try it on CodePen | CodePen da sinab ko'rish |
 | unidirectional data flow | bir tomonlama ma'lumotlar oqimi |
-| UI | UI |
 | update | yangilamoq, yangilash |
+| UI | UI |
 | user interface | foydalanuvchi interfeysi |
 | Tip | Maslahat |
-| Warning | Ogohlantirish |
+| Warning | Ogohlantiruv |
