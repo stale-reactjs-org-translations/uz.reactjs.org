@@ -1,14 +1,14 @@
-# reactjs.org saytining O'zbek tilidagi tarjimasi
+# reactjs.org saytining Oʻzbek tilidagi tarjimasi
 
-## Github open-source projectga contribution qilish bo'yicha qisqa yo'riqnoma
-1. O'ngdagi Fork buttonini bosing. Shunda sizni accountizga fork bo'ladi.
+## Github open-source projectga contribution qilish boʻyicha qisqa yoʻriqnoma
+1. Oʻngdagi Fork buttonini bosing. Shunda sizni accountizga fork boʻladi.
 2. Accountizga fork qilinganini komputerizga clone qilib olasiz.
-3. Birorta o'zgarish qilish uchun mos nom bilan branch yaratasiz.
-4. Qilingan o'zgarishlarni push qilasiz.
-5. Githubga o'tib, asosiy github projectda (sizni accountizga fork qilinganida emas) **Pull Request(PR)** hosil qilasiz. PR review qilinib, accept qilinadi. Shunda keyin qilgan ishlaringiz master ga chiqadi.
-6. Endi kompizdagi projectga upstream remote url qo'shiladi va fetch qilinib, rebase qivoriladi. Va uni accountizga fork qilingan projectga push qilasiz. Shunda Upstream repository bilan origin repo da bir xil changelar bo'ladi.
-7. Yaratgan branchizni o'chirib tashlasangiz ham bo'ladi.
-8. Ba'zi hollarda, react jamoasi siz qilayotgan fayllar o'zgartirib yuborgan paytlarda, ishlab turgan joyizga sync qivolishingiz uchun bu yerga kiring: https://help.github.com/en/articles/syncing-a-fork
+3. Birorta oʻzgarish qilish uchun mos nom bilan branch yaratasiz.
+4. Qilingan oʻzgarishlarni push qilasiz.
+5. Githubga oʻtib, asosiy github projectda (sizni accountizga fork qilinganida emas) **Pull Request(PR)** hosil qilasiz. PR review qilinib, accept qilinadi. Shunda keyin qilgan ishlaringiz master ga chiqadi.
+6. Endi kompizdagi projectga upstream remote url qoʻshiladi va fetch qilinib, rebase qivoriladi. Va uni accountizga fork qilingan projectga push qilasiz. Shunda Upstream repository bilan origin repo da bir xil changelar boʻladi.
+7. Yaratgan branchizni oʻchirib tashlasangiz ham boʻladi.
+8. Ba'zi hollarda, react jamoasi siz qilayotgan fayllar oʻzgartirib yuborgan paytlarda, ishlab turgan joyizga sync qivolishingiz uchun bu yerga kiring: https://help.github.com/en/articles/syncing-a-fork
 
 Screenshotlari bilan batafsil bu yerda: https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940 
 
@@ -16,7 +16,7 @@ Screenshotlari bilan batafsil bu yerda: https://codeburst.io/a-step-by-step-guid
 ## Tarjima qilinayotgan hozirgi jarayon: 
 https://github.com/reactjs/uz.reactjs.org/issues/1
 
-## Tarjima bo'yicha kelishuv
+## Tarjima boʻyicha kelishuv
 
 | Terminning asli | Tarjim |
 | ------------------ | ---------- |
@@ -48,20 +48,20 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | library | kutubxona |
 | lifecycle | hayotiy jarayon/ketma-ketlik |
 | lifecycle method | hayotiy jarayon metodi |
-| lifting state up | holatini ko'tarish |
+| lifting state up | holatini koʻtarish |
 | local state | ichki holat, lokal holat |
 | lowercase | kichik harf, *lowercase* |
 | mock | mok, hayoliy |
-| (im)mutable | (o'zgarmas)/o'zgaruvchan |
-| (im)mutability | (o'zgarmaslik)/o'zgaruvchanlik |
+| (im)mutable | (oʻzgarmas)/oʻzgaruvchan |
+| (im)mutability | (oʻzgarmaslik)/oʻzgaruvchanlik |
 | (un)mount | mount (qilmaslik)/qilish |
-| mutate | o'zgartirish |
+| mutate | oʻzgartirish |
 | Note | Eslatma |
 | online | onlayn |
 | online playground | onlayn maydon |
-| paint | chizmoq, chizish, bo'yash |
+| paint | chizmoq, chizish, boʻyash |
 | prop | prop, kiritma *(birlik)* |
-| props | props, kiritmalar *(ko'plik)* |
+| props | props, kiritmalar *(koʻplik)* |
 | production | prodakshin, foydalanuv |
 | production mode | prodakshin rejimi, foydalanuv rejimi |
 | reuse | qayta ishlatish, qayta foydalanish |
@@ -72,16 +72,16 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | re-render(ing) | qayta chizmoq (qayta chizish) |
 | render prop | prop'ni chizish *(birlik)* |
 | render props | props'larni chizish |
-| ref | ref, ko'rsatgich *(birlik)* |
-| refs | refs, ko'rsatgichlar *(ko'plik)* |
-| (previous/next) section | (oldingi/keyingi) bo'lim |
+| ref | ref, koʻrsatgich *(birlik)* |
+| refs | refs, koʻrsatgichlar *(koʻplik)* |
+| (previous/next) section | (oldingi/keyingi) boʻlim |
 | state | state, holat |
 | stateful component | holatli komponent, stateful komponent |
 | stateless component | holatsiz komponent, stateless komponent |
 | tag | teg |
 | template literals | qolipli matn, shablonli yozuv |
-| tutorial | o'quv qo'llanma, dars |
-| Try it on CodePen | CodePen da sinab ko'rish |
+| tutorial | oʻquv qoʻllanma, dars |
+| Try it on CodePen | CodePen da sinab koʻrish |
 | unidirectional data flow | bir tomonlama ma'lumotlar oqimi |
 | update | yangilamoq, yangilash |
 | UI | UI |
