@@ -57,15 +57,15 @@ class Example extends React.Component {
 }
 ```
 
-Holat `{ count: 0 }` kabi boshlanadi va biz `this.setState()`ni chaqirish orqali, `state.count`ni oshiriramiz. Ushbu misol parchalarini sahifa bo'ylab hali ko'p ishlatamiz.
+Holat `{ count: 0 }` kabi boshlanadi va biz `this.setState()`ni chaqirish orqali, `state.count`ni oshiramiz. Ushbu misol parchalarini sahifa bo'ylab hali ko'p ishlatamiz.
 
 >Eslatma
 >
->Nimaga haqiqiy misollar qolib shunchaki sanog'ichni misol tariqasida ko'ryapmiz deb, o'ylayotgan bo'lishingiz mumkin. Bu bizni asosiy e'tiborimizni API'ga qaratish yo'lida qilinmoqda, zero huklarga endigina qadam bosmoqdamiz.
+>Nimaga haqiqiy misollar qolib shunchaki sanagichni misol tariqasida ko'ryapmiz deb, o'ylayotgan bo'lishingiz mumkin. Bu bizni asosiy e'tiborimizni API'ga qaratish yo'lida qilinmoqda, zero huklarga endigina qadam bosmoqdamiz.
 
-## Huklar hamda fungsiyaviy komponentlar {#hooks-and-function-components}
+## Huklar hamda funksiyaviy komponentlar {#hooks-and-function-components}
 
-Eslatish uchun, fungsiyaviy komponentlar React'da ushbu ko'rinishda bo'ladi:
+Eslatish uchun, funksiyaviy komponentlar React'da ushbu ko'rinishda bo'ladi:
 
 ```js
 const Example = (props) => {
@@ -83,7 +83,7 @@ function Example(props) {
 }
 ```
 
-Siz bularni "holatsiz komponentlar" ("stateless components") kabi bilishingiz mumkin. Biz hozirda ushbu komponentlarda holatlarni ishlatish imkoniyatini bermoqdamiz, shuning uchun "fungsiyaviy komponentlar" nomini afzal ko'ramiz.
+Siz bularni "holatsiz komponentlar" ("stateless components") kabi bilishingiz mumkin. Biz hozirda ushbu komponentlarda holatlarni ishlatish imkoniyatini bermoqdamiz, shuning uchun "funksiyaviy komponentlar" nomini afzal ko'ramiz.
 
 Huklar klasslarning ichida **ishlamaydi**. Lekin ularni klass yozmasdan turib ishlatsangiz bo'ladi.
 
@@ -99,9 +99,9 @@ function Example() {
 }
 ```
 
-**Huk - nima?** Huk maxsus fungsiya bo'lib, React'ning afzalliklariga sho'ng'ishga yordam beradi. Misol uchun, `useState` orqali fungsiyaviy komponentlarga React holatini (state) qo'sha olasiz. Boshqa huklarni keyinroq o'rganamiz.
+**Huk - nima?** Huk maxsus funksiya bo'lib, React'ning afzalliklariga sho'ng'ishga yordam beradi. Misol uchun, `useState` orqali funksiyaviy komponentlarga React holatini (state) qo'sha olasiz. Boshqa huklarni keyinroq o'rganamiz.
 
-**Hukni qachon ishlataman?** agar fungsiyaviy komponent yozdingiz, tasavvur qiling unga ozgina holatini qo'shmoqchisiz, oldinlari uni klassga o'girishga to'g'ri kelardi. Endi, siz fungsiyaviy komponentlarni ichida Huk ishlatishingiz mumkin. Biz hozir shunday qilmoqchimiz!
+**Hukni qachon ishlataman?** agar funksiyaviy komponent yozdingiz, tasavvur qiling unga ozgina holatini qo'shmoqchisiz, oldinlari uni klassga o'girishga to'g'ri kelardi. Endi, siz funksiyaviy komponentlarni ichida Huk ishlatishingiz mumkin. Biz hozir shunday qilmoqchimiz!
 
 >Eslatma:
 >
@@ -121,7 +121,7 @@ class Example extends React.Component {
   }
 ```
 
-Fungsiyaviy komponentda, bizda `this` yo'q, demakki `this.state` ni tayinlay yoki o'qiy olmaymiz. O'rniga, `useState` hukini komponentni ichidan chaqiramiz:
+Funksiyaviy komponentda, bizda `this` yo'q, demakki `this.state` ni tayinlay yoki o'qiy olmaymiz. O'rniga, `useState` hukini komponentni ichidan chaqiramiz:
 
 ```js{4,5}
 import React, { useState } from 'react';
@@ -131,13 +131,11 @@ function Example() {
   const [count, setCount] = useState(0);
 ```
 
-**`useState` nima ish bajaradi?** U "holat o'zgaruvchisi"ni yaratadi. Hozir o'zgaruvchimiz `count` deb nomlangan va uni boshqacha nomlay olamiz, misol uchun `banana`. Bu fungsiya chaqiruvlari orasida qiymatni saqlab qolishning bir yo'li — `useState` klasslardagi `this.state` ta'minlaydigan qulayliklarni ishlatishning yangi ko'rinishi. Odatda, o'zgaruvchilar fungsiya tugaganidan keyin "unitiladi", lekin holat o'zgaruvchilarini React saqlab turadi.
+**`useState` nima ish bajaradi?** U "holat o'zgaruvchisi"ni yaratadi. Hozir o'zgaruvchimiz `count` deb nomlangan va uni boshqacha nomlay olamiz, misol uchun `banana`. Bu funksiya chaqiruvlari orasida qiymatni saqlab qolishning bir yo'li — `useState` klasslardagi `this.state` ta'minlaydigan qulayliklarni ishlatishning yangi ko'rinishi. Odatda, o'zgaruvchilar funksiya tugaganidan keyin "unutiladi", lekin holat o'zgaruvchilarini React saqlab turadi.
 
-**Argument sifatida `useState`ga nima beramiz?** `useState()` uchun yagona argument - bu boshlang'ich holat qiymati. Klasslardan farqli, holat obyekt bo'lishi shart emas. Yozuv yoki raqamni saqlash biz uchun yetarli bo'lsa, shularnigina saqlay olamiz. Misolimizda, bizga foydalanuvchi tugmani necha marta bosganli kerak, shuning uchun boshlang'ich holat qiymatini `0` deb belgiladik. (Agar ikki xil qiymatlarni holatini saqlamoqchi bo'lsak, `useState()`ni ikki marta chaqira olamiz.)
+**Argument sifatida `useState`ga nima beramiz?** `useState()` uchun yagona argument - bu boshlang'ich holat qiymati. Klasslardan farqli, holat obyekt bo'lishi shart emas. Yozuv yoki raqamni saqlash biz uchun yetarli bo'lsa, shularnigina saqlay olamiz. Misolimizda, bizga foydalanuvchi tugmani necha marta bosganligi kerak, shuning uchun boshlang'ich holat qiymatini `0` deb belgiladik. (Agar ikki xil qiymatlarni holatini saqlamoqchi bo'lsak, `useState()`ni ikki marta chaqira olamiz.)
 
-**What does `useState` return?** It returns a pair of values: the current state and a function that updates it. This is why we write `const [count, setCount] = useState()`. This is similar to `this.state.count` and `this.setState` in a class, except you get them in a pair. If you're not familiar with the syntax we used, we'll come back to it [at the bottom of this page](/docs/hooks-state.html#tip-what-do-square-brackets-mean).
-
-**Bizga `useState` nima qaytaradi?** U qiymatlar juftligini qaytaradi: joriy holat hamda uni yangilaydigan fungsiya. Shuning uchun `const [count, setCount] = useState()` deb yozamiz. Bu klasslardagi `this.state.count` va `this.setState`larga o'xshab ketadi, farqi ularni juftlik sifatida olasiz. Biz ishlatgan yozuv turi bilan tanish bo'lmasangiz, [sahifaning oxirog'ida](/docs/hooks-state.html#tip-what-do-square-brackets-mean) bu mavzuga yana qaytamiz.
+**Bizga `useState` nima qaytaradi?** U qiymatlar juftligini qaytaradi: joriy holat hamda uni yangilaydigan funksiya. Shuning uchun `const [count, setCount] = useState()` deb yozamiz. Bu klasslardagi `this.state.count` va `this.setState`larga o'xshab ketadi, farqi ularni juftlik sifatida olasiz. Biz ishlatgan yozuv turi bilan tanish bo'lmasangiz, [sahifaning oxirog'ida](/docs/hooks-state.html#tip-what-do-square-brackets-mean) bu mavzuga yana qaytamiz.
 
 Endi `useState` huki nima qilishini bilamiz, bizning misolimiz endi yaxshiroq ma'no kasb etsa kerak:
 
@@ -149,8 +147,7 @@ function Example() {
   const [count, setCount] = useState(0);
 ```
 
-`count` deb nomanlan holat o'zgaruvchisini yaratamiz, and set it to `0`. React will remember its current value between re-renders, and provide the most recent one to our function. If we want to update the current `count`, we can call `setCount`.
-`count` deb nomanlan, `0`ga teng holat o'zgaruvchisini yaratamiz. React qayta chizishlar orasida uning joriy qiymatini eslab qoladi va bizni eng yangi qiymat bilan ta'minlaydi. Agar `count`ning qiymatini o'zgartirmoqchi bo'lsak, `setCount`ni chaqira olamiz.
+`count` deb nomlangan, `0`ga teng holat o'zgaruvchisini yaratamiz. React qayta chizishlar orasida uning joriy qiymatini eslab qoladi va bizni eng yangi qiymat bilan ta'minlaydi. Agar `count`ning qiymatini o'zgartirmoqchi bo'lsak, `setCount`ni chaqira olamiz.
 
 >Eslatma
 >
@@ -166,7 +163,7 @@ Klassda joriy `count`ni ko'rsatmoqchi bo'lganimizda, `this.state.count` orqali b
   <p>Siz {this.state.count} marta bosdingiz</p>
 ```
 
-Fungsiyada, biz `count`ni bevosida ishlata olamiz:
+Funksiyada, biz `count`ni bevosita ishlata olamiz:
 
 ```js
   <p>Siz {count} marta bosdingiz</p>
@@ -182,7 +179,7 @@ Klassda, `count` ni yangilash uchun, `this.setState()`ni chaqirishimiz kerak:
   </button>
 ```
 
-Fungsiyada, bizda `setCount` hamda `count` o'zgaruvchi sifatida bor, `this` ni ishlatishimizga esa hojat yo'q:
+Funksiyada, bizda `setCount` hamda `count` o'zgaruvchi sifatida bor, `this` ni ishlatishimizga esa hojat yo'q:
 
 ```js{1}
   <button onClick={() => setCount(count + 1)}>
@@ -217,10 +214,10 @@ Qani endi **o'rganganlarimizni qatorma-qator esga olamiz** va bilimlarimizni tek
 ```
 
 * **1-qator:** React'dan `useState` hukini chaqiramiz. U bizga ichki holat o'zgaruvchisini saqlashga yordam beradi.
-* **4-qator:** `Example` komponenti ichida, yangi holat o'zgaruvchisini `useState` hukini chaqirish orqali yaratamiz. U nomlashimiz kerak bo'lgan qiymatlar juftligini qaytaradi. O'zgaruvchimiz raqamga doir ma'lumot salagani uchun `count` deb nomlaymiz. Uni nol qiymatda bo'lishi uchun `useState` argumenti sifatida `0` ni yuboramiz. Ikkinchi qaytgan qiymat fungsiya hisoblanadi. U `count` ni yangilashda yordam bergani uchun `setCount` deb nomlaymiz.
+* **4-qator:** `Example` komponenti ichida, yangi holat o'zgaruvchisini `useState` hukini chaqirish orqali yaratamiz. U nomlashimiz kerak bo'lgan qiymatlar juftligini qaytaradi. O'zgaruvchimiz raqamga doir ma'lumot saqlangani uchun `count` deb nomlaymiz. Uni nol qiymatda bo'lishi uchun `useState` argumenti sifatida `0` ni yuboramiz. Ikkinchi qaytgan qiymat funksiya hisoblanadi. U `count` ni yangilashda yordam bergani uchun `setCount` deb nomlaymiz.
 * **9-qator:** Foydalanuvchi tugmani bosganida, `setCount` ni yangi qiymati bilan chaqiramiz. Bundan keyin, React `count` ning yangi qiymati bilan `Example` komponentini qayta chizadi.
 
-Bir qarashda juda ham murakkab tuyilishi mumkin. Biroq, shoshilmang! Ta'rifdan chalkashib ketgan bo'lsangiz, kodni qayta tepadan pastga qarab o'qib chiqing. Klasslardagi holat (state) qanday ishlashini *unitishingizni* so'ragan bo'lardik, shundan so'ng kodga yangicha nigoh bilan qaray olasiz, bu ish beradi.
+Bir qarashda juda ham murakkab tuyilishi mumkin. Biroq, shoshilmang! Ta'rifdan chalkashib ketgan bo'lsangiz, kodni qayta tepadan pastga qarab o'qib chiqing. Klasslardagi holat (state) qanday ishlashini *unutishingizni* so'ragan bo'lardik, shundan so'ng kodga yangicha nigoh bilan qaray olasiz, bu ish beradi.
 
 ### Maslahat: To'rtburchak qavslar nimaga kerak? {#tip-what-do-square-brackets-mean}
 
@@ -229,8 +226,6 @@ Holat o'zgaruvchilarini yaratgandagi to'rtburchak qavslarni payqagan bo'lsangiz 
 ```js
   const [count, setCount] = useState(0);
 ```
-
-The names on the left aren't a part of the React API. You can name your own state variables:
 
 Chap tomondagi nomlarni React'ning API'yiga aloqasi yo'q. Xohlagan nomingizni qo'yishingiz mumkin:
 
@@ -246,15 +241,13 @@ Bu yozuv turi ["massiv tarqatilishi"](https://developer.mozilla.org/en-US/docs/W
   var setFruit = fruitStateVariable[1]; // Juftlikni ikkinchisi
 ```
 
-`useState` orqali holat o'zgaruvchisini yaratganimizda, u juftlik qaytaradi — ikki qismli massiv. Birinchi qismi joriy qiymat, ikkinchisi bo'lsa shu qiymatni o'zgartiruvchi fungsiya. Bu juftlik o'ziga xos ma'noga ega, `[0]` hamda `[1]` orqali ularni olish chalkashtiruvchi bo'lishi mumkin. Shuning uchun yozuvning massiv tarqatilishi turidan foydalanamiz.
+`useState` orqali holat o'zgaruvchisini yaratganimizda, u juftlik qaytaradi — ikki qismli massiv. Birinchi qismi joriy qiymat, ikkinchisi bo'lsa shu qiymatni o'zgartiruvchi funksiya. Bu juftlik o'ziga xos ma'noga ega, `[0]` hamda `[1]` orqali ularni olish chalkashtiruvchi bo'lishi mumkin. Shuning uchun yozuvning massiv tarqatilishi turidan foydalanamiz.
 
 >Eslatma
 >
->React qanday qilib `useState` qaysi komponentga tegishli ekanligini biladi deb qiziqayyotgan bo'lishingiz mumkin, axir React'ga `this` kabi hech narsa berib yubormayapmiz. [Bu savolingizga](/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components) va boshqa ko'plab savollaringizga FAQ bo'limida javob olasiz.
+>React qanday qilib `useState` qaysi komponentga tegishli ekanligini biladi deb qiziqayotgan bo'lishingiz mumkin, axir React'ga `this` kabi hech narsa berib yubormayapmiz. [Bu savolingizga](/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components) va boshqa ko'plab savollaringizga FAQ bo'limida javob olasiz.
 
 ### Maslahat: Bir qancha holat o'zgaruvchilarini ishlatish {#tip-using-multiple-state-variables}
-
-Declaring state variables as a pair of `[something, setSomething]` is also handy because it lets us give *different* names to different state variables if we want to use more than one:
 
 Holat o'zgaruvchilarini juftlik `[something, setSomething]` sifatida yaratish juda qulay, chunki bu bilan kerak bo'lsa *har xil* nomli, bittadan ko'p  holat o'zgaruvchilarini yarata olamiz:
 
@@ -275,14 +268,14 @@ Yuqoridagi komponentda, bizda `age`, `fruit` va `todos` ichki o'zgaruvchilar bor
   }
 ```
 
-Bir nechta holat o'zgaruvchilarini ishlatishingiz **shart emas**. Holat o'zgaruvchilari obyekt yoki massivlarni o'zida saqlay oladi, anglashiladiki bir-biriga bo'gliq ma'lumotlarni guruhlasangiz bo'ladi. Biroq bunda, o'zgaruvchini klasslardagi `this.setState` kabi chapishtirilmaydi, balki *almashtiriladi*.
+Bir nechta holat o'zgaruvchilarini ishlatishingiz **shart emas**. Holat o'zgaruvchilari obyekt yoki massivlarni o'zida saqlay oladi, anglashiladiki bir-biriga bog'liq ma'lumotlarni guruhlasangiz bo'ladi. Biroq bunda, o'zgaruvchini klasslardagi `this.setState` kabi chapishtirilmaydi, balki *almashtiriladi*.
 
 Holat o'zgaruvchilarini bir-biridan ajratish to'g'risida maslahatlarga [FAQ'da](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables) to'xtalib o'tganmiz.
 
 ## Keyingi qadamlar {#next-steps}
 
-Ushbu sahifada React tomonidan taqdim etilayotgan `useState` nomli huk haqida o'rgandik. Yana ba'zi paytlarda uni "holat huki" deb ham nomlaymiz. U React'ning fungsiyaviy komponentlariga ichki holat qo'shib beradi -- bunaqasi hali bo'lmagan.
+Ushbu sahifada React tomonidan taqdim etilayotgan `useState` nomli huk haqida o'rgandik. Yana ba'zi paytlarda uni "holat huki" deb ham nomlaymiz. U React'ning funksiyaviy komponentlariga ichki holat qo'shib beradi -- bunaqasi hali bo'lmagan.
 
-Biz yana huklar o'zi nima ekanligi haqida ham birqancha bilimlarga ega bo'ldik. Huk maxsus fungsiya bo'lib, React'ning afzalliklarini fungsiyaviy komponentlarda ishlatishga yordam beradi. Ularning nomlari `use` bilan boshlanadi, hali biz ko'rmagan huklar ham bor.
+Biz yana huklar o'zi nima ekanligi haqida ham birqancha bilimlarga ega bo'ldik. Huk maxsus funksiya bo'lib, React'ning afzalliklarini funksiyaviy komponentlarda ishlatishga yordam beradi. Ularning nomlari `use` bilan boshlanadi, hali biz ko'rmagan huklar ham bor.
 
-**Qani endi [`useEffect` hukini o'rganish](/docs/hooks-effect.html)ga kirishamiz.** You sizga komponent ichida tashqi ta'sir ko'rsatishga yordam beradi, yana klasslardagi hayotiy jarayon metodlariga o'xshaydi.
+**Qani endi [`useEffect` hukini o'rganish](/docs/hooks-effect.html)ga kirishamiz.** Sizga komponent ichida tashqi ta'sir ko'rsatishga yordam beradi, yana klasslardagi hayotiy jarayon metodlariga o'xshaydi.
