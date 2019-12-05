@@ -62,16 +62,16 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | paint | chizmoq, chizish, bo'yash |
 | prop | prop, kiritma *(birlik)* |
 | props | props, kiritmalar *(ko'plik)* |
-| production | prodakshin, foydalavish |
-| production mode | prodakshin rejimi, ishlatuv rejimi |
+| production | prodakshin, foydalanuv |
+| production mode | prodakshin rejimi, foydalanuv rejimi |
 | reuse | qayta ishlatish, qayta foydalanish |
 | React | React |
 | React element | React element |
 | reconciliation | kelishuv, muvofiqlashtirish |
 | render(ing) | chizmoq (chizish) |
 | re-render(ing) | qayta chizmoq (qayta chizish) |
-| render prop | prop ni chizish *(birlik)* |
-| render props | props larni chizish |
+| render prop | prop'ni chizish *(birlik)* |
+| render props | props'larni chizish |
 | ref | ref, ko'rsatgich *(birlik)* |
 | refs | refs, ko'rsatgichlar *(ko'plik)* |
 | (previous/next) section | (oldingi/keyingi) bo'lim |
