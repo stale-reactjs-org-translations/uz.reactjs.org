@@ -89,3 +89,4 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | Tip | Maslahat |
 | Warning | Ogohlantiruv |
 | array with two items | ikki qismli massiv |
+| syntax | yozish uslubi |
