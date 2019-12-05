@@ -131,23 +131,26 @@ function Example() {
   const [count, setCount] = useState(0);
 ```
 
-**`useState`ni chaqirish nima qiladi?** It declares a "state variable". Our variable is called `count` but we could call it anything else, like `banana`. This is a way to "preserve" some values between the function calls — `useState` is a new way to use the exact same capabilities that `this.state` provides in a class. Normally, variables "disappear" when the function exits but state variables are preserved by React.
+**`useState` nima ish bajaradi?** U "holat o'zgaruvchisi"ni yaratadi. Hozir o'zgaruvchimiz `count` deb nomlangan va uni boshqacha nomlay olamiz, misol uchun `banana`. Bu fungsiya chaqiruvlari orasida qiymatni saqlab qolishning bir yo'li — `useState` klasslardagi `this.state` ta'minlaydigan qulayliklarni ishlatishning yangi ko'rinishi. Odatda, o'zgaruvchilar fungsiya tugaganidan keyin "unitiladi", lekin holat o'zgaruvchilarini React saqlab turadi.
 
-**What do we pass to `useState` as an argument?** The only argument to the `useState()` Hook is the initial state. Unlike with classes, the state doesn't have to be an object. We can keep a number or a string if that's all we need. In our example, we just want a number for how many times the user clicked, so pass `0` as initial state for our variable. (If we wanted to store two different values in state, we would call `useState()` twice.)
+**Argument sifatida `useState`ga nima beramiz?** `useState()` uchun yagona argument - bu boshlang'ich holat qiymati. Klasslardan farqli, holat obyekt bo'lishi shart emas. Yozuv yoki raqamni saqlash biz uchun yetarli bo'lsa, shularnigina saqlay olamiz. Misolimizda, bizga foydalanuvchi tugmani necha marta bosganli kerak, shuning uchun boshlang'ich holat qiymatini `0` deb belgiladik. (Agar ikki xil qiymatlarni holatini saqlamoqchi bo'lsak, `useState()`ni ikki marta chaqira olamiz.)
 
 **What does `useState` return?** It returns a pair of values: the current state and a function that updates it. This is why we write `const [count, setCount] = useState()`. This is similar to `this.state.count` and `this.setState` in a class, except you get them in a pair. If you're not familiar with the syntax we used, we'll come back to it [at the bottom of this page](/docs/hooks-state.html#tip-what-do-square-brackets-mean).
 
-Now that we know what the `useState` Hook does, our example should make more sense:
+**Bizga `useState` nima qaytaradi?** U qiymatlar juftligini qaytaradi: joriy holat hamda uni yangilaydigan fungsiya. Shuning uchun `const [count, setCount] = useState()` deb yozamiz. Bu klasslardagi `this.state.count` va `this.setState`larga o'xshab ketadi, farqi ularni juftlik sifatida olasiz. Biz ishlatgan yozuv turi bilan tanish bo'lmasangiz, [sahifaning oxirog'ida](/docs/hooks-state.html#tip-what-do-square-brackets-mean) bu mavzuga yana qaytamiz.
+
+Endi `useState` huki nima qilishini bilamiz, bizning misolimiz endi yaxshiroq ma'no kasb etsa kerak:
 
 ```js{4,5}
 import React, { useState } from 'react';
 
 function Example() {
-  // Declare a new state variable, which we'll call "count"
+  // "count" deb nomanlan holat o'zgaruvchisini yaratamiz
   const [count, setCount] = useState(0);
 ```
 
-We declare a state variable called `count`, and set it to `0`. React will remember its current value between re-renders, and provide the most recent one to our function. If we want to update the current `count`, we can call `setCount`.
+`count` deb nomanlan holat o'zgaruvchisini yaratamiz, and set it to `0`. React will remember its current value between re-renders, and provide the most recent one to our function. If we want to update the current `count`, we can call `setCount`.
+`count` deb nomanlan, `0`ga teng holat o'zgaruvchisini yaratamiz. React qayta chizishlar orasida uning joriy qiymatini eslab qoladi va bizni eng yangi qiymat bilan ta'minlaydi. Agar `count`ning qiymatini o'zgartirmoqchi bo'lsak, `setCount`ni chaqira olamiz.
 
 >Eslatma
 >
