@@ -55,7 +55,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | (im)mutable | (o'zgarmas)/o'zgaruvchan |
 | (im)mutability | (o'zgarmaslik)/o'zgaruvchanlik |
 | (un)mount | mount (qilmaslik)/qilish |
-| mutate | o'zgartish |
+| mutate | o'zgartirish |
 | Note | Eslatma |
 | online | onlayn |
 | online playground | onlayn maydon |
