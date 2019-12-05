@@ -171,25 +171,25 @@ Fungsiyada, biz `count`ni bevosida ishlata olamiz:
 
 ## Holatni yangilash {#updating-state}
 
-In a class, we need to call `this.setState()` to update the `count` state:
+Klassda, `count` ni yangilash uchun, `this.setState()`ni chaqirishimiz kerak:
 
 ```js{1}
   <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-    Click me
+    Meni bosing
   </button>
 ```
 
-In a function, we already have `setCount` and `count` as variables so we don't need `this`:
+Fungsiyada, bizda `setCount` hamda `count` o'zgaruvchi sifatida bor, `this` ni ishlatishimizga esa hojat yo'q:
 
 ```js{1}
   <button onClick={() => setCount(count + 1)}>
-    Click me
+    Meni bosing
   </button>
 ```
 
-## Recap {#recap}
+## Takrorlash {#recap}
 
-Let's now **recap what we learned line by line** and check our understanding.
+Qani endi **o'rganganlarimizni qatorma-qator esga olamiz** va bilimlarimizni tekshiramiz.
 
 <!--
   I'm not proud of this line markup. Please somebody fix this.
@@ -213,15 +213,15 @@ Let's now **recap what we learned line by line** and check our understanding.
 14:  }
 ```
 
-* **Line 1:** We import the `useState` Hook from React. It lets us keep local state in a function component.
-* **Line 4:** Inside the `Example` component, we declare a new state variable by calling the `useState` Hook. It returns a pair of values, to which we give names. We're calling our variable `count` because it holds the number of button clicks. We initialize it to zero by passing `0` as the only `useState` argument. The second returned item is itself a function. It lets us update the `count` so we'll name it `setCount`.
-* **Line 9:** When the user clicks, we call `setCount` with a new value. React will then re-render the `Example` component, passing the new `count` value to it.
+* **1-qator:** React'dan `useState` hukini chaqiramiz. U bizga ichki holat o'zgaruvchisini saqlashga yordam beradi.
+* **4-qator:** `Example` komponenti ichida, yangi holat o'zgaruvchisini `useState` hukini chaqirish orqali yaratamiz. U nomlashimiz kerak bo'lgan qiymatlar juftligini qaytaradi. O'zgaruvchimiz raqamga doir ma'lumot salagani uchun `count` deb nomlaymiz. Uni nol qiymatda bo'lishi uchun `useState` argumenti sifatida `0` ni yuboramiz. Ikkinchi qaytgan qiymat fungsiya hisoblanadi. U `count` ni yangilashda yordam bergani uchun `setCount` deb nomlaymiz.
+* **9-qator:** Foydalanuvchi tugmani bosganida, `setCount` ni yangi qiymati bilan chaqiramiz. Bundan keyin, React `count` ning yangi qiymati bilan `Example` komponentini qayta chizadi.
 
-This might seem like a lot to take in at first. Don't rush it! If you're lost in the explanation, look at the code above again and try to read it from top to bottom. We promise that once you try to "forget" how state works in classes, and look at this code with fresh eyes, it will make sense.
+Bir qarashda juda ham murakkab tuyilishi mumkin. Biroq, shoshilmang! Ta'rifdan chalkashib ketgan bo'lsangiz, kodni qayta tepadan pastga qarab o'qib chiqing. Klasslardagi holat (state) qanday ishlashini *unitishingizni* so'ragan bo'lardik, shundan so'ng kodga yangicha nigoh bilan qaray olasiz, bu ish beradi.
 
-### Tip: What Do Square Brackets Mean? {#tip-what-do-square-brackets-mean}
+### Maslahat: To'rtburchak qavslar nimaga kerak? {#tip-what-do-square-brackets-mean}
 
-You might have noticed the square brackets when we declare a state variable:
+Holat o'zgaruvchilarini yaratgandagi to'rtburchak qavslarni payqagan bo'lsangiz kerak:
 
 ```js
   const [count, setCount] = useState(0);
@@ -229,27 +229,31 @@ You might have noticed the square brackets when we declare a state variable:
 
 The names on the left aren't a part of the React API. You can name your own state variables:
 
+Chap tomondagi nomlarni React'ning API'yiga aloqasi yo'q. Xohlagan nomingizni qo'yishingiz mumkin:
+
 ```js
   const [fruit, setFruit] = useState('banana');
 ```
 
-This JavaScript syntax is called ["array destructuring"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring). It means that we're making two new variables `fruit` and `setFruit`, where `fruit` is set to the first value returned by `useState`, and `setFruit` is the second. It is equivalent to this code:
+Bu yozuv turi ["massiv tarqatilishi"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring) ("array destructuring) deb ataladi. Bu shuni anglatadiki, yangi ikkita o'zgaruvchilar bo'lmish `fruit` va `setFruit`larni yaratmoqdamiz, qaysiki `fruit` aslida `useState` dan qaytarilgan qiymatning birinchisi hisoblanadi, shu o'rinda `setFruit` qiymatning ikkinchisidir. Kodni quyidagicha ham yozsak bo'ladi:
 
 ```js
-  var fruitStateVariable = useState('banana'); // Returns a pair
-  var fruit = fruitStateVariable[0]; // First item in a pair
-  var setFruit = fruitStateVariable[1]; // Second item in a pair
+  var fruitStateVariable = useState('banana'); // Juftlik qaytariladi
+  var fruit = fruitStateVariable[0]; // Juftlikni birinchisi
+  var setFruit = fruitStateVariable[1]; // Juftlikni ikkinchisi
 ```
 
-When we declare a state variable with `useState`, it returns a pair — an array with two items. The first item is the current value, and the second is a function that lets us update it. Using `[0]` and `[1]` to access them is a bit confusing because they have a specific meaning. This is why we use array destructuring instead.
+`useState` orqali holat o'zgaruvchisini yaratganimizda, u juftlik qaytaradi — ikki qismli massiv. Birinchi qismi joriy qiymat, ikkinchisi bo'lsa shu qiymatni o'zgartiruvchi fungsiya. Bu juftlik o'ziga xos ma'noga ega, `[0]` hamda `[1]` orqali ularni olish chalkashtiruvchi bo'lishi mumkin. Shuning uchun yozuvning massiv tarqatilishi turidan foydalanamiz.
 
->Note
+>Eslatma
 >
->You might be curious how React knows which component `useState` corresponds to since we're not passing anything like `this` back to React. We'll answer [this question](/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components) and many others in the FAQ section.
+>React qanday qilib `useState` qaysi komponentga tegishli ekanligini biladi deb qiziqayyotgan bo'lishingiz mumkin, axir React'ga `this` kabi hech narsa berib yubormayapmiz. [Bu savolingizga](/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components) va boshqa ko'plab savollaringizga FAQ bo'limida javob olasiz.
 
-### Tip: Using Multiple State Variables {#tip-using-multiple-state-variables}
+### Maslahat: Bir qancha holat o'zgaruvchilarini ishlatish {#tip-using-multiple-state-variables}
 
 Declaring state variables as a pair of `[something, setSomething]` is also handy because it lets us give *different* names to different state variables if we want to use more than one:
+
+Holat o'zgaruvchilarini juftlik `[something, setSomething]` sifatida yaratish juda qulay, chunki bu bilan kerak bo'lsa *har xil* nomli, bittadan ko'p  holat o'zgaruvchilarini yarata olamiz:
 
 ```js
 function ExampleWithManyStates() {
@@ -259,7 +263,7 @@ function ExampleWithManyStates() {
   const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 ```
 
-Yuqoridagi komponentda, bida `age`, `fruit` va `todos` ichki o'zgaruvchilar bor va ularni birma bir yangilay olamiz:
+Yuqoridagi komponentda, bizda `age`, `fruit` va `todos` ichki o'zgaruvchilar bor va ularni birma bir yangilay olamiz:
 
 ```js
   function handleOrangeClick() {
@@ -278,5 +282,4 @@ Ushbu sahifada React tomonidan taqdim etilayotgan `useState` nomli huk haqida o'
 
 Biz yana huklar o'zi nima ekanligi haqida ham birqancha bilimlarga ega bo'ldik. Huk maxsus fungsiya bo'lib, React'ning afzalliklarini fungsiyaviy komponentlarda ishlatishga yordam beradi. Ularning nomlari `use` bilan boshlanadi, hali biz ko'rmagan huklar ham bor.
 
-**Qani endi [`useEffect` hukini o'rganish](/docs/hooks-effect.html)ga kirishamiz** It lets you perform side effects in components, and is similar to lifecycle methods in classes.
-You sizga komponent ichida tashqi ta'sir ko'rsatishga yordam beradi, yana klasslardagi hayotiy jarayon metodlariga o'xshaydi.
+**Qani endi [`useEffect` hukini o'rganish](/docs/hooks-effect.html)ga kirishamiz.** You sizga komponent ichida tashqi ta'sir ko'rsatishga yordam beradi, yana klasslardagi hayotiy jarayon metodlariga o'xshaydi.
