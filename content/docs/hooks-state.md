@@ -263,12 +263,12 @@ Yuqoridagi komponentda, bizda `age`, `fruit` va `todos` ichki oʻzgaruvchilar bo
 
 ```js
   function handleOrangeClick() {
-    // this.setState ga oʻxshash ({ fruit: 'orange' })
+    // this.setState({ fruit: 'orange' }) ga oʻxshash
     setFruit('orange');
   }
 ```
 
-Bir nechta holat oʻzgaruvchilarini ishlatishingiz **shart emas**. Holat oʻzgaruvchilari obyekt yoki massivlarni oʻzida saqlay oladi, anglashiladiki bir-biriga bogʻliq ma'lumotlarni guruhlasangiz boʻladi. Biroq bunda, oʻzgaruvchini klasslardagi `this.setState` kabi chapishtirilmaydi, balki *almashtiriladi*.
+Bir nechta holat oʻzgaruvchilarini ishlatishingiz **shart emas**. Holat oʻzgaruvchilari obyekt yoki massivlarni oʻzida saqlay oladi, anglashiladiki bir-biriga bogʻliq ma'lumotlarni guruhlasangiz boʻladi. Biroq bunda, oʻzgaruvchini klasslardagi `this.setState` kabi birlashtirilmaydi, balki *almashtiriladi*.
 
 Holat oʻzgaruvchilarini bir-biridan ajratish toʻgʻrisida maslahatlarga [FAQ'da](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables) toʻxtalib oʻtganmiz.
 

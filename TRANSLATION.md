@@ -29,7 +29,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | bug | bag, xatolik  |
 | bundler | bandler |
 | callback | kolbek |
-| camelCase | *camelCase*, tuyasimon yozuv |
+| camelCase | *camelCase*, tuyasimonYozuv |
 | class component | klass komponent |
 | (un)controlled component | boshqaril(may)adigan komponent |
 | debugging | debag qilish |
