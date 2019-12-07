@@ -3,7 +3,7 @@
     - id: getting-started
       title: Boshlash
     - id: add-react-to-a-website
-      title: Reactni Veb-saytga qo'shing
+      title: Reactni Veb-saytga qoʻshing
     - id: create-a-new-react-app
       title: Yangi React Ilova yaratish
     - id: cdn-links
@@ -28,7 +28,7 @@
     - id: conditional-rendering
       title: Shartli Renderlash
     - id: lists-and-keys
-      title: Ro'yxatlar va kalitlar(Keys) 
+      title: Roʻyxatlar va kalitlar(Keys) 
     - id: forms
       title: Formalar
     - id: lifting-state-up
@@ -37,7 +37,7 @@
       title: Kompozitsiya meros qilib olish(Inheritance) qarshi
     - id: thinking-in-react
       title: React da fikirlash
-- title: Murakkab qo'llanmalar
+- title: Murakkab qoʻllanmalar
   items:
     - id: accessibility
       title: Accessibility
@@ -48,7 +48,7 @@
     - id: error-boundaries
       title: Xato chegaralari
     - id: forwarding-refs
-      title: Ref larni qo'llash
+      title: Ref larni qoʻllash
     - id: fragments
       title: Parchalar(Fragmentlar)
     - id: higher-order-components
@@ -105,9 +105,9 @@
     - id: test-renderer
       title: Test Renderlash
     - id: javascript-environment-requirements
-      title: JS dasturiy muhitiga qo'yiladigan talablar
+      title: JS dasturiy muhitiga qoʻyiladigan talablar
     - id: glossary
-      title: Lug'at
+      title: Lugʻat
 - title: Ilgaklar(Hooks)
   isOrdered: true
   items:
@@ -116,9 +116,9 @@
       - id: hooks-overview
         title: Hooks ga umumiy nazar
       - id: hooks-state
-        title: State Hook ni qo'llash
+        title: Holat hukini ishlatish
       - id: hooks-effect
-        title: Effect Hook larini qo'llash
+        title: Effekt hukini ishlatish
       - id: hooks-rules
         title: Hooks qoidalari
       - id: hooks-custom
@@ -148,14 +148,14 @@
       title: Adopting Concurrent Mode
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
-- title: Hissa qo'shish
+- title: Hissa qoʻshish
   items:
   - id: how-to-contribute
-    title: Qanday hissa qo'shish kerak
+    title: Qanday hissa qoʻshish kerak
   - id: codebase-overview
     title: Kod bazasi haqida umumiy ma'lumot
   - id: implementation-notes
-    title: Bajarish bo'yicha eslatmalar
+    title: Bajarish boʻyicha eslatmalar
   - id: design-principles
     title: Dizayn asoslari
 - title: FAQ
