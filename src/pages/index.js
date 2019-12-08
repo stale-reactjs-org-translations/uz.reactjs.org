@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; Foydalanuvchi interfeyslarini(UI) yaratish uchun JavaScript kutubxonasi"
+          title="React &ndash; Foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi"
           canonicalUrl={createCanonicalUrl('/')}
         />
         <div css={{ width: '100%' }}>
@@ -133,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    Foydalanuvchi interfeyslarini(UI) yaratish uchun JavaScript kutubxonasi
+                    Foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi
                   </p>
                   <Flex
                     valign="center"
