@@ -90,3 +90,9 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | Warning | Ogohlantiruv |
 | array with two items | ikki qismli massiv |
 | syntax | yozish uslubi |
+| snippet | boʻlak |
+| logging | loglash |
+| scope | qamrov |
+| run | yurgizish |
+| browser | brauzer |
+| responsive | sezgir |

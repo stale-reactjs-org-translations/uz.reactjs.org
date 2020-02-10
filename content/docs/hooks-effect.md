@@ -6,9 +6,9 @@ next: hooks-rules.html
 prev: hooks-state.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Huklar* - React 16.8'ga kiritilgan yangilik. Ular sizga klass yozmasdan turib holat (state) va React'ning boshqa qulayliklarini ishlatishga yordam beradi.
 
-The *Effect Hook* lets you perform side effects in function components:
+Funksiyaviy komponentlar *Taʼsir Huki* tashqi taʼsirlar koʻrsatishga yordam beradi:
 
 ```js{1,6-10}
 import React, { useState, useEffect } from 'react';
@@ -16,42 +16,43 @@ import React, { useState, useEffect } from 'react';
 function Example() {
   const [count, setCount] = useState(0);
 
-  // Similar to componentDidMount and componentDidUpdate:
+  // componentDidMount hamda componentDidUpdate ga oʻxshash:
   useEffect(() => {
-    // Update the document title using the browser API
+    // Hujjat sarlavhasini bravzer APIʼyi orqali oʻzgartirish
     document.title = `You clicked ${count} times`;
   });
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>Siz {count} marta bosdingiz</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        Meni bosing
       </button>
     </div>
   );
 }
 ```
 
-This snippet is based on the [counter example from the previous page](/docs/hooks-state.html), but we added a new feature to it: we set the document title to a custom message including the number of clicks.
+Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html), biroq unga yangilik kiritdik: hujjat sarlavhasini tugmani necha marta bosilganini koʻrsatadigan matnga oʻzgartirdik.
 
-Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. Whether or not you're used to calling these operations "side effects" (or just "effects"), you've likely performed them in your components before.
+Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlish hamda DOMʼni qoʻlda oʻzgartirish. Ularni "tashqi taʼsir" (yoki shunchaki "taʻsir") deb nomlaganmisiz yoʻqmi, lekin ularni komponentlaringizda ishlatgan boʻlsangiz kerak.
 
->Tip
+>Maslahat
 >
->If you're familiar with React class lifecycle methods, you can think of `useEffect` Hook as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined.
+>Agar Reactʼning hayotiy jarayon metodlari bilan tanish boʻlsangiz, `useEffect` hukini `componentDidMount`, `componentDidUpdate` va `componentWillUnmount`larni birlashgani deyishingiz mumkin .
 
-There are two common kinds of side effects in React components: those that don't require cleanup, and those that do. Let's look at this distinction in more detail.
+React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash taʼlab qilmaydigan, hamda talab qiladigan. Qani shu farqga koʻproq toʻxtalamiz.
 
-## Effects Without Cleanup {#effects-without-cleanup}
+## Tozalanmaydigan tashqi taʼsirlar {#effects-without-cleanup}
 
-Sometimes, we want to **run some additional code after React has updated the DOM.** Network requests, manual DOM mutations, and logging are common examples of effects that don't require a cleanup. We say that because we can run them and immediately forget about them. Let's compare how classes and Hooks let us express such side effects.
+Sometimes, we want to **run some additional code after React has updated the DOM.** Network requests, DOMʼni qoʻlda oʻzgartirish va logging are common examples of effects that don't require a cleanup. We say that because we can run them and immediately forget about them. Let's compare how classes and Hooks let us express such side effects.
+Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizgimiz keladi. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
 
-### Example Using Classes {#example-using-classes}
+### Klasslardagi misol {#example-using-classes}
 
-In React class components, the `render` method itself shouldn't cause side effects. It would be too early -- we typically want to perform our effects *after* React has updated the DOM.
+Reactʼning klass komponentlarida, `render` metodi tashqi taʼsir koʻrsatmasligi kerak. Bu oldinga oʻtib ketadi -- odatda React DOMʼni yangilaganidan keyingina biz oʻz taʼsirlarimizni koʻrsatamiz.
 
-This is why in React classes, we put side effects into `componentDidMount` and `componentDidUpdate`. Coming back to our example, here is a React counter class component that updates the document title right after React makes changes to the DOM:
+Shuning uchun klasslarda, tashqi taʼsirlarni `componentDidMount` hamda `componentDidUpdate`larni ichida amalga oshiramiz. Misolimizga qaytar ekanmiz, ushbu sanagichli React klass komponentida DOMʼga oʻzgartirishlar kiritilganidan soʻng hujjat sarlavhasini oʻzgartiramiz:
 
 ```js{9-15}
 class Example extends React.Component {
@@ -63,19 +64,19 @@ class Example extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Siz ${this.state.count} marta bosdingiz`;
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Siz ${this.state.count} marta bosdingiz`;
   }
 
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>Siz {this.state.count} marta bosdingiz</p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Click me
+          Meni bosing
         </button>
       </div>
     );
@@ -83,15 +84,15 @@ class Example extends React.Component {
 }
 ```
 
-Note how **we have to duplicate the code between these two lifecycle methods in class.**
+**Klasslarda bitta kodni ikki hayotiy jarayon metodlari ichida nusxalashga majbur ekanligimizga** eʼtibor qarating.
 
-This is because in many cases we want to perform the same side effect regardless of whether the component just mounted, or if it has been updated. Conceptually, we want it to happen after every render -- but React class components don't have a method like this. We could extract a separate method but we would still have to call it in two places.
+Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Hayolan qarasak, biz uni harsafar chizilishdan (render) soʻng amalga oshishini hohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
 
-Now let's see how we can do the same with the `useEffect` Hook.
+Qani endi xuddi shu narsani `useEffect` huki bilan amalga oshiramiz.
 
-### Example Using Hooks {#example-using-hooks}
+### Huklar bilan misol {#example-using-hooks}
 
-We've already seen this example at the top of this page, but let's take a closer look at it:
+Bu misolni sahifa tepasida allaqachon koʻrgan edingiz, qani endi yaqinroq tanishamiz:
 
 ```js{1,6-8}
 import React, { useState, useEffect } from 'react';
@@ -100,47 +101,49 @@ function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Siz ${count} marta bosdingiz`;
   });
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>Siz {count} marta bosdingiz</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        Meni bosing
       </button>
     </div>
   );
 }
 ```
 
-**What does `useEffect` do?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
+**`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlari amalga oshganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
 
-**Why is `useEffect` called inside a component?** Placing `useEffect` inside the component lets us access the `count` state variable (or any props) right from the effect. We don't need a special API to read it -- it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
+**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib murojaat qila olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va React uchun boʻlgan API yaratilishini oldini oladi.
 
-**Does `useEffect` run after every render?** Yes! By default, it runs both after the first render *and* after every update. (We will later talk about [how to customize this](#tip-optimizing-performance-by-skipping-effects).) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.
+**`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chiziqlish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "oʻzgarish" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb firklash ancha tushinarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
 
-### Detailed Explanation {#detailed-explanation}
+### Batafsil tushuntirish {#detailed-explanation}
 
-Now that we know more about effects, these lines should make sense:
+Endi taʼsirlar haqida koʻproq bilamiz. Ushbu kod maʼno anglatishi kerak:
 
 ```js
 function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Siz ${count} marta bosdingiz`;
   });
 }
 ```
 
-We declare the `count` state variable, and then we tell React we need to use an effect. We pass a function to the `useEffect` Hook. This function we pass *is* our effect. Inside our effect, we set the document title using the `document.title` browser API. We can read the latest `count` inside the effect because it's in the scope of our function. When React renders our component, it will remember the effect we used, and then run our effect after updating the DOM. This happens for every render, including the first one.
+`count` deb nomanlan holat oʻzgaruvchisini yaratamiz va Reactʼga taʼsir koʻrsatishimiz kerakligi haqida aytamiz. `useEffect` hukiga funksiya berib yuboramiz. Berib yuborilgan funksiya - *bu* bizning taʼsirimiz hisoblanadi. Taʼsirimiz ichida, Brauzerning `document.title` APIʼdan foydalanib hujjat sarlavhasini oʻzgartiramiz. `count` funksiyamiznig qamrovida boʻlgani uchun uni taʼsirning ichida oxirgi qiymatida ishlata olamiz. React komponentimizni chizganida, ishlatgan taʼsirimizni eslaydi va DOMʼni yangilashi bilanoq bizni taʼsirni ishga tushiradi. Bu har chizishda amalga oshadi, eng birinchisida ham.
 
 Experienced JavaScript developers might notice that the function passed to `useEffect` is going to be different on every render. This is intentional. In fact, this is what lets us read the `count` value from inside the effect without worrying about it getting stale. Every time we re-render, we schedule a _different_ effect, replacing the previous one. In a way, this makes the effects behave more like a part of the render result -- each effect "belongs" to a particular render. We will see more clearly why this is useful [later on this page](#explanation-why-effects-run-on-each-update).
 
->Tip
+Tajribali JavaScript dasturchilar sezishi mumkinki `useEffect`ga berib yuborilgan funksiya har safar har xil boʻladi. Bu ataylabdan. Chunki, aynan shu narsa bizga taʼsir ichida turib `count`ning eskirib qolmayotganini kafolatlaydi. Har safar qayta-chizishda, oldingisini oʻrniga _boshqa_ taʼsirni rejalashtiramiz. Qaysidur maʼnoda, bu - taʼsirlarni chizishning oqibatlari boʻlagiga aylantiradi -- har taʼsir aynan bir chizishga "tegishli". Bu nimaga foydali ekanligiga [keyinroq toʻxtalamiz](#explanation-why-effects-run-on-each-update).
+
+>Maslahat
 >
->Unlike `componentDidMount` or `componentDidUpdate`, effects scheduled with `useEffect` don't block the browser from updating the screen. This makes your app feel more responsive. The majority of effects don't need to happen synchronously. In the uncommon cases where they do (such as measuring the layout), there is a separate [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) Hook with an API identical to `useEffect`.
+>`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ket-ma ketlikda bajarilishi kerak emas. Baʼzi holatlarda (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor .
 
 ## Effects with Cleanup {#effects-with-cleanup}
 
