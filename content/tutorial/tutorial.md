@@ -38,11 +38,7 @@ Ushbu qo'llanmada biz, React yordamida qanday interfaol "tic-tac-toe" o'yinini  
 
 Siz bu yerda nimani yaratayotganimizni ko'rishingiz mumkin: **[Yakuniy natija](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Agar kod siz uchun tushunarsiz bo'lsa yoki kodning sintaksisidan bexabar bo'lsangiz, xavotirga o'rin yo'q! Ushbu darslikning maqsadi React va uning sintaksisini tushunishga yordam berishdir.
 
-<<<<<<< HEAD
 Qo'llanmani davom ettirishdan oldin, "tic-tac-toe" o'yinini tekshirib ko'rishingizni maslahat beramiz. Sizning etiboringizni tortadigan xususiyatlardan biri shundaki, o'yin stolining o'ng tomonida raqamlangan ro'yxat mavjud. Ushbu ro'yxat o'yinda sodir bo'lgan barcha harakatlarning tarixini ko'rsatib turadi va o'yin davom etib borgan sari yangilanadi.
-=======
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
->>>>>>> 4367566bddd06ed9dfbd6b1c3f45f9925e60b2c3
 
 "Tic-tac-toe" o'yini bilan tanishib chiqganingizdan so'ng uni yopishingiz mumkin. Biz ushbu darslikni sodda shablondan boshlaymiz. Bizning keyingi qadamimiz sizni o'yinni yaratishni boshlashingiz uchun sozlamaralni sozlashdan iborat.
 
