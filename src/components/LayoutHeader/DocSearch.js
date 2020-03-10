@@ -5,8 +5,8 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { colors, media } from 'theme';
+import React, {Component} from 'react';
+import {colors, media} from 'theme';
 
 type State = {
   enabled: boolean,
@@ -28,12 +28,12 @@ class DocSearch extends Component<{}, State> {
       });
     } else {
       console.warn('Search has failed to load and now is being disabled');
-      this.setState({ enabled: false });
+      this.setState({enabled: false});
     }
   }
 
   render() {
-    const { enabled } = this.state;
+    const {enabled} = this.state;
 
     return enabled ? (
       <form

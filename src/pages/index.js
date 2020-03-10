@@ -9,14 +9,14 @@ import Container from 'components/Container';
 import Flex from 'components/Flex';
 import CodeExample from 'components/CodeExample';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { graphql } from 'gatsby';
+import React, {Component} from 'react';
+import {graphql} from 'gatsby';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
-import { colors, media, sharedStyles } from 'theme';
+import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createCanonicalUrl from 'utils/createCanonicalUrl';
-import { babelURL } from 'site-constants';
+import {babelURL} from 'site-constants';
 import logoWhiteSvg from 'icons/logo-white.svg';
 
 class Home extends Component {
@@ -38,11 +38,11 @@ class Home extends Component {
   }
 
   render() {
-    const { babelLoaded } = this.state;
-    const { data, location } = this.props;
-    const { codeExamples, examples, marketing } = data;
+    const {babelLoaded} = this.state;
+    const {data, location} = this.props;
+    const {codeExamples, examples, marketing} = data;
 
-    const code = codeExamples.edges.reduce((lookup, { node }) => {
+    const code = codeExamples.edges.reduce((lookup, {node}) => {
       lookup[node.mdAbsolutePath] = node;
       return lookup;
     }, {});
@@ -53,7 +53,7 @@ class Home extends Component {
           title="React &ndash; Foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi"
           canonicalUrl={createCanonicalUrl('/')}
         />
-        <div css={{ width: '100%' }}>
+        <div css={{width: '100%'}}>
           <header
             css={{
               backgroundColor: colors.dark,
@@ -133,7 +133,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    Foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi
+                    Foydalanuvchi interfeyslarini yaratish uchun JavaScript
+                    kutubxonasi
                   </p>
                   <Flex
                     valign="center"
@@ -193,7 +194,7 @@ class Home extends Component {
                       whiteSpace: 'nowrap',
                     },
                   }}>
-                  {marketing.edges.map(({ node: column }, index) => (
+                  {marketing.edges.map(({node: column}, index) => (
                     <div
                       key={index}
                       css={{
@@ -243,7 +244,7 @@ class Home extends Component {
                         ]}>
                         {column.frontmatter.title}
                       </h3>
-                      <div dangerouslySetInnerHTML={{ __html: column.html }} />
+                      <div dangerouslySetInnerHTML={{__html: column.html}} />
                     </div>
                   ))}
                 </div>
@@ -258,7 +259,7 @@ class Home extends Component {
               />
               <section css={sectionStyles}>
                 <div id="examples">
-                  {examples.edges.map(({ node }, index) => {
+                  {examples.edges.map(({node}, index) => {
                     const snippet = code[node.fileAbsolutePath];
                     return (
                       <CodeExample
@@ -268,7 +269,7 @@ class Home extends Component {
                         containerNodeID={node.frontmatter.domid}
                         loaded={babelLoaded}>
                         <h3 css={headingStyles}>{node.frontmatter.title}</h3>
-                        <div dangerouslySetInnerHTML={{ __html: node.html }} />
+                        <div dangerouslySetInnerHTML={{__html: node.html}} />
                       </CodeExample>
                     );
                   })}
@@ -318,7 +319,7 @@ Home.propTypes = {
   }).isRequired,
 };
 
-const CtaItem = ({ children, primary = false }) => (
+const CtaItem = ({children, primary = false}) => (
   <div
     css={{
       [media.between('small', 'large')]: {
