@@ -1,6 +1,6 @@
 ---
 id: hooks-state
-title: Using the Effect Hook
+title: Taʼsir hukini ishlatish
 permalink: docs/hooks-effect.html
 next: hooks-rules.html
 prev: hooks-state.html
@@ -145,13 +145,14 @@ Tajribali JavaScript dasturchilar sezishi mumkinki `useEffect`ga berib yuborilga
 >
 >`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ket-ma ketlikda bajarilishi kerak emas. Baʼzi holatlarda (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor .
 
-## Effects with Cleanup {#effects-with-cleanup}
+## Tozalanadigan taʼsirlar {#effects-with-cleanup}
 
-Earlier, we looked at how to express side effects that don't require any cleanup. However, some effects do. For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak! Let's compare how we can do it with classes and with Hooks.
+Yuqorida, qanday qilib tozalash talab qilmaydigan taʼsir koʻrsatish haqida toʻxtaldik. Biroq, baʼzi taʼsirlar buni talab qiladi. Masalan, biror tashqi maʼlumot manbaiga **obuna boʻlmoqchimiz**. Bu holatda, xotira sizishini toʻxtatish uchun tozalash ishlarini olib borish muhimdir! Qani endi buni klasslarda hamda huklarda qanday qilishimiz mumkinligini solishtiramiz.
 
-### Example Using Classes {#example-using-classes-1}
+### Klass orqali yozilganida {#example-using-classes-1}
 
 In a React class, you would typically set up a subscription in `componentDidMount`, and clean it up in `componentWillUnmount`. For example, let's say we have a `ChatAPI` module that lets us subscribe to a friend's online status. Here's how we might subscribe and display that status using a class:
+React klasslarida, obuna odatda `componentDidMount`da sozlaysiz va `componentWillUnmount`da tozalaysiz. Masalan, aytaylik doʻstimizning tarmoqda ekanligi haqida maʼlumot beradigan `ChatAPI` modulimiz bor. Quyida buni klasslar orqali qanday yozishimiz mumkinligi aks etgan:
 
 ```js{8-26}
 class FriendStatus extends React.Component {
@@ -183,18 +184,18 @@ class FriendStatus extends React.Component {
 
   render() {
     if (this.state.isOnline === null) {
-      return 'Loading...';
+      return 'Yuklanyapti...';
     }
-    return this.state.isOnline ? 'Online' : 'Offline';
+    return this.state.isOnline ? 'Onlayn' : 'Oflayn';
   }
 }
 ```
 
-Notice how `componentDidMount` and `componentWillUnmount` need to mirror each other. Lifecycle methods force us to split this logic even though conceptually code in both of them is related to the same effect.
+`componentDidMount` bilan `componentWillUnmount` bir birini takrorlashiga eʼtibor qarating. Kodning gʻoyasi bitta taʼsir ekanligiga qaramasdan, hayotiy jarayon metodlari ularni ikkita mantiqiy boʻlaklarga ajratishga majburlatdi.
 
->Note
+>Eslatma
 >
->Eagle-eyed readers may notice that this example also needs a `componentDidUpdate` method to be fully correct. We'll ignore this for now but will come back to it in a [later section](#explanation-why-effects-run-on-each-update) of this page.
+>Ziyrak oʻquvchilarimiz ushbu kod aniq ishlashi uchun `componentDidUpdate` kerak ekanligini sezgandurlar. Hozircha buni chetga surib turamiz, lekin albatta [keyingi boʻlimda](#explanation-why-effects-run-on-each-update) bunga qaytamiz.
 
 ### Example Using Hooks {#example-using-hooks-1}
 
