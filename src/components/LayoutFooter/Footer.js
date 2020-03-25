@@ -12,15 +12,15 @@ import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
 import SectionLinks from './SectionLinks';
 import React from 'react';
-import { colors, media } from 'theme';
-import { sectionListCommunity, sectionListDocs } from 'utils/sectionList';
+import {colors, media} from 'theme';
+import {sectionListCommunity, sectionListDocs} from 'utils/sectionList';
 
 // $FlowFixMe
 import navFooter from '../../../content/footerNav.yml';
 
 import ossLogoPng from 'images/oss_logo.png';
 
-const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => (
+const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
   <footer
     css={{
       backgroundColor: colors.darker,
