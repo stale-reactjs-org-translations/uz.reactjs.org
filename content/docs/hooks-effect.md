@@ -8,7 +8,7 @@ prev: hooks-state.html
 
 *Huklar* - React 16.8'ga kiritilgan yangilik. Ular sizga klass yozmasdan turib holat (state) va React'ning boshqa qulayliklarini ishlatishga yordam beradi.
 
-Funksiyaviy komponentlar *Taʼsir Huki* tashqi taʼsirlar koʻrsatishga yordam beradi:
+Funksiyaviy komponentlarda *Taʼsir Huki* tashqi taʼsirlar koʻrsatishga yordam beradi:
 
 ```js{1,6-10}
 import React, { useState, useEffect } from 'react';
@@ -33,26 +33,25 @@ function Example() {
 }
 ```
 
-Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html), biroq unga yangilik kiritdik: hujjat sarlavhasini tugmani necha marta bosilganini koʻrsatadigan matnga oʻzgartirdik.
+Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html) olingan. Biroq, unga hujjat sarlavhasini tugmani necha marta bosilganini haqidagi matnga oʻzgartadigan yangilik kiritik.
 
-Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlish hamda DOMʼni qoʻlda oʻzgartirish. Ularni "tashqi taʼsir" (yoki shunchaki "taʻsir") deb nomlaganmisiz yoʻqmi, lekin ularni komponentlaringizda ishlatgan boʻlsangiz kerak.
+Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlish va DOMʼni qoʻlda oʻzgartirish. Ularni "tashqi taʼsir" (yoki shunchaki "taʻsir") deb nomlaganmisiz yoʻqmi, lekin ularni komponentlaringizda ishlatgan boʻlsangiz kerak.
 
 >Maslahat
 >
->Agar Reactʼning hayotiy jarayon metodlari bilan tanish boʻlsangiz, `useEffect` hukini `componentDidMount`, `componentDidUpdate` va `componentWillUnmount`larni birlashgani deyishingiz mumkin .
+>Agar Reactʼning hayotiy jarayon metodlari bilan tanish boʻlsangiz, `useEffect` hukini `componentDidMount`, `componentDidUpdate` va `componentWillUnmount` kabilarni birlashgani deyishingiz mumkin .
 
-React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash taʼlab qilmaydigan, hamda talab qiladigan. Qani shu farqga koʻproq toʻxtalamiz.
+React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash taʼlab qilmaydigan, hamda talab qiladigan. Qani endi shu farqga koʻproq toʻxtalamiz.
 
 ## Tozalanmaydigan tashqi taʼsirlar {#effects-without-cleanup}
 
-Sometimes, we want to **run some additional code after React has updated the DOM.** Network requests, DOMʼni qoʻlda oʻzgartirish va logging are common examples of effects that don't require a cleanup. We say that because we can run them and immediately forget about them. Let's compare how classes and Hooks let us express such side effects.
-Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizgimiz keladi. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
+Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - buni talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
 
 ### Klasslardagi misol {#example-using-classes}
 
-Reactʼning klass komponentlarida, `render` metodi tashqi taʼsir koʻrsatmasligi kerak. Bu oldinga oʻtib ketadi -- odatda React DOMʼni yangilaganidan keyingina biz oʻz taʼsirlarimizni koʻrsatamiz.
+Reactʼning klass komponentlarida, `render` metodi tashqi taʼsir koʻrsatmasligi kerak. Bu ancha ertaroq boʻlib qoladi -- odatda React DOMʼni yangilaganidan keyingina biz oʻz taʼsirlarimizni koʻrsatamiz.
 
-Shuning uchun klasslarda, tashqi taʼsirlarni `componentDidMount` hamda `componentDidUpdate`larni ichida amalga oshiramiz. Misolimizga qaytar ekanmiz, ushbu sanagichli React klass komponentida DOMʼga oʻzgartirishlar kiritilganidan soʻng hujjat sarlavhasini oʻzgartiramiz:
+Shuning uchun klasslarda, tashqi taʼsirlarni `componentDidMount` hamda `componentDidUpdate`larni ichida amalga oshiramiz. Misolimizga qaytar ekanmiz, ushbu sanagich keltirilgan Reactʼning klass komponentida DOMʼga oʻzgartirishlar kiritilganidan soʻng hujjat sarlavhasini oʻzgartiramiz:
 
 ```js{9-15}
 class Example extends React.Component {
@@ -86,7 +85,7 @@ class Example extends React.Component {
 
 **Klasslarda bitta kodni ikki hayotiy jarayon metodlari ichida nusxalashga majbur ekanligimizga** eʼtibor qarating.
 
-Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Hayolan qarasak, biz uni harsafar chizilishdan (render) soʻng amalga oshishini hohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
+Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Hayolan, biz uni harsafar chizilishdan (render) soʻng amalga oshishini hohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
 
 Qani endi xuddi shu narsani `useEffect` huki bilan amalga oshiramiz.
 
@@ -117,13 +116,13 @@ function Example() {
 
 **`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlari amalga oshganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
 
-**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib murojaat qila olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va React uchun boʻlgan API yaratilishini oldini oladi.
+**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
 
-**`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chiziqlish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "oʻzgarish" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb firklash ancha tushinarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
+**`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chizilish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq buni [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "yangilanishga" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb firklash ancha tushinarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
 
 ### Batafsil tushuntirish {#detailed-explanation}
 
-Endi taʼsirlar haqida koʻproq bilamiz. Ushbu kod maʼno anglatishi kerak:
+Endi taʼsirlar haqida koʻproq bilamiz va ushbu kod siz uchun maʼno anglatishi kerak:
 
 ```js
 function Example() {
@@ -137,13 +136,11 @@ function Example() {
 
 `count` deb nomanlan holat oʻzgaruvchisini yaratamiz va Reactʼga taʼsir koʻrsatishimiz kerakligi haqida aytamiz. `useEffect` hukiga funksiya berib yuboramiz. Berib yuborilgan funksiya - *bu* bizning taʼsirimiz hisoblanadi. Taʼsirimiz ichida, Brauzerning `document.title` APIʼdan foydalanib hujjat sarlavhasini oʻzgartiramiz. `count` funksiyamiznig qamrovida boʻlgani uchun uni taʼsirning ichida oxirgi qiymatida ishlata olamiz. React komponentimizni chizganida, ishlatgan taʼsirimizni eslaydi va DOMʼni yangilashi bilanoq bizni taʼsirni ishga tushiradi. Bu har chizishda amalga oshadi, eng birinchisida ham.
 
-Experienced JavaScript developers might notice that the function passed to `useEffect` is going to be different on every render. This is intentional. In fact, this is what lets us read the `count` value from inside the effect without worrying about it getting stale. Every time we re-render, we schedule a _different_ effect, replacing the previous one. In a way, this makes the effects behave more like a part of the render result -- each effect "belongs" to a particular render. We will see more clearly why this is useful [later on this page](#explanation-why-effects-run-on-each-update).
-
 Tajribali JavaScript dasturchilar sezishi mumkinki `useEffect`ga berib yuborilgan funksiya har safar har xil boʻladi. Bu ataylabdan. Chunki, aynan shu narsa bizga taʼsir ichida turib `count`ning eskirib qolmayotganini kafolatlaydi. Har safar qayta-chizishda, oldingisini oʻrniga _boshqa_ taʼsirni rejalashtiramiz. Qaysidur maʼnoda, bu - taʼsirlarni chizishning oqibatlari boʻlagiga aylantiradi -- har taʼsir aynan bir chizishga "tegishli". Bu nimaga foydali ekanligiga [keyinroq toʻxtalamiz](#explanation-why-effects-run-on-each-update).
 
 >Maslahat
 >
->`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ket-ma ketlikda bajarilishi kerak emas. Baʼzi holatlarda (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor .
+>`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ket-ma ketlikda bajarilishi kerak emas. Baʼzi holatlar uchun (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor .
 
 ## Tozalanadigan taʼsirlar {#effects-with-cleanup}
 
@@ -151,8 +148,7 @@ Yuqorida, qanday qilib tozalash talab qilmaydigan taʼsir koʻrsatish haqida to�
 
 ### Klass orqali yozilganida {#example-using-classes-1}
 
-In a React class, you would typically set up a subscription in `componentDidMount`, and clean it up in `componentWillUnmount`. For example, let's say we have a `ChatAPI` module that lets us subscribe to a friend's online status. Here's how we might subscribe and display that status using a class:
-React klasslarida, obuna odatda `componentDidMount`da sozlaysiz va `componentWillUnmount`da tozalaysiz. Masalan, aytaylik doʻstimizning tarmoqda ekanligi haqida maʼlumot beradigan `ChatAPI` modulimiz bor. Quyida buni klasslar orqali qanday yozishimiz mumkinligi aks etgan:
+React klasslarida, obunani odatda `componentDidMount`da sozlaysiz va `componentWillUnmount`da tozalaysiz. Masalan, aytaylik doʻstimizning statusi haqida maʼlumot beradigan `ChatAPI` toʻplamimiz bor. Quyida buni klasslar orqali qanday yozishimiz mumkinligi aks etgan:
 
 ```js{8-26}
 class FriendStatus extends React.Component {
@@ -191,17 +187,17 @@ class FriendStatus extends React.Component {
 }
 ```
 
-`componentDidMount` bilan `componentWillUnmount` bir birini takrorlashiga eʼtibor qarating. Kodning gʻoyasi bitta taʼsir ekanligiga qaramasdan, hayotiy jarayon metodlari ularni ikkita mantiqiy boʻlaklarga ajratishga majburlatdi.
+`componentDidMount` bilan `componentWillUnmount` bir birini takrorlashiga eʼtibor qarating. Kodning gʻoyasi bitta taʼsir ekanligiga qaramasdan, hayotiy jarayon metodlari ularni ikkita mantiqiy boʻlaklarga ajratishga majburlaydi.
 
 >Eslatma
 >
 >Ziyrak oʻquvchilarimiz ushbu kod aniq ishlashi uchun `componentDidUpdate` kerak ekanligini sezgandurlar. Hozircha buni chetga surib turamiz, lekin albatta [keyingi boʻlimda](#explanation-why-effects-run-on-each-update) bunga qaytamiz.
 
-### Example Using Hooks {#example-using-hooks-1}
+### Huklar bilan misol {#example-using-hooks-1}
 
-Let's see how we could write this component with Hooks.
+Ushbu komponentni huklar yordamida qanday yozishimizni koʻramiz.
 
-You might be thinking that we'd need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that `useEffect` is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up:
+Tozalashni amalga oshirish uchun alohida taʼsir kerak deb oʻylayotgandir siz. Lekin obuna boʻlish va uni bekor qilish bir biriga shunchalik bogʻliqki, `useEffect` ularni bir joyda saqlashni koʻzda tutgan. Agar taʼsiringiz funksiya qaytarsa, React uni tozalash vaqtida chaqiradi:
 
 ```js{6-16}
 import React, { useState, useEffect } from 'react';
@@ -222,23 +218,23 @@ function FriendStatus(props) {
   });
 
   if (isOnline === null) {
-    return 'Loading...';
+    return 'Yuklanyapti...';
   }
-  return isOnline ? 'Online' : 'Offline';
+  return isOnline ? 'Onlayn' : 'Oflayn';
 }
 ```
 
-**Why did we return a function from our effect?** This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They're part of the same effect!
+**Nimaga taʼsirimizdan funksiya qaytardik?** Bu taʼsirlar uchun ixtiyoriy tozalash usuli. Barcha taʼsirlar oʻzlarini tozalaydigan funksiya qaytarishi mumkin. Bu bizga obuna boʻlish va bekor qilishning mantiqiy qismini bir joyda saqlashga imkon beradi. Ular ayni bir taʼsirning boʻlarlaridir!
 
-**When exactly does React clean up an effect?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
+**Aynan qachon React taʼsirni tozalaydi?** Komponent tushirilgandan keyin React tozalashni amalga oshiradi. Biroq, oldinroq oʻrganganimizdek, taʼsirlar bir martagina emas balki har bir chizishda chaqiriladi. Chunki React taʼsirlarni yana chaqirishdan avval oldingi chizishning taʼsirlarini *ham* tozalab chiqadi. Bu nimaga [xatoliklarni chetlab oʻtishga yordam berishi](#explanation-why-effects-run-on-each-update) hamda [agar tezlikda muammo keltirgan paytlarda bundan qutilish](#tip-optimizing-performance-by-skipping-effects) haqida quyida yana toʻxtalamiz.
 
->Note
+>Eslatma
 >
->We don't have to return a named function from the effect. We called it `cleanup` here to clarify its purpose, but you could return an arrow function or call it something different.
+>Taʼsirlardan nomli funksiya qaytarishimiz majburiy emas. Funksiyani maqsadini aniqlab ketish uchun `cleanup` nomlagan edik. Siz yoylik funksiyalardan yoki boshqa nomdan foydalanishingiz mumkin.
 
-## Recap {#recap}
+## Takrorlash {#recap}
 
-We've learned that `useEffect` lets us express different kinds of side effects after a component renders. Some effects might require cleanup so they return a function:
+`useEffect` turli xil taʼsirlar koʻrsatishimizda yordam berishini bilib oldik. Baʼzi tozalashni talab qiladigan taʼsirlar funksiya qaytaradi:
 
 ```js
   useEffect(() => {
@@ -253,7 +249,7 @@ We've learned that `useEffect` lets us express different kinds of side effects a
   });
 ```
 
-Other effects might not have a cleanup phase, and don't return anything.
+Tozalash kerak boʻlmagan taʼsirlar ham bor va ular hech narsa qaytarmaydi.
 
 ```js
   useEffect(() => {
@@ -261,21 +257,21 @@ Other effects might not have a cleanup phase, and don't return anything.
   });
 ```
 
-The Effect Hook unifies both use cases with a single API.
+Taʼsir huki ikki holatni yagona API mujassam etadi.
 
 -------------
 
-**If you feel like you have a decent grasp on how the Effect Hook works, or if you feel overwhelmed, you can jump to the [next page about Rules of Hooks](/docs/hooks-rules.html) now.**
+**Taʼsir huki qanday ishlashini yaxshi tushungan boʻlsangiz yoki sizga qiyinlik qilyotgan boʻlsangiz keyingi [Huklar uchun qoidalar](/docs/hooks-rules.html) sahifasiga oʻtishingiz mumkin.**
 
 -------------
 
-## Tips for Using Effects {#tips-for-using-effects}
+## Taʼsirlarni ishlatishda tavsiyalar {#tips-for-using-effects}
 
-We'll continue this page with an in-depth look at some aspects of `useEffect` that experienced React users will likely be curious about. Don't feel obligated to dig into them now. You can always come back to this page to learn more details about the Effect Hook.
+Tajribali React foydalanuvchilari uchun qiziq boʻlgan, `useEffect`ning baʼzi jabhalarini chuqurroq oʻrganishda davom etamiz. Ular haqida hozir bilishingiz majburiy emas albatta. Istagan payt taʼsir huki haqida bilimlarni kuchaytirish uchun ushbu sahifaga qaytishingiz mumkin.
 
-### Tip: Use Multiple Effects to Separate Concerns {#tip-use-multiple-effects-to-separate-concerns}
+### Maslahat: Vazifasiga qarab taʼsirlarni ajrating {#tip-use-multiple-effects-to-separate-concerns}
 
-One of the problems we outlined in the [Motivation](/docs/hooks-intro.html#complex-components-become-hard-to-understand) for Hooks is that class lifecycle methods often contain unrelated logic, but related logic gets broken up into several methods. Here is a component that combines the counter and the friend status indicator logic from the previous examples:
+Klasslarning hayotiy-jarayon metodlarida bir-biriga bogʻliq boʻlmagan mantiqiy qismlar saqlanadi, bogʻliqlari esa bir necha metodlarga ajratiladi. Bu bizni huklarni yaratishga undagan [sabab](/docs/hooks-intro.html#complex-components-become-hard-to-understand)lardan biri ekanligi haqida aytgan edik. Ushbu komponent sizga tanish boʻlgan sanagich va doʻstingizning statusi haqidagi misollardagi mantiqiy qismlarni birlashtiradi:
 
 ```js
 class FriendStatusWithCounter extends React.Component {
@@ -286,7 +282,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Siz ${this.state.count} marta bosdingiz`;
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -294,7 +290,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Siz ${this.state.count} marta bosdingiz`;
   }
 
   componentWillUnmount() {
@@ -312,15 +308,15 @@ class FriendStatusWithCounter extends React.Component {
   // ...
 ```
 
-Note how the logic that sets `document.title` is split between `componentDidMount` and `componentDidUpdate`. The subscription logic is also spread between `componentDidMount` and `componentWillUnmount`. And `componentDidMount` contains code for both tasks.
+`document.title` bilan ishlaydigan mantiqiy qismlar `componentDidMount` hamda `componentDidUpdate` boʻylab ajratilganiga eʼtibor bering. Obuna boʻlish bilan bogʻliq mantiq ham `componentDidMount` va `componentWillUnmount` orasida taqsimlangan. `componentDidMount`da boʻlsa ikkala vazifaga ham aloqador kodni uchratishingiz mumkin.
 
-So, how can Hooks solve this problem? Just like [you can use the *State* Hook more than once](/docs/hooks-state.html#tip-using-multiple-state-variables), you can also use several effects. This lets us separate unrelated logic into different effects:
+Xoʻsh, ushbu muammoni huklar bilan qanday hal qilamiz? [*Holat* hukini bir necha marta ishlata olganingiz](/docs/hooks-state.html#tip-using-multiple-state-variables) kabi, Taʼsir hukini ham bir necha bor ishlata olasiz. Bu bizga bogʻliq boʻlmagan mantiqiy qismlarni bir-biridan ajratishga yordam beradi:
 
 ```js{3,8}
 function FriendStatusWithCounter(props) {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Siz ${count} marta bosdingiz`;
   });
 
   const [isOnline, setIsOnline] = useState(null);
@@ -338,13 +334,13 @@ function FriendStatusWithCounter(props) {
 }
 ```
 
-**Hooks let us split the code based on what it is doing** rather than a lifecycle method name. React will apply *every* effect used by the component, in the order they were specified.
+Hayotiy-jarayon metodlaridan farqli, **huklar bilan kod nima qilishiga qarab, ularni ajrata olamiz**. React komponent ishlatgan *har bir* taʼsirni yozilgan ketma-ketligida amalga oshirib chiqadi.
 
-### Explanation: Why Effects Run on Each Update {#explanation-why-effects-run-on-each-update}
+### Sharh: Nega Taʼsirlar har yangilanishda chaqiriladi {#explanation-why-effects-run-on-each-update}
 
-If you're used to classes, you might be wondering why the effect cleanup phase happens after every re-render, and not just once during unmounting. Let's look at a practical example to see why this design helps us create components with fewer bugs.
+Klasslarga oʻrganib qolgan boʻlsangiz, oʻylayotgan boʻlishingiz mumkin taʼsirni tozalash nimaga har qayta chizishdan soʻng amalga oshiriladi, shunchaki (komponent) tushirilganidan soʻng bir martagina emas? Qani bu usul kamroq baglar bilan komponent yozishimizda qanday yordam berishi mumkinligini koʻramiz.
 
-[Earlier on this page](#example-using-classes-1), we introduced an example `FriendStatus` component that displays whether a friend is online or not. Our class reads `friend.id` from `this.props`, subscribes to the friend status after the component mounts, and unsubscribes during unmounting:
+[Shu sahifaning teparogʻida](#example-using-classes-1), doʻstingiz onlayn yoki yoʻqligini koʻrsatadigan `FriendStatus` komponentini taqdim etgandik. Klassimiz `this.props`dan `friend.id`ni oʻqiydi, komponent oʻrnatilganidan keyin doʻstimizning statusiga obuna boʻladi, shu bilan (komponent) tushirilishida obunani bekor qiladi:
 
 ```js
   componentDidMount() {
@@ -362,9 +358,9 @@ If you're used to classes, you might be wondering why the effect cleanup phase h
   }
 ```
 
-**But what happens if the `friend` prop changes** while the component is on the screen? Our component would continue displaying the online status of a different friend. This is a bug. We would also cause a memory leak or crash when unmounting since the unsubscribe call would use the wrong friend ID.
+Komponent ekranda paytida **`friend` kiritmasi (prop) oʻzgarsa nima boʻladi?** Komponentimiz boshqa doʻstimizning tarmoqda ekanligi haqidagi maʼlumotni koʻrsatib turadi va bu - bag. Komponentni tushirish paytida obunani boshqa ID bilan bekor qilganimiz uchun xotira sizishi yoki dasturni ishdan chiqishiga ham olib kelamiz.
 
-In a class component, we would need to add `componentDidUpdate` to handle this case:
+Klass komponentlarda, buni hal qilishimiz uchun `componentDidUpdate` kerak:
 
 ```js{8-19}
   componentDidMount() {
@@ -375,12 +371,12 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 
   componentDidUpdate(prevProps) {
-    // Unsubscribe from the previous friend.id
+    // Avvalgi friend.id bilan obunani bekor qilish
     ChatAPI.unsubscribeFromFriendStatus(
       prevProps.friend.id,
       this.handleStatusChange
     );
-    // Subscribe to the next friend.id
+    // Yangi friend.id bilan obuna boʻlish
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -395,9 +391,9 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 ```
 
-Forgetting to handle `componentDidUpdate` properly is a common source of bugs in React applications.
+React dasturlaridagi koʻp baglar `componentDidUpdate`ni boshqarishdagi xatoliklar ortidan kelib chiqadi.
 
-Now consider the version of this component that uses Hooks:
+Komponentni huklarda yozilgan koʻrinishiga eʼtibor bering:
 
 ```js
 function FriendStatus(props) {
@@ -411,31 +407,31 @@ function FriendStatus(props) {
   });
 ```
 
-It doesn't suffer from this bug. (But we also didn't make any changes to it.)
+Bu unday bagdan holis. (Hech qanday oʻzgartirish kiritmasak ham.)
 
-There is no special code for handling updates because `useEffect` handles them *by default*. It cleans up the previous effects before applying the next effects. To illustrate this, here is a sequence of subscribe and unsubscribe calls that this component could produce over time:
+Yangilanishlarni boshqarish uchun hech qanday maxsus kod kerak emas, chunki `useEffect` *boshidan* bu ishni oʻzi qiladi. U yangi taʼsirlarni amalga oshirishdan oldin eskilarini tozalab chiqadi. Obuna boʻlish va uni bekor qilish ortidan komponent nimalar qilishini tasavvur qilib koʻramiz:
 
 ```js
-// Mount with { friend: { id: 100 } } props
-ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Run first effect
+// { friend: { id: 100 } } kiritmalari bilan oʻrnatildi
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Birinchi taʼsir koʼrsatildi
 
-// Update with { friend: { id: 200 } } props
-ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Run next effect
+// { friend: { id: 200 } } kiritmalari bilan yangilandi
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Taʼsir tozalandi
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Keyingi taʼsir koʼrsatildi
 
-// Update with { friend: { id: 300 } } props
-ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Run next effect
+// { friend: { id: 300 } } kiritmalari bilan yangilandi
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Taʼsir tozalandi
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Keyingi taʼsir koʼrsatildi
 
-// Unmount
-ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last effect
+// Tushirildi
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Eng oxirgi taʼsir tozalandi
 ```
 
-This behavior ensures consistency by default and prevents bugs that are common in class components due to missing update logic.
+Bu xulq (behaviour) mustahkamlikni boshidan taʼminlab, klasslarda yangilashning mantiqiy qismi yo'qligi ortidan kelib chiqadigan baglarni oldini oladi.
 
-### Tip: Optimizing Performance by Skipping Effects {#tip-optimizing-performance-by-skipping-effects}
+### Maslahat: Tezlikni taʼsirlarni tashlab ketib oshirish {#tip-optimizing-performance-by-skipping-effects}
 
-In some cases, cleaning up or applying the effect after every render might create a performance problem. In class components, we can solve this by writing an extra comparison with `prevProps` or `prevState` inside `componentDidUpdate`:
+Baʼzi holatlarda, har chizishda taʼsirlarni tozalash yoki amalga oshirish tezlikka taʼsir qilishi mumkin. Buni klass komponentlarda `componentDidUpdate`ning ichida `prevProps` yoki `prevState`dan foydalanib qoʻshimcha solishtirish amali orqali hal qilamiz:
 
 ```js
 componentDidUpdate(prevProps, prevState) {
@@ -445,19 +441,19 @@ componentDidUpdate(prevProps, prevState) {
 }
 ```
 
-This requirement is common enough that it is built into the `useEffect` Hook API. You can tell React to *skip* applying an effect if certain values haven't changed between re-renders. To do so, pass an array as an optional second argument to `useEffect`:
+Bu ish koʻp talab qilingani uchun `useEffect` huki APIʼda bu koʻzda tutilgan. Qayta chizishlar davrida baʼzi qiymatlar oʻzgarmagan boʻlsa, Reactʼga taʼsirlarni *tashlab* ketishi mumkinligini aytsangiz boʻladi. Bu uchun, `useEffect`ga ixtiyoriy boʻlgan ikkinchi argument sifatida massiv berib yuboring:
 
 ```js{3}
 useEffect(() => {
   document.title = `You clicked ${count} times`;
-}, [count]); // Only re-run the effect if count changes
+}, [count]); // count oʻzgarsagina, taʼsir koʻrsatiladi
 ```
 
-In the example above, we pass `[count]` as the second argument. What does this mean? If the `count` is `5`, and then our component re-renders with `count` still equal to `5`, React will compare `[5]` from the previous render and `[5]` from the next render. Because all items in the array are the same (`5 === 5`), React would skip the effect. That's our optimization.
+Yuqoridagi misolda, ikkinchi argument sifatida `[count]`ni berib yubordik. Bu nima degani? Agar `count`ni `5` desak, qayta chizishdan keyin komponentimizdagi `count` haliyam `5`ga teng boʻlsa, React oldingi chizishdagi `[5]` bilan keyingi chizishdagi `[5]`ni solishtiradi. Massivdagi barcha qiymatlar tengligi uchun (`5 === 5`), React (oʻsha) taʼsirni tashlab ketadi. Bu bilan kodni iloji boricha yaxshiladik.
 
-When we render with `count` updated to `6`, React will compare the items in the `[5]` array from the previous render to items in the `[6]` array from the next render. This time, React will re-apply the effect because `5 !== 6`. If there are multiple items in the array, React will re-run the effect even if just one of them is different.
+`count` qiymati `6`ga oʻzgarganidan keyingi chizishda, React oldingi chizishdagi massiv qiymatlari `[5]` bilan keyingi chizishdagi massivni `[6]` solishtiradi. Bu safar, `5 !== 6` ekanligi uchun React taʼsirni amalga oshiradi. Massivda birnechta qiymatlar boʻladigan boʻlsa, ularni bittaginasi oʻzgargan boʻlsa ham React taʼsirni qayta amalga oshiradi.
 
-This also works for effects that have a cleanup phase:
+Bu tozalanishi kerak boʻlgan taʼsirlarga ham amal qiladi:
 
 ```js{10}
 useEffect(() => {
@@ -469,25 +465,25 @@ useEffect(() => {
   return () => {
     ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
   };
-}, [props.friend.id]); // Only re-subscribe if props.friend.id changes
+}, [props.friend.id]); // Faqatgina props.friend.id oʻzgarsa qayta obuna boʻl
 ```
 
-In the future, the second argument might get added automatically by a build-time transformation.
+Kelajakda, ikkinchi argument bajarilish davridagi oʻzgarishlar ortidan oʻz-oʻzidan berib yuborilishi mumkin.
 
->Note
+>Eslatma
 >
->If you use this optimization, make sure the array includes **all values from the component scope (such as props and state) that change over time and that are used by the effect**. Otherwise, your code will reference stale values from previous renders. Learn more about [how to deal with functions](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) and [what to do when the array changes too often](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
+>Bu usulni ishlatmoqchi boʻlsangiz, massiv ichida **komponent qamrovidagi vaqt oʻtishi bilan oʻzgaradigan (holat yoki kiritmalar kabi) hamda taʼsir tomonidan ishlatilgan qiymatlar** borligini tekshiring. Aks holda, kodingiz oldingi chizishlardan qolgan, eskirgan qiymatlarni ishlatishi mumkin. [Funksiyalar bilan qanday ishlash](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) yoki [massiv juda koʻp oʻzgarganda nima qilish](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) koʻproq oʻqishingiz mumkin.
 >
->If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array (`[]`) as a second argument. This tells React that your effect doesn't depend on *any* values from props or state, so it never needs to re-run. This isn't handled as a special case -- it follows directly from how the dependencies array always works.
+>Taʼsirni faqat bir marta amalga oshirib hamda tozalamoqchi boʻlsangiz (oʻrnatilgani va tushirilganida), ikkinchi argument sifatida boʻsh massiv berib yuborishingiz (`[]`) mumkin. Bu orqali React taʼsiringiz *hech qanday* holat yoki kiritmaga boʻysunmasligini biladi va uni qayta yurgizmaydi. Bunga alohida holat sifatida qaralmaydi -- taʼsir oʻziga kerakli massivga qarab, odatiy ishlash usulida  davom etadi .
 >
->If you pass an empty array (`[]`), the props and state inside the effect will always have their initial values. While passing `[]` as the second argument is closer to the familiar `componentDidMount` and `componentWillUnmount` mental model, there are usually [better](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [solutions](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid re-running effects too often. Also, don't forget that React defers running `useEffect` until after the browser has painted, so doing extra work is less of a problem.
+>Boʻsh massiv (`[]`) berib yuborilganida, taʼsir ichidagi kiritma hamda holat qiymatlari boshlangʼich holatida qolagi. `[]` berib yuborish bizga tanish `componentDidMount` bilan `componentWillUnmount`ning andazasiga yaqin va odatda taʼsirlarni koʻp marta qayta ishlatmaslik uchun [yaxshiroq](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [yechimlar](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) ham mavjud. Esdan chiqarmangki, bravzer barcha oʻzgarishlarni chizib tugatmaganicha, React `useEffect`ni chaqirilishini orqaga surib turadi, shu uchun qoʻshimcha ish qilishga muammo sifatida qaramang.
 >
->We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
+>[`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) toʻplamimizning boʻlagi hisoblanadigan  [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) qoidasini ishlatishni maslahat beramiz. U taʼsir boʻysunadigan qiymatlar notoʻgʻri qoʻyilganligidan ogohlantirib, yechim taklif qiladi.
 
-## Next Steps {#next-steps}
+## Keyingi qadamlar {#next-steps}
 
-Congratulations! This was a long page, but hopefully by the end most of your questions about effects were answered. You've learned both the State Hook and the Effect Hook, and there is a *lot* you can do with both of them combined. They cover most of the use cases for classes -- and where they don't, you might find the [additional Hooks](/docs/hooks-reference.html) helpful.
+Tabriklaymiz! Sahifa ancha choʻzilib ketdi, ammo umid qilamizki oxiriga kelib taʼsirlar haqidagi savollaringizga javob topdingiz. Holat va Taʼsir huklari haqida oʻrganib boʻldingiz va bu ikkalasidan foydalanib *anchagina* narsalar qilishingiz mumkin. Bular klasslar ishlatiladigan koʻpgina vaziyatlarni qamrab oladi. [Qoʻshimcha huklar](/docs/hooks-reference.html) haqida bilish zarar qilmaydi.
 
-We're also starting to see how Hooks solve problems outlined in [Motivation](/docs/hooks-intro.html#motivation). We've seen how effect cleanup avoids duplication in `componentDidUpdate` and `componentWillUnmount`, brings related code closer together, and helps us avoid bugs. We've also seen how we can separate effects by their purpose, which is something we couldn't do in classes at all.
+Huklarni yaratishga [undagan](/docs/hooks-intro.html#motivation) bir qancha muammolar yechilyotganini koʻra boshladik. Taʼsirni tozalash `componentDidUpdate` hamda `componentWillUnmount`dagi nusxa koʻchirishlarni tugatib, bir-biriga aloqador kodlarni yaqinlashtirgani shuning bilan birga bagsiz kod yozishga yordam berishini koʻrdik. Klasslarda qilishni iloji boʻlmagan ish yaʼni, Taʼsirlarni vazifasiga qarab ajratishni haqida oʻrganib oldik.
 
-At this point you might be questioning how Hooks work. How can React know which `useState` call corresponds to which state variable between re-renders? How does React "match up" previous and next effects on every update? **On the next page we will learn about the [Rules of Hooks](/docs/hooks-rules.html) -- they're essential to making Hooks work.**
+Bu nuqtaga kelib, Huklar qanday ishlashiga qiziqayotgan boʻlishingiz mumkin. Qayta chizishlar orasida React qanday biladiki qaysi `useState` chaqiruvi uchun qaysi holat oʻzgaruvchisiga tegishli? Har yangilanishda React qanday qilib oldingi va keyingi taʼsirlarni "toʻgʻirlab" keta olyapti? **Keyingi sahifada [Huklar uchun qoidalar](/docs/hooks-rules.html) haqida oʻrganishingiz mumkin -- ular Huklarni ishlatadigan asosiy narsalar.**

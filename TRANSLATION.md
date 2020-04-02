@@ -54,7 +54,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | mock | mok, hayoliy |
 | (im)mutable | (oʻzgarmas)/oʻzgaruvchan |
 | (im)mutability | (oʻzgarmaslik)/oʻzgaruvchanlik |
-| (un)mount | mount (qilmaslik)/qilish |
+| (un)mount | oʻrnatish/tushirilish |
 | mutate | oʻzgartirish |
 | Note | Eslatma |
 | online | onlayn |
