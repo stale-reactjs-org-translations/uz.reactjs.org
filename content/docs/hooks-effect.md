@@ -197,7 +197,7 @@ class FriendStatus extends React.Component {
 
 Ushbu komponentni huklar yordamida qanday yozishimizni koʻramiz.
 
-Tozalashni amalga oshirish uchun alohida taʼsir kerak deb oʻylayotgandir siz. Lekin obuna boʻlish va uni bekor qilish bir biriga shunchalik bogʻliqki, `useEffect` ularni bir joyda saqlashni koʻzda tutgan. Agar taʼsiringiz funksiya qaytarsa, React uni tozalash vaqtida chaqiradi:
+Tozalashni amalga oshirish uchun alohida taʼsir kerak deb oʻylayotgandirsiz. Lekin obuna boʻlish va uni bekor qilish uchun boʻlgan kod bir biriga shunchalik bogʻliqki, `useEffect` ularni bir joyda saqlashni koʻzda tutgan. Agar taʼsiringiz funksiya qaytarsa, React uni tozalash vaqtida chaqiradi:
 
 ```js{6-16}
 import React, { useState, useEffect } from 'react';
