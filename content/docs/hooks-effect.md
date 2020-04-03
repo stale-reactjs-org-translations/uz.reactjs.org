@@ -18,7 +18,7 @@ function Example() {
 
   // componentDidMount hamda componentDidUpdate ga oʻxshash:
   useEffect(() => {
-    // Hujjat sarlavhasini bravzer APIʼyi orqali oʻzgartirish
+    // Hujjat sarlavhasini brauzer APIʼyi orqali oʻzgartirish
     document.title = `You clicked ${count} times`;
   });
 
