@@ -54,7 +54,7 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | mock | mok, hayoliy |
 | (im)mutable | (oʻzgarmas)/oʻzgaruvchan |
 | (im)mutability | (oʻzgarmaslik)/oʻzgaruvchanlik |
-| (un)mount | oʻrnatish/tushirilish |
+| (un)mount | oʻrnatish/yechish |
 | mutate | oʻzgartirish |
 | Note | Eslatma |
 | online | onlayn |
@@ -88,9 +88,9 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | user interface | foydalanuvchi interfeysi |
 | Tip | Maslahat |
 | Warning | Ogohlantiruv |
-| array with two items | ikki qismli massiv |
+| array with two items | ikki elementli massiv |
 | syntax | yozish uslubi |
-| snippet | boʻlak |
+| snippet | parcha |
 | logging | loglash |
 | scope | qamrov |
 | run | yurgizish |

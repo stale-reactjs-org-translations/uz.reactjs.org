@@ -8,7 +8,7 @@ prev: hooks-state.html
 
 *Huklar* - React 16.8'ga kiritilgan yangilik. Ular sizga klass yozmasdan turib holat (state) va React'ning boshqa qulayliklarini ishlatishga yordam beradi.
 
-Funksiyaviy komponentlarda *Taʼsir Huki* tashqi taʼsirlar koʻrsatishga yordam beradi:
+Funksiyaviy komponentlarda *Taʼsir huki* tashqi taʼsirlar koʻrsatishga yordam beradi:
 
 ```js{1,6-10}
 import React, { useState, useEffect } from 'react';
@@ -18,7 +18,7 @@ function Example() {
 
   // componentDidMount hamda componentDidUpdate ga oʻxshash:
   useEffect(() => {
-    // Hujjat sarlavhasini brauzer APIʼyi orqali oʻzgartirish
+    // Brauzer API orqali hujjat sarlavhasini yangilash
     document.title = `You clicked ${count} times`;
   });
 
@@ -33,7 +33,7 @@ function Example() {
 }
 ```
 
-Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html) olingan. Biroq, unga hujjat sarlavhasini tugmani necha marta bosilganini haqidagi matnga oʻzgartadigan yangilik kiritadi.
+Ushbu parcha [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html) olingan. Biroq, unga hujjat sarlavhasini tugmani necha marta bosilganini haqidagi matnga oʻzgartadigan yangilik kiritadi.
 
 Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlish va DOMʼni qoʻlda oʻzgartirish. Ularni "tashqi taʼsir" (yoki shunchaki "taʻsir") deb nomlaganmisiz yoʻqmi, lekin ularni komponentlaringizda ishlatgan boʻlsangiz kerak.
 
@@ -226,7 +226,7 @@ function FriendStatus(props) {
 
 **Nimaga taʼsirimizdan funksiya qaytardik?** Bu taʼsirlar uchun ixtiyoriy tozalash usuli. Barcha taʼsirlar oʻzlarini tozalaydigan funksiya qaytarishi mumkin. Bu bizga obuna boʻlish va bekor qilishning mantiqiy qismini bir joyda saqlashga imkon beradi. Ular ayni bir taʼsirning boʻlaklaridir!
 
-**Aynan qachon React taʼsirni tozalaydi?** Komponent tushirilgandan keyin React tozalashni amalga oshiradi. Biroq, oldinroq oʻrganganimizdek, taʼsirlar bir martagina emas balki har bir chizishda chaqiriladi. Chunki React taʼsirlarni yana chaqirishdan avval oldingi chizishning taʼsirlarini *ham* tozalab chiqadi. Bu nimaga [xatoliklarni chetlab oʻtishga yordam berishi](#explanation-why-effects-run-on-each-update) hamda [agar tezlikda muammo keltirgan paytlarda bundan qutilish](#tip-optimizing-performance-by-skipping-effects) haqida quyida yana toʻxtalamiz.
+**Aynan qachon React taʼsirni tozalaydi?** Komponent yechilganidan keyin React tozalashni amalga oshiradi. Biroq, oldinroq oʻrganganimizdek, taʼsirlar bir martagina emas balki har bir chizishda chaqiriladi. Chunki React taʼsirlarni yana chaqirishdan avval oldingi chizishning taʼsirlarini *ham* tozalab chiqadi. Bu nimaga [xatoliklarni chetlab oʻtishga yordam berishi](#explanation-why-effects-run-on-each-update) hamda [agar tezlikda muammo keltirgan paytlarda bundan qutilish](#tip-optimizing-performance-by-skipping-effects) haqida quyida yana toʻxtalamiz.
 
 >Eslatma
 >
@@ -338,9 +338,9 @@ Hayotiy jarayon metodlaridan farqli, **huklar bilan kod nima qilishiga qarab, ul
 
 ### Sharh: Nega Taʼsirlar har yangilanishda chaqiriladi {#explanation-why-effects-run-on-each-update}
 
-Klasslarga oʻrganib qolgan boʻlsangiz, oʻylayotgan boʻlishingiz mumkin taʼsirni tozalash nimaga har qayta chizishdan soʻng amalga oshiriladi, shunchaki (komponent) tushirilganidan soʻng bir martagina emas? Qani bu usul kamroq baglar bilan komponent yozishimizda qanday yordam berishi mumkinligini koʻramiz.
+Klasslarga oʻrganib qolgan boʻlsangiz, oʻylayotgan boʻlishingiz mumkin taʼsirni tozalash nimaga har qayta chizishdan soʻng amalga oshiriladi, shunchaki (komponent) yechilganidan soʻng bir martagina emas? Qani bu usul kamroq baglar bilan komponent yozishimizda qanday yordam berishi mumkinligini koʻramiz.
 
-[Shu sahifaning teparogʻida](#example-using-classes-1), doʻstingiz onlayn yoki yoʻqligini koʻrsatadigan `FriendStatus` komponentini taqdim etgandik. Klassimiz `this.props`dan `friend.id`ni oʻqiydi, komponent oʻrnatilganidan keyin doʻstimizning statusiga obuna boʻladi, shu bilan (komponent) tushirilishida obunani bekor qiladi:
+[Shu sahifaning teparogʻida](#example-using-classes-1), doʻstingiz onlayn yoki yoʻqligini koʻrsatadigan `FriendStatus` komponentini taqdim etgandik. Klassimiz `this.props`dan `friend.id`ni oʻqiydi, komponent oʻrnatilganidan keyin doʻstimizning statusiga obuna boʻladi, shu bilan (komponent) yechilishida obunani bekor qiladi:
 
 ```js
   componentDidMount() {
@@ -358,7 +358,7 @@ Klasslarga oʻrganib qolgan boʻlsangiz, oʻylayotgan boʻlishingiz mumkin taʼs
   }
 ```
 
-Komponent ekranda paytida **`friend` kiritmasi (prop) oʻzgarsa nima boʻladi?** Komponentimiz boshqa doʻstimizning tarmoqda ekanligi haqidagi maʼlumotni koʻrsatib turadi va bu - bag. Komponentni tushirish paytida obunani boshqa ID bilan bekor qilganimiz uchun xotira sizishi yoki dasturni ishdan chiqishiga ham olib kelamiz.
+Komponent ekranda paytida **`friend` kiritmasi (prop) oʻzgarsa nima boʻladi?** Komponentimiz boshqa doʻstimizning tarmoqda ekanligi haqidagi maʼlumotni koʻrsatib turadi va bu - bag. Komponentni yechish paytida obunani boshqa ID bilan bekor qilganimiz uchun xotira sizishi yoki dasturni ishdan chiqishiga ham olib kelamiz.
 
 Klass komponentlarda, buni hal qilishimiz uchun `componentDidUpdate` kerak:
 
@@ -474,7 +474,7 @@ Kelajakda, ikkinchi argument bajarilish davridagi oʻzgarishlar ortidan oʻz-oʻ
 >
 >Bu usulni ishlatmoqchi boʻlsangiz, massiv ichida **komponent qamrovidagi vaqt oʻtishi bilan oʻzgaradigan (holat yoki kiritmalar kabi) hamda taʼsir tomonidan ishlatilgan qiymatlar** borligini tekshiring. Aks holda, kodingiz oldingi chizishlardan qolgan, eskirgan qiymatlarni ishlatishi mumkin. [Funksiyalar bilan qanday ishlash](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) yoki [massiv juda koʻp oʻzgarganda nima qilish](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) koʻproq oʻqishingiz mumkin.
 >
->Taʼsirni faqat bir marta amalga oshirib hamda tozalamoqchi boʻlsangiz (oʻrnatilgani va tushirilganida), ikkinchi argument sifatida boʻsh massiv berib yuborishingiz (`[]`) mumkin. Bu orqali React taʼsiringiz *hech qanday* holat yoki kiritmaga boʻysunmasligini biladi va uni qayta yurgizmaydi. Bunga alohida holat sifatida qaralmaydi -- taʼsir oʻziga kerakli massivga qarab, odatiy ishlash usulida  davom etadi .
+>Taʼsirni faqat bir marta amalga oshirib hamda tozalamoqchi boʻlsangiz (oʻrnatilgani va yechilganida), ikkinchi argument sifatida boʻsh massiv berib yuborishingiz (`[]`) mumkin. Bu orqali React taʼsiringiz *hech qanday* holat yoki kiritmaga boʻysunmasligini biladi va uni qayta yurgizmaydi. Bunga alohida holat sifatida qaralmaydi -- taʼsir oʻziga kerakli massivga qarab, odatiy ishlash usulida  davom etadi .
 >
 >Boʻsh massiv (`[]`) berib yuborilganida, taʼsir ichidagi kiritma hamda holat qiymatlari boshlangʼich holatida qoladi. `[]` berib yuborish bizga tanish `componentDidMount` bilan `componentWillUnmount`ning andazasiga yaqin va odatda taʼsirlarni koʻp marta qayta ishlatmaslik uchun [yaxshiroq](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [yechimlar](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) ham mavjud. Esdan chiqarmangki, brauzer barcha oʻzgarishlarni chizib tugatmaganicha, React `useEffect`ni chaqirilishini orqaga surib turadi, shuning uchun qoʻshimcha ish qilishga muammo sifatida qaramang.
 >
