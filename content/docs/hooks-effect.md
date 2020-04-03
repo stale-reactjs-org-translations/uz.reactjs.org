@@ -45,7 +45,7 @@ React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash talab qilmaydigan,
 
 ## Tozalanmaydigan tashqi taʼsirlar {#effects-without-cleanup}
 
-Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - tozalashni talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
+Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - buni tozalashni qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
 
 ### Klasslardagi misol {#example-using-classes}
 
@@ -85,7 +85,7 @@ class Example extends React.Component {
 
 **Klasslarda bitta kodni ikki hayotiy jarayon metodlari ichida nusxalashga majbur ekanligimizga** eʼtibor qarating.
 
-Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Hayolan, biz uni harsafar chizilishdan (render) soʻng amalga oshishini hohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
+Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Xayolan, biz uni har safar chizilishdan (render) soʻng amalga oshishini xohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
 
 Qani endi xuddi shu narsani `useEffect` huki bilan amalga oshiramiz.
 
@@ -114,9 +114,9 @@ function Example() {
 }
 ```
 
-**`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlari amalga oshganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
+**`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlarini amalga oshirganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
 
-**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
+**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisini (yoki kiritmalarni (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
 
 **`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chizilish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq buni [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "yangilanishga" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb fikrlash ancha tushunarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
 
@@ -197,7 +197,7 @@ class FriendStatus extends React.Component {
 
 Ushbu komponentni huklar yordamida qanday yozishimizni koʻramiz.
 
-Tozalashni amalga oshirish uchun alohida taʼsir kerak deb oʻylayotgandir siz. Lekin obuna boʻlish va uni bekor qilish bir biriga shunchalik bogʻliqki, `useEffect` ularni bir joyda saqlashni koʻzda tutgan. Agar taʼsiringiz funksiya qaytarsa, React uni tozalash vaqtida chaqiradi:
+Tozalashni amalga oshirish uchun alohida taʼsir kerak deb oʻylayotgandirsiz. Lekin obuna boʻlish va uni bekor qilish uchun boʻlgan kod bir biriga shunchalik bogʻliqki, `useEffect` ularni bir joyda saqlashni koʻzda tutgan. Agar taʼsiringiz funksiya qaytarsa, React uni tozalash vaqtida chaqiradi:
 
 ```js{6-16}
 import React, { useState, useEffect } from 'react';
