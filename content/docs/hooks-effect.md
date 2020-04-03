@@ -33,7 +33,7 @@ function Example() {
 }
 ```
 
-Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html) olingan. Biroq, unga hujjat sarlavhasini tugmani necha marta bosilganini haqidagi matnga oʻzgartadigan yangilik kiritik.
+Ushbu boʻlak [oldingi sahifadagi sanagich misolidan](/docs/hooks-state.html) olingan. Biroq, unga hujjat sarlavhasini tugmani necha marta bosilganini haqidagi matnga oʻzgartadigan yangilik kiritadi.
 
 Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlish va DOMʼni qoʻlda oʻzgartirish. Ularni "tashqi taʼsir" (yoki shunchaki "taʻsir") deb nomlaganmisiz yoʻqmi, lekin ularni komponentlaringizda ishlatgan boʻlsangiz kerak.
 
@@ -41,11 +41,11 @@ Quyidagilarni tashqi taʼsirlar deya olamiz: maʼlumotlarni olish, obuna boʻlis
 >
 >Agar Reactʼning hayotiy jarayon metodlari bilan tanish boʻlsangiz, `useEffect` hukini `componentDidMount`, `componentDidUpdate` va `componentWillUnmount` kabilarni birlashgani deyishingiz mumkin .
 
-React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash taʼlab qilmaydigan, hamda talab qiladigan. Qani endi shu farqga koʻproq toʻxtalamiz.
+React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash talab qilmaydigan, hamda talab qiladigan. Qani endi shu farqqa koʻproq toʻxtalamiz.
 
 ## Tozalanmaydigan tashqi taʼsirlar {#effects-without-cleanup}
 
-Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - buni talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
+Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - tozalashni talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
 
 ### Klasslardagi misol {#example-using-classes}
 
@@ -118,7 +118,7 @@ function Example() {
 
 **Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
 
-**`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chizilish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq buni [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "yangilanishga" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb firklash ancha tushinarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
+**`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chizilish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq buni [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "yangilanishga" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb fikrlash ancha tushunarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
 
 ### Batafsil tushuntirish {#detailed-explanation}
 
@@ -134,17 +134,17 @@ function Example() {
 }
 ```
 
-`count` deb nomanlan holat oʻzgaruvchisini yaratamiz va Reactʼga taʼsir koʻrsatishimiz kerakligi haqida aytamiz. `useEffect` hukiga funksiya berib yuboramiz. Berib yuborilgan funksiya - *bu* bizning taʼsirimiz hisoblanadi. Taʼsirimiz ichida, Brauzerning `document.title` APIʼdan foydalanib hujjat sarlavhasini oʻzgartiramiz. `count` funksiyamiznig qamrovida boʻlgani uchun uni taʼsirning ichida oxirgi qiymatida ishlata olamiz. React komponentimizni chizganida, ishlatgan taʼsirimizni eslaydi va DOMʼni yangilashi bilanoq bizni taʼsirni ishga tushiradi. Bu har chizishda amalga oshadi, eng birinchisida ham.
+`count` deb nomlangan holat oʻzgaruvchisini yaratamiz va Reactʼga taʼsir koʻrsatishimiz kerakligi haqida aytamiz. `useEffect` hukiga funksiya berib yuboramiz. Berib yuborilgan funksiya - *bu* bizning taʼsirimiz hisoblanadi. Taʼsirimiz ichida, Brauzerning `document.title` APIʼdan foydalanib hujjat sarlavhasini oʻzgartiramiz. `count` funksiyamiznig qamrovida boʻlgani uchun uni taʼsirning ichida oxirgi qiymatida ishlata olamiz. React komponentimizni chizganida, ishlatgan taʼsirimizni eslaydi va DOMʼni yangilashi bilanoq taʼsirimizni ishga tushiradi. Bu har chizishda amalga oshadi, eng birinchisida ham.
 
-Tajribali JavaScript dasturchilar sezishi mumkinki `useEffect`ga berib yuborilgan funksiya har safar har xil boʻladi. Bu ataylabdan. Chunki, aynan shu narsa bizga taʼsir ichida turib `count`ning eskirib qolmayotganini kafolatlaydi. Har safar qayta-chizishda, oldingisini oʻrniga _boshqa_ taʼsirni rejalashtiramiz. Qaysidur maʼnoda, bu - taʼsirlarni chizishning oqibatlari boʻlagiga aylantiradi -- har taʼsir aynan bir chizishga "tegishli". Bu nimaga foydali ekanligiga [keyinroq toʻxtalamiz](#explanation-why-effects-run-on-each-update).
+Tajribali JavaScript dasturchilar sezishi mumkinki `useEffect`ga berib yuborilgan funksiya har safar har xil boʻladi. Bu ataylab qilingan. Chunki, aynan shu narsa bizga taʼsir ichida turib `count`ning eskirib qolmayotganini kafolatlaydi. Har safar qayta-chizishda, oldingisini oʻrniga _boshqa_ taʼsirni rejalashtiramiz. Qaysidir maʼnoda, bu - taʼsirlarni chizishning oqibatlari boʻlagiga aylantiradi -- har taʼsir aynan bir chizishga "tegishli". Bu nimaga foydali ekanligiga [keyinroq toʻxtalamiz](#explanation-why-effects-run-on-each-update).
 
 >Maslahat
 >
->`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ket-ma ketlikda bajarilishi kerak emas. Baʼzi holatlar uchun (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor .
+>`componentDidMount` yoki `componentDidUpdate`ga oʻxshamagan holda, `useEffect` orqali rejalashtirilgan taʼsirlar brauzer ekranni yangilashiga toʻsqinlik qilmaydi. Bu dasturimizni sezgirroq qiladi. Koʻpchilik taʼsirlar ketma-ketlikda bajarilishi kerak emas. Baʼzi holatlar uchun (masalan, oʻlchovlar olishda) esa, APIʼyi `useEffect`ga oʻxshash boʻlgan alohida [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) huki bor.
 
 ## Tozalanadigan taʼsirlar {#effects-with-cleanup}
 
-Yuqorida, qanday qilib tozalash talab qilmaydigan taʼsir koʻrsatish haqida toʻxtaldik. Biroq, baʼzi taʼsirlar buni talab qiladi. Masalan, biror tashqi maʼlumot manbaiga **obuna boʻlmoqchimiz**. Bu holatda, xotira sizishini toʻxtatish uchun tozalash ishlarini olib borish muhimdir! Qani endi buni klasslarda hamda huklarda qanday qilishimiz mumkinligini solishtiramiz.
+Yuqorida, qanday qilib tozalash talab qilmaydigan taʼsir koʻrsatish haqida toʻxtaldik. Biroq, baʼzi taʼsirlar buni talab qiladi. Masalan, biror tashqi maʼlumot manbayiga **obuna boʻlmoqchimiz**. Bu holatda, xotira sizishini toʻxtatish uchun tozalash ishlarini olib borish muhimdir! Qani endi buni klasslarda hamda huklarda qanday qilishimiz mumkinligini solishtiramiz.
 
 ### Klass orqali yozilganida {#example-using-classes-1}
 
@@ -191,7 +191,7 @@ class FriendStatus extends React.Component {
 
 >Eslatma
 >
->Ziyrak oʻquvchilarimiz ushbu kod aniq ishlashi uchun `componentDidUpdate` kerak ekanligini sezgandurlar. Hozircha buni chetga surib turamiz, lekin albatta [keyingi boʻlimda](#explanation-why-effects-run-on-each-update) bunga qaytamiz.
+>Ziyrak oʻquvchilarimiz ushbu kod aniq ishlashi uchun `componentDidUpdate` kerak ekanligini sezgandirlar. Hozircha buni chetga surib turamiz, lekin albatta [keyingi boʻlimda](#explanation-why-effects-run-on-each-update) bunga qaytamiz.
 
 ### Huklar bilan misol {#example-using-hooks-1}
 
@@ -224,7 +224,7 @@ function FriendStatus(props) {
 }
 ```
 
-**Nimaga taʼsirimizdan funksiya qaytardik?** Bu taʼsirlar uchun ixtiyoriy tozalash usuli. Barcha taʼsirlar oʻzlarini tozalaydigan funksiya qaytarishi mumkin. Bu bizga obuna boʻlish va bekor qilishning mantiqiy qismini bir joyda saqlashga imkon beradi. Ular ayni bir taʼsirning boʻlarlaridir!
+**Nimaga taʼsirimizdan funksiya qaytardik?** Bu taʼsirlar uchun ixtiyoriy tozalash usuli. Barcha taʼsirlar oʻzlarini tozalaydigan funksiya qaytarishi mumkin. Bu bizga obuna boʻlish va bekor qilishning mantiqiy qismini bir joyda saqlashga imkon beradi. Ular ayni bir taʼsirning boʻlaklaridir!
 
 **Aynan qachon React taʼsirni tozalaydi?** Komponent tushirilgandan keyin React tozalashni amalga oshiradi. Biroq, oldinroq oʻrganganimizdek, taʼsirlar bir martagina emas balki har bir chizishda chaqiriladi. Chunki React taʼsirlarni yana chaqirishdan avval oldingi chizishning taʼsirlarini *ham* tozalab chiqadi. Bu nimaga [xatoliklarni chetlab oʻtishga yordam berishi](#explanation-why-effects-run-on-each-update) hamda [agar tezlikda muammo keltirgan paytlarda bundan qutilish](#tip-optimizing-performance-by-skipping-effects) haqida quyida yana toʻxtalamiz.
 
@@ -261,7 +261,7 @@ Taʼsir huki ikki holatni yagona API mujassam etadi.
 
 -------------
 
-**Taʼsir huki qanday ishlashini yaxshi tushungan boʻlsangiz yoki sizga qiyinlik qilyotgan boʻlsangiz keyingi [Huklar uchun qoidalar](/docs/hooks-rules.html) sahifasiga oʻtishingiz mumkin.**
+**Taʼsir huki qanday ishlashini yaxshi tushungan boʻlsangiz yoki sizga qiyinlik qilayotgan boʻlsangiz keyingi [Huklar uchun qoidalar](/docs/hooks-rules.html) sahifasiga oʻtishingiz mumkin.**
 
 -------------
 
@@ -271,7 +271,7 @@ Tajribali React foydalanuvchilari uchun qiziq boʻlgan, `useEffect`ning baʼzi j
 
 ### Maslahat: Vazifasiga qarab taʼsirlarni ajrating {#tip-use-multiple-effects-to-separate-concerns}
 
-Klasslarning hayotiy-jarayon metodlarida bir-biriga bogʻliq boʻlmagan mantiqiy qismlar saqlanadi, bogʻliqlari esa bir necha metodlarga ajratiladi. Bu bizni huklarni yaratishga undagan [sabab](/docs/hooks-intro.html#complex-components-become-hard-to-understand)lardan biri ekanligi haqida aytgan edik. Ushbu komponent sizga tanish boʻlgan sanagich va doʻstingizning statusi haqidagi misollardagi mantiqiy qismlarni birlashtiradi:
+Klasslarning hayotiy jarayon metodlarida bir-biriga bogʻliq boʻlmagan mantiqiy qismlar saqlanadi, bogʻliqlari esa bir necha metodlarga ajratiladi. Bu bizni huklarni yaratishga undagan [sabab](/docs/hooks-intro.html#complex-components-become-hard-to-understand)lardan biri ekanligi haqida aytgan edik. Ushbu komponent sizga tanish boʻlgan sanagich va doʻstingizning statusi haqidagi misollardagi mantiqiy qismlarni birlashtiradi:
 
 ```js
 class FriendStatusWithCounter extends React.Component {
@@ -334,7 +334,7 @@ function FriendStatusWithCounter(props) {
 }
 ```
 
-Hayotiy-jarayon metodlaridan farqli, **huklar bilan kod nima qilishiga qarab, ularni ajrata olamiz**. React komponent ishlatgan *har bir* taʼsirni yozilgan ketma-ketligida amalga oshirib chiqadi.
+Hayotiy jarayon metodlaridan farqli, **huklar bilan kod nima qilishiga qarab, ularni ajrata olamiz**. React komponent ishlatgan *har bir* taʼsirni yozilgan ketma-ketligida amalga oshirib chiqadi.
 
 ### Sharh: Nega Taʼsirlar har yangilanishda chaqiriladi {#explanation-why-effects-run-on-each-update}
 
@@ -407,7 +407,7 @@ function FriendStatus(props) {
   });
 ```
 
-Bu unday bagdan holis. (Hech qanday oʻzgartirish kiritmasak ham.)
+Bu unday bagdan xolis. (Hech qanday oʻzgartirish kiritmasak ham.)
 
 Yangilanishlarni boshqarish uchun hech qanday maxsus kod kerak emas, chunki `useEffect` *boshidan* bu ishni oʻzi qiladi. U yangi taʼsirlarni amalga oshirishdan oldin eskilarini tozalab chiqadi. Obuna boʻlish va uni bekor qilish ortidan komponent nimalar qilishini tasavvur qilib koʻramiz:
 
@@ -436,7 +436,7 @@ Baʼzi holatlarda, har chizishda taʼsirlarni tozalash yoki amalga oshirish tezl
 ```js
 componentDidUpdate(prevProps, prevState) {
   if (prevState.count !== this.state.count) {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Siz ${this.state.count} marta bosdingiz`;
   }
 }
 ```
@@ -445,13 +445,13 @@ Bu ish koʻp talab qilingani uchun `useEffect` huki APIʼda bu koʻzda tutilgan.
 
 ```js{3}
 useEffect(() => {
-  document.title = `You clicked ${count} times`;
+  document.title = `Siz ${count} marta bosdingiz`;
 }, [count]); // count oʻzgarsagina, taʼsir koʻrsatiladi
 ```
 
-Yuqoridagi misolda, ikkinchi argument sifatida `[count]`ni berib yubordik. Bu nima degani? Agar `count`ni `5` desak, qayta chizishdan keyin komponentimizdagi `count` haliyam `5`ga teng boʻlsa, React oldingi chizishdagi `[5]` bilan keyingi chizishdagi `[5]`ni solishtiradi. Massivdagi barcha qiymatlar tengligi uchun (`5 === 5`), React (oʻsha) taʼsirni tashlab ketadi. Bu bilan kodni iloji boricha yaxshiladik.
+Yuqoridagi misolda, ikkinchi argument sifatida `[count]`ni berib yubordik. Bu nima degani? Agar `count`ni `5` desak, qayta chizishdan keyin komponentimizdagi `count` hali ham `5`ga teng boʻlsa, React oldingi chizishdagi `[5]` bilan keyingi chizishdagi `[5]`ni solishtiradi. Massivdagi barcha qiymatlar tengligi uchun (`5 === 5`), React (oʻsha) taʼsirni tashlab ketadi. Bu bilan kodni iloji boricha yaxshiladik.
 
-`count` qiymati `6`ga oʻzgarganidan keyingi chizishda, React oldingi chizishdagi massiv qiymatlari `[5]` bilan keyingi chizishdagi massivni `[6]` solishtiradi. Bu safar, `5 !== 6` ekanligi uchun React taʼsirni amalga oshiradi. Massivda birnechta qiymatlar boʻladigan boʻlsa, ularni bittaginasi oʻzgargan boʻlsa ham React taʼsirni qayta amalga oshiradi.
+`count` qiymati `6`ga oʻzgarganidan keyingi chizishda, React oldingi chizishdagi massiv qiymatlari `[5]` bilan keyingi chizishdagi massivni `[6]` solishtiradi. Bu safar, `5 !== 6` ekanligi uchun React taʼsirni amalga oshiradi. Massivda bir nechta qiymatlar boʻladigan boʻlsa, ularni bittaginasi oʻzgargan boʻlsa ham React taʼsirni qayta amalga oshiradi.
 
 Bu tozalanishi kerak boʻlgan taʼsirlarga ham amal qiladi:
 
@@ -476,7 +476,7 @@ Kelajakda, ikkinchi argument bajarilish davridagi oʻzgarishlar ortidan oʻz-oʻ
 >
 >Taʼsirni faqat bir marta amalga oshirib hamda tozalamoqchi boʻlsangiz (oʻrnatilgani va tushirilganida), ikkinchi argument sifatida boʻsh massiv berib yuborishingiz (`[]`) mumkin. Bu orqali React taʼsiringiz *hech qanday* holat yoki kiritmaga boʻysunmasligini biladi va uni qayta yurgizmaydi. Bunga alohida holat sifatida qaralmaydi -- taʼsir oʻziga kerakli massivga qarab, odatiy ishlash usulida  davom etadi .
 >
->Boʻsh massiv (`[]`) berib yuborilganida, taʼsir ichidagi kiritma hamda holat qiymatlari boshlangʼich holatida qolagi. `[]` berib yuborish bizga tanish `componentDidMount` bilan `componentWillUnmount`ning andazasiga yaqin va odatda taʼsirlarni koʻp marta qayta ishlatmaslik uchun [yaxshiroq](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [yechimlar](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) ham mavjud. Esdan chiqarmangki, bravzer barcha oʻzgarishlarni chizib tugatmaganicha, React `useEffect`ni chaqirilishini orqaga surib turadi, shu uchun qoʻshimcha ish qilishga muammo sifatida qaramang.
+>Boʻsh massiv (`[]`) berib yuborilganida, taʼsir ichidagi kiritma hamda holat qiymatlari boshlangʼich holatida qoladi. `[]` berib yuborish bizga tanish `componentDidMount` bilan `componentWillUnmount`ning andazasiga yaqin va odatda taʼsirlarni koʻp marta qayta ishlatmaslik uchun [yaxshiroq](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [yechimlar](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) ham mavjud. Esdan chiqarmangki, brauzer barcha oʻzgarishlarni chizib tugatmaganicha, React `useEffect`ni chaqirilishini orqaga surib turadi, shuning uchun qoʻshimcha ish qilishga muammo sifatida qaramang.
 >
 >[`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) toʻplamimizning boʻlagi hisoblanadigan  [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) qoidasini ishlatishni maslahat beramiz. U taʼsir boʻysunadigan qiymatlar notoʻgʻri qoʻyilganligidan ogohlantirib, yechim taklif qiladi.
 
@@ -484,6 +484,6 @@ Kelajakda, ikkinchi argument bajarilish davridagi oʻzgarishlar ortidan oʻz-oʻ
 
 Tabriklaymiz! Sahifa ancha choʻzilib ketdi, ammo umid qilamizki oxiriga kelib taʼsirlar haqidagi savollaringizga javob topdingiz. Holat va Taʼsir huklari haqida oʻrganib boʻldingiz va bu ikkalasidan foydalanib *anchagina* narsalar qilishingiz mumkin. Bular klasslar ishlatiladigan koʻpgina vaziyatlarni qamrab oladi. [Qoʻshimcha huklar](/docs/hooks-reference.html) haqida bilish zarar qilmaydi.
 
-Huklarni yaratishga [undagan](/docs/hooks-intro.html#motivation) bir qancha muammolar yechilyotganini koʻra boshladik. Taʼsirni tozalash `componentDidUpdate` hamda `componentWillUnmount`dagi nusxa koʻchirishlarni tugatib, bir-biriga aloqador kodlarni yaqinlashtirgani shuning bilan birga bagsiz kod yozishga yordam berishini koʻrdik. Klasslarda qilishni iloji boʻlmagan ish yaʼni, Taʼsirlarni vazifasiga qarab ajratishni haqida oʻrganib oldik.
+Huklarni yaratishga [undagan](/docs/hooks-intro.html#motivation) bir qancha muammolar yechilayotganini koʻra boshladik. Taʼsirni tozalash `componentDidUpdate` hamda `componentWillUnmount`dagi nusxa koʻchirishlarni tugatib, bir-biriga aloqador kodlarni yaqinlashtirgani shuning bilan birga bagsiz kod yozishga yordam berishini koʻrdik. Klasslarda qilishni iloji boʻlmagan ish yaʼni, Taʼsirlarni vazifasiga qarab ajratishni haqida oʻrganib oldik.
 
-Bu nuqtaga kelib, Huklar qanday ishlashiga qiziqayotgan boʻlishingiz mumkin. Qayta chizishlar orasida React qanday biladiki qaysi `useState` chaqiruvi uchun qaysi holat oʻzgaruvchisiga tegishli? Har yangilanishda React qanday qilib oldingi va keyingi taʼsirlarni "toʻgʻirlab" keta olyapti? **Keyingi sahifada [Huklar uchun qoidalar](/docs/hooks-rules.html) haqida oʻrganishingiz mumkin -- ular Huklarni ishlatadigan asosiy narsalar.**
+Bu nuqtaga kelib, Huklar qanday ishlashiga qiziqayotgan boʻlishingiz mumkin. Qayta chizishlar orasida React qanday biladiki qaysi `useState` chaqiruvi uchun qaysi holat oʻzgaruvchisiga tegishli? Har yangilanishda React qanday qilib oldingi va keyingi taʼsirlarni "toʻgʻrilab" keta olyapti? **Keyingi sahifada [Huklar uchun qoidalar](/docs/hooks-rules.html) haqida oʻrganishingiz mumkin -- ular Huklarni ishlatadigan asosiy narsalar.**
