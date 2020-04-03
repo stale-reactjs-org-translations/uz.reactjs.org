@@ -116,7 +116,7 @@ function Example() {
 
 **`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlarini amalga oshirganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
 
-**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
+**Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisini (yoki kiritmalarni (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
 
 **`useEffect` har bir chizilishdan soʻng yurgiziladimi?** Ha! Odatda, u birinchi chizilish *hamda* har bir oʻzgarishdan soʻng yurgiziladi. (Keyinroq buni [qanday oʻzgartirish](#tip-optimizing-performance-by-skipping-effects) haqida gaplashamiz.) "Oʻrnatilish" yoki "yangilanishga" asoslangan fikrdan koʻra, taʼsirlar "chizishdan keyin" amalga oshadi deb firklash ancha tushinarliroq. React taʼsirlarni DOM oʻzgartirilganidan soʻng chaqirilishini kafolatlaydi.
 
