@@ -45,7 +45,7 @@ React komponentlarda ikki xil tashqi taʼsirlar bor: tozalash talab qilmaydigan,
 
 ## Tozalanmaydigan tashqi taʼsirlar {#effects-without-cleanup}
 
-Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - buni tozalashni qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
+Baʼzida, **React DOMʼni yangilaganidan soʻng qoʻshimcha kodni** yurgizishimiz kerak. Tarmoq soʻrovi, DOMʼni qoʻlda oʻzgartirish va loglash tozalash - buni tozalashni talab qilmaydigan tashqi taʼsirlarga yaqqol misoldir. Bunday deyishimizga sabab bu kodlarni yurgizib ular haqida unuta olamiz. Qani endi klasslar hamda huklar qanday qilib tashqi taʼsirlarni amalga oshirishini solishtiramiz.
 
 ### Klasslardagi misol {#example-using-classes}
 
