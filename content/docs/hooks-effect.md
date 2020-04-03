@@ -114,7 +114,7 @@ function Example() {
 }
 ```
 
-**`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlari amalga oshganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
+**`useEffect` nima ish bajaradi?** Ushbu huk orqali, Reactʼga komponentni chizgandan soʻng nima qilishni aytishingiz mumkin. React berib yuborgan funksiyangizni eslab qoladi (bu narsani "taʼsir" deb ataymiz), hamda DOM oʻzgarishlarini amalga oshirganidan soʻng chaqiradi. Bu taʼsirda, biz hujjat sarlavhasini oʻzgartirmoqdamiz, buni oʻrniga maʼlumot olish yoki ixtiyoriy APIʼdan biror narsani chaqirishimiz ham mumkin.
 
 **Nega `useEffect` komponent ichida chaqirilmoqda?** `useEffect`ni komponentning ichida joylash orqali `count` holat oʻzgaruvchisiga (yoki kiritmalarga (props)) taʼsir ichidan turib ishlata olamiz. Buni oʻqish uchun bizga hech qanday API kerak emas -- u allaqachon funksiya qamrovi ichida. Huk JavaScript yopilishlarini (closureʼlarni) ishlatadi va faqat React uchun tanish boʻlgan API yaratilishini oldini oladi.
 
