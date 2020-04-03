@@ -85,7 +85,7 @@ class Example extends React.Component {
 
 **Klasslarda bitta kodni ikki hayotiy jarayon metodlari ichida nusxalashga majbur ekanligimizga** eʼtibor qarating.
 
-Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Hayolan, biz uni harsafar chizilishdan (render) soʻng amalga oshishini hohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
+Chunki koʻp holatlarda bitta taʼsirni komponent hozirgina oʻrnatilganligi yoki yangilanganligidan qatʼiy nazar amalga oshirishni hohlaymiz. Xayolan, biz uni har safar chizilishdan (render) soʻng amalga oshishini xohlaymiz -- lekin React klass komponentlarda bunaqa metod yoʻq. Oʻsha boʻlakni alohida metodga ajrata olamiz, lekin baribir uni ikka marta chaqirishimiz kerak.
 
 Qani endi xuddi shu narsani `useEffect` huki bilan amalga oshiramiz.
 
