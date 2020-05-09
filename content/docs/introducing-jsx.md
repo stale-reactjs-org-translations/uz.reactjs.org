@@ -6,10 +6,10 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Ushbu o'zgaruvchini yaratilishini ko'rib chiqing:
 
 ```js
-const element = <h1>Hello, world!</h1>;
+const element = <h1>Assalom, dunyo!</h1>;
 ```
 
 This funny tag syntax is neither a string nor HTML.
