@@ -34,4 +34,4 @@ Siz foydalanayotgan CDN-ning `Access-Control-Allow-Origin: *` HTTP headerini o'r
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-Bu React 16 va undan keyingi versiyalarida [xatolarni boshqarish tajribasini](/blog/2017/07/26/error-handling-in-react-16.html) ni yaxshilaydi.
+Bu React 16 va undan keyingi versiyalarida [xatolarni boshqarish tajribasi](/blog/2017/07/26/error-handling-in-react-16.html) ni yaxshilaydi.
