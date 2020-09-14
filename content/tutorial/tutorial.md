@@ -172,7 +172,11 @@ JSX da JavaScriptdan to'liq foydalanishingiz mumkin. JSX da jingalak  qavs ichig
 
 Yuqoridagi `ShoppingList` komponenti faqat DOM ga oid `<div/>` va `<li /> `kabi elementlarni ko'rsatadi. Ammo siz maxsus React elementlarni yaratishingiz va namoyish etishingiz ham mumkin. Masalan, endi biz hamma xaridlar ro'yxatiga komponentiga `<ShoppingList />` yozib murojaat qilishimiz mumkin. Reaktning har bir komponenti inkapsulyatsiya qilingan va mustaqil ravishda ishlay oladi; bu oddiy komponentlardan murakkab ifoydalanuvchi interfeyslarini yaratishga imkon beradi.
 
+<<<<<<< HEAD
 ## Boshlang'ich kodni ko'zdan kechirish {#inspecting-the-starter-code}
+=======
+### Inspecting the Starter Code {#inspecting-the-starter-code}
+>>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 Agar siz darslikni **brauzerda** ishlamoqchi bo'lsangiz, ushbu kodni yangi ichki oynada oching: **[Boshlang'ich kod](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Agar siz darslik ustida **mahalliy dasturlashlash muhiti** orqali ishlamoqchi bo'lsangiz, o'rniga `src/index.js`-ni loyiha papkangizda oching (sozlash paytida siz ushbu faylni o'zgartirgan edingiz).
 
