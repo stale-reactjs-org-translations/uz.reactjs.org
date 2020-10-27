@@ -9,18 +9,20 @@ next: release-channels.html
 React va ReactDOM ikkalasi ham CDN orqali mavjud.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
 Yuqoridagi versiyalar faqat dasturlash uchun mo'ljallangan va foydalanuv uchun mos emas. React-ning minimallashtirilgan va optimallashtirilgan  foydalanuv versiyalari quyidagi CDN lar orqali mavjud:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-`React` va `React-dom` ning ma'lum bir versiyasini yuklash uchun `16` raqamini versiya raqami bilan almashtiring.
+
+`React` va `React-dom` ning ma'lum bir versiyasini yuklash uchun `17` raqamini versiya raqami bilan almashtiring.
+
 
 ### Nima uchun `crossorigin` Atributi? {#why-the-crossorigin-attribute}
 
