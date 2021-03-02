@@ -2,8 +2,6 @@
 id: higher-order-components
 title: Yuqori darajadagi komponentlar
 permalink: docs/higher-order-components.html
-prev: web-components.html
-next: render-props.html
 ---
 
 Yuqori darajadagi komponent (HOC) - bu mantiqni qayta ishlatishning ilg'or usullaridan biri. HOClar React API-ning bir qismi emas, lekin ko'pincha tarkibiy qismlarning kompozitsion xususiyati tufayli ishlatiladi.
