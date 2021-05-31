@@ -5,8 +5,4 @@ order: 2
 
 Biz sizning boshqa texnologiya to'plamingiz haqida har xil taxminlar qilmaymiz, shuning uchun mavjud kodni qayta yozmasdan React da yangi imkoniy(xususiyat)lar yartishishga imkon beradi.
 
-<<<<<<< HEAD
 Shuningdek React Node dan foydalangan holda server da va [React Native](https://facebook.github.io/react-native/) dan foydalangan holda mobil ilovalarda  ishlatiladi.
-=======
-React can also render on the server using Node and power mobile apps using [React Native](https://reactnative.dev/).
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
