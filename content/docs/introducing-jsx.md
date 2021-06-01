@@ -87,27 +87,27 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### JSX Atributlarni Ishlatish {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Matnni atribut sifatida belgilash uchun qo'shtirnoq ishlatishingiz mumkin:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Atributga JavaScript ifodasini biriktirish uchun jingalak qavsdan foydalansangiz ham bo'ladi:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+JavaScript ifodasini atributga biriktirganda, jingalak qavs atrofida qo'shtirnoq ishlatmang. Siz yo qo'shtirnoq (matn uchun) yo jingalak qavslar (ifodalar uchun) ishlatishingiz kerak, ikkalasini birdaniga emas.
 
->**Warning:**
+>**Ogohlantirish:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>JSX HTML dan ko'ra JavaScriptga yaqinroq bo'lgani uchun, React DOM xususiyat nomlashda HTML atribut nomlarini o'rniga xususiyatlarni `tuyasimonYozuv` shaklida nomlash odatini ishlatadi.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>Masalan, `class` JSX da [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)ga o'zgaradi, va `tabindex` esa [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)ga o'zgaradi.
 
 ### Specifying Children with JSX {#specifying-children-with-jsx}
 
