@@ -1,37 +1,39 @@
 ---
 id: cdn-links
-title: CDN Links
+title: CDN Havolalar
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
 next: release-channels.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+React va ReactDOM ikkalasi ham CDN orqali mavjud.
 
 ```html
 <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+Yuqoridagi versiyalar faqat dasturlash uchun mo'ljallangan va foydalanuv uchun mos emas. React-ning minimallashtirilgan va optimallashtirilgan  foydalanuv versiyalari quyidagi CDN lar orqali mavjud:
 
 ```html
 <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `17` with the version number.
 
-### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
+`React` va `React-dom` ning ma'lum bir versiyasini yuklash uchun `17` raqamini versiya raqami bilan almashtiring.
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
+
+### Nima uchun `crossorigin` Atributi? {#why-the-crossorigin-attribute}
+
+Agar siz React ni CDN orqali ishlatmoqchi bo'lsangiz, [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) atributini qo'shishni tavsiya etamiz:
 
 ```html
 <script crossorigin src="..."></script>
 ```
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+Siz foydalanayotgan CDN-ning `Access-Control-Allow-Origin: *` HTTP headerini o'rnatganligini tekshirishni tavsiya etamiz.
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+Bu React 16 va undan keyingi versiyalarida [xatolarni boshqarish tajribasi](/blog/2017/07/26/error-handling-in-react-16.html) ni yaxshilaydi.
