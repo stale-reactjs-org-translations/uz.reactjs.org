@@ -28,9 +28,9 @@ React da JSX ni ishtatish [zarur emas](/docs/react-without-jsx.html), lekin ko'p
 
 Endi buni chetga surgan holda, qani boshladik!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### JSX Ichida Ifoda Biriktirish {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+Quyidagi misolda, biz `name` degan o'zgaruvchi hosil qilamiz va uni JSX ichida jingalak qavsga o'ragan holda ishlatamiz:
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+JSX dagi jingalak qavslar ichida istalgan to'g'ri [JavaScript ifodas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)ini qo'yishingiz mumkin. Masalan, `2 + 2`, `user.firstName`, yoki `formatName(user)`, bu hammasi to'g'ri JavaScript ifodalari.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Quyidagi misolda, biz `formatName(user)` JavaScript funksiyasi natijasini `<h1>` elementiga biriktiramiz. 
 
 ```js{12}
 function formatName(user) {
@@ -70,7 +70,7 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+Biz JSX ni o'qish osonroq bo'lishi uchun bir nechta qatorlarga  ajratib qo'ydik. Bunday qilish aslida shart emas, agar ajratadigan bo'lsangiz, [avtomat ravishda nuqta-vergul qo'yish](https://stackoverflow.com/q/2846283) tuzog'ini oldini olish uchun, uni qavs ichiga joylashingizni ham maslahat beramiz.
 
 ### JSX is an Expression Too {#jsx-is-an-expression-too}
 
