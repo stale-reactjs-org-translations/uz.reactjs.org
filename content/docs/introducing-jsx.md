@@ -103,21 +103,21 @@ const element = <img src={user.avatarUrl}></img>;
 
 JavaScript ifodasini atributga biriktirganda, jingalak qavs atrofida qo'shtirnoq ishlatmang. Siz yo qo'shtirnoq (matn uchun) yo jingalak qavslar (ifodalar uchun) ishlatishingiz kerak, ikkalasini birdaniga emas.
 
->**Ogohlantirish:**
+>**Ogohlantiruv:**
 >
 >JSX HTML dan ko'ra JavaScriptga yaqinroq bo'lgani uchun, React DOM xususiyat nomlashda HTML atribut nomlarini o'rniga xususiyatlarni `tuyasimonYozuv` shaklida nomlash odatini ishlatadi.
 >
 >Masalan, `class` JSX da [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)ga o'zgaradi, va `tabindex` esa [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)ga o'zgaradi.
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### JSX Bilan Bolalarni Belgilash {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Agar teg ichi bo'sh bo'lsa, tezda `/>` bilan yopishingiz mumkin, huddi XML ga o'xshab:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX teglari bolalarini o'z ichiga olgan bo'lishi mumkin:
 
 ```js
 const element = (
