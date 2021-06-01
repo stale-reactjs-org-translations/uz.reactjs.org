@@ -140,11 +140,11 @@ const element = <h1>{title}</h1>;
 
 React DOM JSX ga biriktirilgan har qanday qiymatlarni chizishdan oldin [to'g'rilab qo'yadi](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html). Natijada ilovangizda ochiqchasiga yozilmagan hech qanday narsaga in'eksiya qilolmasligingizni ta'minlaydi. Hamma narsa chizishdan avval matnga o'giriladi. Bu [saytlar-aro-skriptlash (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) hujumlarni oldini olishga yordam beradi.
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX Obyektni Tashkil Qiladi {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel JSX ni `React.createElement()` funksiya chaqiruvlariga kompilyatsiya qiladi.
 
-These two examples are identical:
+Bu ikki misol bir xil natijaga ega:
 
 ```js
 const element = (
@@ -162,10 +162,10 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()` sizga xatosiz kod yozishga yordam bergan holda, bir nechta tekshiruvlarni amalga oshiradi, lekin oxir oqibat mana shunga o'xshagan obyekt yaratadi:
 
 ```js
-// Note: this structure is simplified
+// Eslatma: bu tarkib soddalashtirilgan
 const element = {
   type: 'h1',
   props: {
@@ -175,10 +175,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Bu obyektlar "React elementlari" hisoblanadi. Tasavvur qilish uchun siz bularni ekranda ko'rmoqchi bo'lgan narsalarni ma'lumotlari deb faraz qilsangiz bo'ladi. React bu obyektlarni o'qiydi va DOM ni qurish va uni yangilab turish uchun ishlatadi.
 
-We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+Biz React elementlarini DOM da chizishni [keyingi bo'limda](/docs/rendering-elements.html) yoritamiz.
 
->**Tip:**
+>**Maslahat:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>Biz yoqtirgan redaktoringizda ES6 va JSX kod to'g'ri yoritilishi uchun [Babel](https://babeljs.io/docs/en/next/editors) bilan sozlashingizni maslahat beramiz.
