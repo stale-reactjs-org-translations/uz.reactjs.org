@@ -1,6 +1,6 @@
 ---
 id: cdn-links
-title: CDN zanjirlar
+title: CDN Havolalar
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
 next: release-channels.html
