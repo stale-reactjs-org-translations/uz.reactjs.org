@@ -4,7 +4,7 @@ title: Yuqori darajadagi komponentlar
 permalink: docs/higher-order-components.html
 ---
 
-Yuqori darajadagi komponent (HOC) - bu mantiqni qayta ishlatishning ilg'or usullaridan biri. HOClar React API-ning bir qismi emas, lekin ko'pincha tarkibiy qismlarning kompozitsion xususiyati tufayli ishlatiladi.
+Yuqori darajadagi komponent (HOC) - bu komponent mantiqni qayta ishlatishning ilg'or usullaridan biri. HOClar React API-ning bir qismi emas. Ular Reactning kompozitsion xususiyatidan hosil bo'lgandir.
 
 Oddiy qilib aytganda, **yuqori darajadagi komponent - bu komponentni qabul qiladigan va yangi komponentni qaytaradigan funktsiya.**
 
@@ -12,7 +12,7 @@ Oddiy qilib aytganda, **yuqori darajadagi komponent - bu komponentni qabul qilad
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
 ```
 
-Agar oddiy komponent rekvizitlarni UI ga aylantirsa, unda yuqori darajadagi komponent komponentni boshqa komponentga o'zgartiradi.
+Agar oddiy komponent propsni UI ga aylantirsa, unda yuqori darajadagi komponent komponentni boshqa komponentga o'zgartiradi.
 
 HOC ko'pincha Redux-da [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) va Relay-da [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) kabi uchinchi tomon kutubxonalarida uchraydi..
 
@@ -22,7 +22,7 @@ Ushbu bobda biz nima uchun yuqori darajadagi komponentlar foydali ekanligini va 
 
 > **Eslatma**
 >
-> Ilgari biz aralashtirish funktsiyasini amalga oshirish uchun miksinlarni tavsiya qilgan edik, ammo vaqt o'tishi bilan ular foydadan ko'ra ko'proq zarar yetkazishini aniqladik. Nima uchun aralashmalarni olib tashlashga qaror qilganimizni va qanday qilib eski qismlarni qayta yozishni [bilib oling](/blog/2016/07/13/mixins-considered-harmful.html).
+> Ilgari biz aralashtirish funktsiyasini amalga oshirish uchun miksinlarni tavsiya qilgan edik, ammo vaqt o'tishi bilan ular foydadan ko'ra ko'proq zarar yetkazishini aniqladik. Nima uchun miksinlarni olib tashlashga qaror qilganimizni va qanday qilib eski qismlarni qayta yozishni [bilib oling](/blog/2016/07/13/mixins-considered-harmful.html).
 
 An'anaviy komponentlarni qayta ishlatish mumkin, ammo ular ba'zi muammolarni osonlikcha hal qilmaydi.
 
@@ -40,7 +40,7 @@ class CommentList extends React.Component {
   }
 
   componentDidMount() {
-    // Ogohlantirishlarga obuna bo'lish
+    // O'zgarishlarga obuna bo'lish
     DataSource.addChangeListener(this.handleChange);
   }
 
@@ -50,7 +50,7 @@ class CommentList extends React.Component {
   }
 
   handleChange() {
-    // Sharhlarni state ga o'zlashtirish
+    // Ma'lumotlar manbaasi o'zgarganda, komponent stateni yangilash
     this.setState({
       comments: DataSource.getComments()
     });
@@ -68,7 +68,7 @@ class CommentList extends React.Component {
 }
 ```
 
-Endi biz ma'lum bir nashrdagi o'zgarishlarni kuzatadigan va biz bilgan namunani takrorlaydigan yangi komponentni yaratamiz:
+Endi biz oldingi komponentga oxshagan, ma'lum bir nashrdagi o'zgarishlarni kuzatadigan yangi komponentni yaratamiz:
 
 ```js
 class BlogPost extends React.Component {
@@ -100,7 +100,7 @@ class BlogPost extends React.Component {
 }
 ```
 
-`CommentList` va `BlogPost` o'rtasidagi farq shundaki, ular turli xil DataSource usullarini chaqirishadi va har xil natijalarni berishadi. Biroq, aksariyat hollarda ular o'xshash:
+`CommentList` va `BlogPost` o'rtasidagi farq shundaki, ular turli xil DataSource funktsiyalarini chaqirishadi va har xil natijalarni berishadi. Biroq, ko'p hollarda ular o'xshash:
 
 - Ikkala komponent ham o'rnatilganida `DataSource` xabarnomalariga obuna bo'lishadi.
 - `DataSource` o'zgarganda ikkalasi ham ichki holatni o'zgartiradi.
@@ -108,7 +108,7 @@ class BlogPost extends React.Component {
 
 Katta ilovalarda "`DataSource`-ga obuna bo'lish, keyin `setState`-ni chaqirish" to'plami juda tez-tez takrorlanadi. Ushbu funksiyani ajratib olish va uni boshqa komponentlarda ishlatish juda yaxshi bo'lar edi.
 
-Keling, `withSubscription` funktsiyasini amalga oshiraylik - u tarkibiy qismlarni yaratadi va ularni DataSource yangilanishlariga obuna qiladi (masalan, `CommentList` va `BlogPost`). Funktsiya o'ralgan komponentni qabul qiladi va `props`lar orqali yangi ma'lumotlarni uzatadi:
+Keling, `withSubscription` funktsiyasini amalga oshiraylik - u yangi komponent yaratadi va uni DataSource yangilanishlariga obuna qiladi (masalan, `CommentList` va `BlogPost`). Funktsiya komponentni qabul qiladi va `props`lar orqali yangi ma'lumotlarni uzatadi:
 
 ```js
 const CommentListWithSubscription = withSubscription(
@@ -124,7 +124,7 @@ const BlogPostWithSubscription = withSubscription(
 
 Birinchi parametr - bu o'rash uchun komponent. Ikkinchisi, biz uchun kerakli ma'lumotlarni oladigan funktsiya, u `DataSource` va joriy `props`larni oladi.
 
-`CommentListWithSubscription` va `BlogPost Subscription` ko'rsatilganda, `CommentList` va `Blog Post` `DataSource`dan olingan eng so'nggi ma'lumotlarni `data` orqali uzatadi.:
+`CommentListWithSubscription` va `BlogPost Subscription` ko'rsatilganda, `CommentList` va `Blog Post` `DataSource`dan olingan eng so'nggi ma'lumotlarni `data` prop orqali uzatadi.:
 
 ```js
 // Bu funksiya komponentni qabul qiladi...
@@ -163,17 +163,17 @@ function withSubscription(WrappedComponent, selectData) {
 }
 ```
 
-Shuni esda tutingki, HOC hech narsani o'zgartirmaydi va o'ralgan komponentning xatti-harakatini meros qilib olmaydi, aksincha HOC tarkibidagi asl komponentni konteynerga o'raydi. HOC noaniq ta'sirga ega bo'lgan sof funktsiyadir.
+Shuni esda tutingki, HOC berilgan komponentni o'zgartirmaydi va uning xatti-harakatini meros qilib olmaydi, aksincha HOC tarkibidagi asl komponentni konteynerga o'raydi. HOC noaniq ta'sirga ega bo'lgan sof funktsiyadir.
 
-Hammasi shu! Qaytariladigan komponent konteynerga yuborilgan barcha `props`larni, shuningdek, `prop` ma'lumotlarini oladi. HOC uchun ma'lumotlarning qanday ishlatilishi muhim emas va aylantirilgan komponent qayerdan kelib chiqqanligi muhim emas.
+Hammasi shu! Qaytariladigan komponent konteynerga yuborilgan barcha `props`larni, shuningdek, `data` propni oladi. HOC uchun ma'lumotlarning qanday ishlatilishi muhim emas va berligan komponent qayerdan malumot kelishi haqida o'ylamaydi.
 
-`WithSubscription` muntazam funktsiyasi bo'lgani uchun, biz istalgan miqdordagi argumentlarni olib tashlashimiz yoki qo'shishimiz mumkin. Masalan, biz `data` nomini sozlanishi va HOCni o'ralgan komponentdan ajratib qo'yishimiz mumkin. Biz shuningdek, `shouldComponentUpdate` yoki ma'lumotlar manbai konfiguratsiyasi uchun argument qo'sha olamiz. Bularning barchasi mumkin, chunki HOC komponentlarni yaratish jarayonini to'liq nazorat qiladi.
+`withSubscription` oddiy funktsiyasi bo'lgani uchun, biz istalgan miqdordagi argumentlarni olib tashlashimiz yoki qo'shishimiz mumkin. Masalan, biz `data` nomini sozlanishi va HOCni o'ralgan komponentdan ajratib qo'yishimiz uchun. Biz shuningdek, `shouldComponentUpdate` yoki ma'lumotlar manbai konfiguratsiyasi uchun argument qo'sha olamiz. Bularning barchasi mumkin, chunki HOC komponentlarni yaratish jarayonini to'liq nazorat qiladi.
 
-`WithSubscription` va o'ralgan komponent o'rtasidagi aloqa, xuddi oddiy komponentlar kabi rekvizitlar yordamida amalga oshiriladi. Shu tufayli, bir xil rekvizitlarni o'ralgan komponentga o'tkazib yuborish sharti bilan, biz bir HOCni boshqasiga osongina almashtirishimiz mumkin. Bu, masalan, ma'lumot olish kutubxonasini o'zgartirishga qaror qilsak foydali bo'lishi mumkin.
+`withSubscription` va o'ralgan komponent o'rtasidagi aloqa, xuddi oddiy komponentlar kabi proplar yordamida amalga oshiriladi. Shu tufayli, bir xil proplarni o'ralgan komponentga o'tkazib yuborish sharti bilan, biz bir HOCni boshqasiga osongina almashtirishimiz mumkin. Bu, masalan, ma'lumot olish kutubxonasini o'zgartirishga qaror qilsak foydali bo'lishi mumkin.
 
-## O'ralgan komponentning mutatsiyasini qilmang. Kompozitsiyadan foydalaning. {#dont-mutate-the-original-component-use-composition}
+## O'ralgan komponentning mutatsiya qilmang. Kompozitsiyadan foydalaning. {#dont-mutate-the-original-component-use-composition}
 
-HOC tarkibidagi komponentning prototipini o'zgartirishga (yoki boshqa usul bilan mutatsiyaga) o'zgartirish vasvasasiga tushmang.
+HOC tarkibidagi komponentning prototipini o'zgartirmang (yoki mutatsiya qilmang) .
 
 ```js
 function logProps(InputComponent) {
@@ -181,19 +181,19 @@ function logProps(InputComponent) {
     console.log('Current props: ', this.props);
     console.log('Previous props: ', prevProps);
   };
-  // Agar biz o'ralgan komponentni qaytaradigan bo'lsak, ehtimol biz uni o'zgartirdik.
+  // Biz berilgan komponentni mutatsiya qilib qaytaryabmiz.
   return InputComponent;
 }
 
-// EnhancedComponent rekvizit o'zgarganda konsolga bosib chiqaradi
+// EnhancedComponent prop lar o'zgarganda konsolga bosib chiqaradi
 const EnhancedComponent = logProps(InputComponent);
 ```
 
-Yuqoridagi misolda biz `InputComponent`ni `EnhancedComponent`dan tashqari qayta ishlata olmaymiz. Eng muhimi, agar biz `EnhancedComponent`ni boshqa HOC-ga o'rashni xohlasak, u tarkibiyDidUpdate-ni o'zgartiradi, biz birinchi HOC tomonidan belgilangan funktsiyalarni o'chirib tashlaymiz! Bundan tashqari, `EnhancedComponent` funktsional komponentlar bilan ishlamaydi, chunki ular hayot aylanishining usullaridan mahrum.
+Yuqoridagi misolda biz `InputComponent`ni `EnhancedComponent`dan tashqari qayta ishlata olmaymiz. Eng muhimi, agar biz `EnhancedComponent`ni boshqa HOC-ga o'rashni xohlasak, u `componentDidUpdate` ni o'zgartiradi, biz birinchi HOC tomonidan belgilangan funktsiyalarni o'chirib tashlaymiz! Bundan tashqari, `EnhancedComponent` funktsional komponentlar bilan ishlamaydi, chunki ularda `componentDidUpdate` funktsiyasi yo'q.
 
 Mutatsiyaga uchragan HOClar nozik abstraktsiyalardir, ular boshqa HOClar bilan to'qnashadi, biz ularni aynan nima o'zgarayotganini bilmasdan foydalana olmaymiz.
 
-Mutatsiyaning o'rniga yuqori darajadagi komponentlar tarkibni idishga o'rash orqali kompozitsiyani qo'llashlari kerak:
+Mutatsiyaning o'rniga yuqori darajadagi komponentlar berligan komponent konteyner komponent bilan o'rash orqali kompozitsiyani qo'llashlari kerak:
 
 ```js
 function logProps(WrappedComponent) {
@@ -203,7 +203,7 @@ function logProps(WrappedComponent) {
       console.log('Previous props: ', prevProps);
     }
     render() {
-      // Biz tarkibiy qismni mutatsiyalarsiz idishga o'rab olamiz. Super!
+      // Biz berligan komponentni mutatsiyalarsiz konteynerga o'rab olamiz. Super!
       return <WrappedComponent {...this.props} />;
     }
   }
