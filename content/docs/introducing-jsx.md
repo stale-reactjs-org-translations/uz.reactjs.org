@@ -72,11 +72,11 @@ ReactDOM.render(
 
 Biz JSX ni o'qish osonroq bo'lishi uchun bir nechta qatorlarga  ajratib qo'ydik. Bunday qilish aslida shart emas, agar ajratadigan bo'lsangiz, [avtomat ravishda nuqta-vergul qo'yish](https://stackoverflow.com/q/2846283) tuzog'ini oldini olish uchun, uni qavs ichiga joylashingizni ham maslahat beramiz.
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX O'zi Ham Ifoda {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Kompilyatsiyadan keyin, JSX ifodani o'zi ham oddiy JavaScript funksiya chaqiruvlari hisoblanadi va JavaScript obyektlariga aylanadi.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Bu degani, siz JSX ni `if` bayonotlarida va `for` tsikllarida, o'zgaruvchilarga berishda, argument sifatida qabul qilishda va funksiyalardan qaytarishda ishlatishingiz mumkin
 
 ```js{3,5}
 function getGreeting(user) {
