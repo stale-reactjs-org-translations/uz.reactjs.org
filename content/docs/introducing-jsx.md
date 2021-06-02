@@ -1,6 +1,6 @@
 ---
 id: introducing-jsx
-title: JSX Kirish
+title: JSX ga kirish
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
