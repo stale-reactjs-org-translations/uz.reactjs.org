@@ -181,4 +181,4 @@ Biz React elementlarini DOM da chizishni [keyingi bo'limda](/docs/rendering-elem
 
 >**Maslahat:**
 >
->Biz yoqtirgan redaktoringizda ES6 va JSX kod to'g'ri yoritilishi uchun [Babel](https://babeljs.io/docs/en/next/editors) bilan sozlashingizni maslahat beramiz.
+>Siz yoqtirgan redaktoringizda ES6 va JSX kod to'g'ri yoritilishi uchun [Babel](https://babeljs.io/docs/en/next/editors) bilan sozlashingizni maslahat beramiz.
