@@ -16,7 +16,7 @@ Bu ajoyib yozish uslubi na string na HTML ga o'xshaydi.
 
 Bu JSX deb ataladi, ya'ni JavaScript yozish uslubi kengaytmasi. Biz UI ni qanday ko'rinishga ega bo'lishini tasvirlash uchun shuni React bilan qo'llagan holda ishlatishni maslahat beramiz. JSX sizga boshqa qolip tillarini eslatishi mumkin, lekin u JavaScript ning to'liq kuchi bilan keladi. 
 
-JSX React "elementlari" ni hosil qiladi. Biz ularni DOM ga chizishni [keyingi bo'limda](/docs/rendering-elements.html) ko'rib chiqamiz. Quyida, siz boshlashingiz uchun kerak bo'ladigan JSX ning asoslari bilan tanishib chiqishingiz mumkin
+JSX React "elementlari" ni hosil qiladi. Biz ularni DOM ga chizishni [keyingi bo'limda](/docs/rendering-elements.html) ko'rib chiqamiz. Quyida, siz boshlashingiz uchun kerak bo'ladigan JSX ning asoslari bilan tanishib chiqishingiz mumkin.
 
 ### Nega JSX? {#why-jsx}
 
