@@ -1,36 +1,36 @@
 ---
 id: introducing-jsx
-title: Introducing JSX
+title: JSX ga kirish
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Quyidagi o'zgaruvchi bayonotiga e'tibor bering:
 
 ```js
-const element = <h1>Hello, world!</h1>;
+const element = <h1>Salom Dunyo!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+Bu ajoyib yozish uslubi na string na HTML ga o'xshaydi.
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+Bu JSX deb ataladi, ya'ni JavaScript yozish uslubi kengaytmasi. Biz UI ni qanday ko'rinishga ega bo'lishini tasvirlash uchun shuni React bilan qo'llagan holda ishlatishni maslahat beramiz. JSX sizga boshqa qolip tillarini eslatishi mumkin, lekin u JavaScript ning to'liq kuchi bilan keladi. 
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX React "elementlari" ni hosil qiladi. Biz ularni DOM ga chizishni [keyingi bo'limda](/docs/rendering-elements.html) ko'rib chiqamiz. Quyida, siz boshlashingiz uchun kerak bo'ladigan JSX ning asoslari bilan tanishib chiqishingiz mumkin.
 
-### Why JSX? {#why-jsx}
+### Nega JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React chizish mantig'i boshqa UI matig'lari ( hodisalar bilan qanday ishlanadi, vaqt o'tishi bilan holat qanday o'zgaradi, va ma'lumotlar namoyish qilish uchun qanday tayyorlanadi) bilan tabiiy ravishda boshg'liqligini qo'llab quvvatlaydi
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+Belgilash va mantiq fayllarini alohida fayllarga qo'yib, sun'iy ravishda *texnologiyalarni* ajratish o'rniga, React [*tashvishlarni*](https://en.wikipedia.org/wiki/Separation_of_concerns) erkin bog'langan va har ikkalasini (mantiq va belgilash) o'z ichiga olgan "komponentlar" orqali ajratadi.
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React da JSX ni ishtatish [zarur emas](/docs/react-without-jsx.html), lekin ko'pchilik JavaScript da UI bilan ishlash uchun vizual yordam sifatida ma'qul ko'radi.
 
-With that out of the way, let's get started!
+Endi buni chetga surgan holda, qani boshladik!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### JSX Ichida Ifoda Biriktirish {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+Quyidagi misolda, biz `name` degan o'zgaruvchi hosil qilamiz va uni JSX ichida jingalak qavsga o'ragan holda ishlatamiz:
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+JSX dagi jingalak qavslar ichida istalgan to'g'ri [JavaScript ifodas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)ini qo'yishingiz mumkin. Masalan, `2 + 2`, `user.firstName`, yoki `formatName(user)`, bu hammasi to'g'ri JavaScript ifodalari.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Quyidagi misolda, biz `formatName(user)` JavaScript funksiyasi natijasini `<h1>` elementiga biriktiramiz. 
 
 ```js{12}
 function formatName(user) {
@@ -70,13 +70,13 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+Biz JSX ni o'qish osonroq bo'lishi uchun bir nechta qatorlarga  ajratib qo'ydik. Bunday qilish aslida shart emas, agar ajratadigan bo'lsangiz, [avtomat ravishda nuqta-vergul qo'yish](https://stackoverflow.com/q/2846283) tuzog'ini oldini olish uchun, uni qavs ichiga joylashingizni ham maslahat beramiz.
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX O'zi Ham Ifoda {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Kompilyatsiyadan keyin, JSX ifodani o'zi ham oddiy JavaScript funksiya chaqiruvlari hisoblanadi va JavaScript obyektlariga aylanadi.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Bu degani, siz JSX ni `if` bayonotlarida va `for` tsikllarida, o'zgaruvchilarga berishda, argument sifatida qabul qilishda va funksiyalardan qaytarishda ishlatishingiz mumkin
 
 ```js{3,5}
 function getGreeting(user) {
@@ -87,37 +87,37 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### JSX Atributlarni Ishlatish {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Matnni atribut sifatida belgilash uchun qo'shtirnoq ishlatishingiz mumkin:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Atributga JavaScript ifodasini biriktirish uchun jingalak qavsdan foydalansangiz ham bo'ladi:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+JavaScript ifodasini atributga biriktirganda, jingalak qavs atrofida qo'shtirnoq ishlatmang. Siz yo qo'shtirnoq (matn uchun) yo jingalak qavslar (ifodalar uchun) ishlatishingiz kerak, ikkalasini birdaniga emas.
 
->**Warning:**
+>**Ogohlantiruv:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>JSX HTML dan ko'ra JavaScriptga yaqinroq bo'lgani uchun, React DOM xususiyat nomlashda HTML atribut nomlarini o'rniga xususiyatlarni `tuyasimonYozuv` shaklida nomlash odatini ishlatadi.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>Masalan, `class` JSX da [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)ga o'zgaradi, va `tabindex` esa [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)ga o'zgaradi.
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### JSX Bilan Bolalarni Belgilash {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Agar teg ichi bo'sh bo'lsa, tezda `/>` bilan yopishingiz mumkin, huddi XML ga o'xshab:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX teglari bolalarini o'z ichiga olgan bo'lishi mumkin:
 
 ```js
 const element = (
@@ -128,23 +128,23 @@ const element = (
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX In'ektsiya Hujumlarni Oldini Oladi {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+JSX da foydalanuvchi kiritmalarini biriktirish xavsiz:
 
 ```js
 const title = response.potentiallyMaliciousInput;
-// This is safe:
+// Bu havfsiz:
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+React DOM JSX ga biriktirilgan har qanday qiymatlarni chizishdan oldin [to'g'rilab qo'yadi](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html). Natijada ilovangizda ochiqchasiga yozilmagan hech qanday narsaga in'eksiya qilolmasligingizni ta'minlaydi. Hamma narsa chizishdan avval matnga o'giriladi. Bu [saytlar-aro-skriptlash (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) hujumlarni oldini olishga yordam beradi.
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX Obyektni Tashkil Qiladi {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel JSX ni `React.createElement()` funksiya chaqiruvlariga kompilyatsiya qiladi.
 
-These two examples are identical:
+Bu ikki misol bir xil natijaga ega:
 
 ```js
 const element = (
@@ -162,10 +162,10 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()` sizga xatosiz kod yozishga yordam bergan holda, bir nechta tekshiruvlarni amalga oshiradi, lekin oxir oqibat mana shunga o'xshagan obyekt yaratadi:
 
 ```js
-// Note: this structure is simplified
+// Eslatma: bu tarkib soddalashtirilgan
 const element = {
   type: 'h1',
   props: {
@@ -175,10 +175,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Bu obyektlar "React elementlari" hisoblanadi. Tasavvur qilish uchun siz bularni ekranda ko'rmoqchi bo'lgan narsalarni ma'lumotlari deb faraz qilsangiz bo'ladi. React bu obyektlarni o'qiydi va DOM ni qurish va uni yangilab turish uchun ishlatadi.
 
-We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+Biz React elementlarini DOM da chizishni [keyingi bo'limda](/docs/rendering-elements.html) yoritamiz.
 
->**Tip:**
+>**Maslahat:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>Siz yoqtirgan redaktoringizda ES6 va JSX kod to'g'ri yoritilishi uchun [Babel](https://babeljs.io/docs/en/next/editors) bilan sozlashingizni maslahat beramiz.
