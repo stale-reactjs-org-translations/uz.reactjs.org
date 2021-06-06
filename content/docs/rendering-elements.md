@@ -18,7 +18,7 @@ const element = <h1>Salom Dunyo!</h1>;
 
 Brauzer DOM elementlaridan farqli o'laroq, React elementlari oddiy obyektlar hisoblanadi va ularni yaratish juda arzonga tushadi. React DOM esa DOM ni React elementlariga mos ravishda yangilashni o'z zimmasiga oladi.
 
->**Note:**
+>**Eslatma:**
 >
 >Kimdir elementlarni keng tarqalgan konsepsiya - "komponent" lar bilan adashtirishi mumkin. Komponentlar [keyingi bo'limda](/docs/components-and-props.html) tanishtiriladi. Komponentlar o'zi elementlardan iborat, biz sizga boshqa mavzularga o'tishdan oldin, bu bo'limni yakunlashingizni maslahat beramiz.
 
