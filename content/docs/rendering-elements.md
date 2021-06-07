@@ -58,7 +58,7 @@ Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`se
 
 >**Eslatma:**
 >
->React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kod qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar qamroviga kirishini ko'rib chiqamiz.
+>React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kodni qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar orqali yozishni oʻrganamiz.
 >
 >Mavzularni sakrab ketmasligingizni maslahat beramiz, chunki bular bir biriga bog'liq.
 
@@ -70,6 +70,6 @@ Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni 
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
-Har bir soniyada biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, faqatgina matn tuguni o'zgargani tufayli React DOM shunga yarasha uni yangilaydi.
+Har bir sekundda biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, React DOM faqatgina oʻzgargan matnli elementlarnigina yangilaydi.
 
-Bizning tajribamizda, ayni vaqt davomida UI ni qanday qilib o'zgartirish haqida o'ylashdan ko'ra, ayni vaqtda UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
+Tajribamizdan kelib chiqib aytish mumkinki, UIʼni qanday qilib o'zgartirishdan ko'ra, UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
