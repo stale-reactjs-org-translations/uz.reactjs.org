@@ -44,7 +44,7 @@ Bu sahifada "Hello, world" deb ko'rsatadi.
 
 ## Chizilgan Elementni Yangilash {#updating-the-rendered-element}
 
-React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir rasmga o'xshaydi: bu UI ni ayni vaqt ichidagi bir holatini ifodalaydi.
+React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir kadrga o'xshaydi: bu UI ni ayni vaqt ichidagi bir holatini ifodalaydi.
 
 Bizni bilishimizcha, UI ni yangilashning birdan bir yo'li yangi element hosil qilib uni [`ReactDOM.render()`](/docs/react-dom.html#render) ga uzatishdir.
 
@@ -54,7 +54,7 @@ Mana bu soat misoliga e'tibor bering:
 
 [](codepen://rendering-elements/update-rendered-element)
 
-Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har sekundda [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
+Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
 
 >**Eslatma:**
 >
@@ -70,6 +70,6 @@ Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni 
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
-Har bir sekundda biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, faqatgina matn tuguni o'zgargani tufayli React DOM shunga yarasha uni yangilaydi.
+Har bir soniyada biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, faqatgina matn tuguni o'zgargani tufayli React DOM shunga yarasha uni yangilaydi.
 
 Bizning tajribamizda, ayni vaqt davomida UI ni qanday qilib o'zgartirish haqida o'ylashdan ko'ra, ayni vaqtda UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
