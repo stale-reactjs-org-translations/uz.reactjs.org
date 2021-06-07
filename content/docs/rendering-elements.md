@@ -72,4 +72,4 @@ Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni 
 
 Har bir sekundda biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, faqatgina matn tuguni o'zgargani tufayli React DOM shunga yarasha uni yangilaydi.
 
-Bizning tajribamizda, ayni vaqt davomida UI ni qanday qilib o'zgartirish haqida o'ylashdan ko'ra, ayni vaqtda UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
+Tajribamizdan kelib chiqib aytish mumkinki, UIʼni qanday qilib o'zgartirishdan ko'ra, UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
