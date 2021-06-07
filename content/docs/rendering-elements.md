@@ -70,6 +70,6 @@ Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni 
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
-Har bir sekundda biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, faqatgina matn tuguni o'zgargani tufayli React DOM shunga yarasha uni yangilaydi.
+Har bir sekundda biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, React DOM faqatgina oʻzgargan matnli elementlarnigina yangilaydi.
 
 Tajribamizdan kelib chiqib aytish mumkinki, UIʼni qanday qilib o'zgartirishdan ko'ra, UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.
