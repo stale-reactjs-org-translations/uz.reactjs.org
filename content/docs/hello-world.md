@@ -40,7 +40,11 @@ React JavaScript kutubxonasi xisoblanadi, shuning uchun biz sizni JavaScript til
 
 >Eslatma
 >
+<<<<<<< HEAD
 >Bu qo'llanmaning bazi misollarida Javascriptning yangi sintaksisi ishlatilgan. Agar siz oxirgi bir necha yil Javascript bilan ishlamagan bo'lsangiz, [shu uchta punkt](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) sizga yordam berishi kerak.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
 
 ## Qani boshladik! {#lets-get-started}
