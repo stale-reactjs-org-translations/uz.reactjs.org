@@ -58,7 +58,7 @@ Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har sekundda [`se
 
 >**Eslatma:**
 >
->React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kod qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar qamroviga kirishini ko'rib chiqamiz.
+>React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kodni qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar orqali yozishni oʻrganamiz.
 >
 >Mavzularni sakrab ketmasligingizni maslahat beramiz, chunki bular bir biriga bog'liq.
 
