@@ -8,7 +8,7 @@ prev: introducing-jsx.html
 next: components-and-props.html
 ---
 
-Elementlar React ilovalarining eng kichik qurish bloklari hisoblanadi
+Elementlar React ilovalarining eng kichik qurish bloklari hisoblanadi.
 
 Element siz ekranda ko'rmoqchi bo'lgan narsangizni tasvirlaydi.
 
