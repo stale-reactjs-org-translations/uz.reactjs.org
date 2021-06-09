@@ -16,7 +16,7 @@ Element siz ekranda ko'rmoqchi bo'lgan narsangizni tasvirlaydi.
 const element = <h1>Salom Dunyo!</h1>;
 ```
 
-Brauzer DOM elementlaridan farqli o'laroq, React elementlari oddiy obyektlar hisoblanadi va ularni yaratish juda arzonga tushadi. React DOM esa DOM ni React elementlariga mos ravishda yangilashni o'z zimmasiga oladi.
+Brauzer DOM elementlaridan farqli o'laroq, React elementlari oddiy obyektlar hisoblanadi va ularni yaratish katta kompyuter resurslarini talab qilmaydi. React DOM esa DOM ni React elementlariga mos ravishda yangilashni o'z zimmasiga oladi.
 
 >**Eslatma:**
 >
