@@ -47,4 +47,3 @@ React JavaScript kutubxonasi xisoblanadi, shuning uchun biz sizni JavaScript til
 
 [Qo'llanmani keyingi bob](/docs/introducing-jsx.html)iga o'tish uchun sahifani pastga aylantiring.
 
-
