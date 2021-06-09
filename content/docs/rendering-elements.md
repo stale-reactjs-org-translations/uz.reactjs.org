@@ -32,7 +32,7 @@ Aytaylik HTML faylimizni qayeridadir `<div>` bor:
 
 Buni biz "ildiz" DOM tugunimiz deb ataymiz, chunki ichidagi hamma narsa React DOM orqali boshqariladi.
 
-React bilan qurilgan ilovalar odatda faqat bir dona ildiz DOM tuguni bo'ladi. Agar siz React ni boshqa ishlab turgan ilovaga biriktirmoqchi bo'lsangiz, siz bir nechta ildiz DOM tugunlarini yaratishingiz mumkin.
+React bilan qurilgan ilovalar odatda faqat bir dona ildiz DOM tuguni bo'ladi. Agar siz React ni boshqa ishlab turgan ilovaga biriktirmoqchi bo'lsangiz, siz bir biridan alohida bo'lgan bir nechta o'zak DOM elementlarini yaratishingiz mumkin.
 
 React elementini asosiy DOM elementi ichiga chizish uchun, bu ikkisini [`ReactDOM.render()`](/docs/react-dom.html#render) ichiga tashlang:
 
