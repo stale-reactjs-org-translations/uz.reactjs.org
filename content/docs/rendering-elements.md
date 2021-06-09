@@ -34,7 +34,7 @@ Buni biz "ildiz" DOM tugunimiz deb ataymiz, chunki ichidagi hamma narsa React DO
 
 React bilan qurilgan ilovalar odatda faqat bir dona ildiz DOM tuguni bo'ladi. Agar siz React ni boshqa ishlab turgan ilovaga biriktirmoqchi bo'lsangiz, siz bir nechta ildiz DOM tugunlarini yaratishingiz mumkin.
 
-React elementini ildiz DOM tuguniga uzatish uchun, bu ikkisini [`ReactDOM.render()`](/docs/react-dom.html#render) ni ichiga tashlang:
+React elementini asosiy DOM elementi ichiga chizish uchun, bu ikkisini [`ReactDOM.render()`](/docs/react-dom.html#render) ichiga tashlang:
 
 `embed:rendering-elements/render-an-element.js`
 
