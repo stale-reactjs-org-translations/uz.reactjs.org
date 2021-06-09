@@ -44,7 +44,7 @@ Bu sahifada "Hello, world" deb ko'rsatadi.
 
 ## Chizilgan Elementni Yangilash {#updating-the-rendered-element}
 
-React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir kadrga o'xshaydi: bu UI ni ayni vaqt ichidagi bir holatini ifodalaydi.
+React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir kadrga o'xshaydi: u ma'lum bir vaqtdagi UI ni tasvirlaydi.
 
 Bizni bilishimizcha, UI ni yangilashning birdan bir yo'li yangi element hosil qilib uni [`ReactDOM.render()`](/docs/react-dom.html#render) ga uzatishdir.
 
