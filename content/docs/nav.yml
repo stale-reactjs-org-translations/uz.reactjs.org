@@ -134,6 +134,7 @@
     - id: testing-recipes
       title: Test sinovlarining retseptlari
     - id: testing-environments
+<<<<<<< HEAD
       title: Test sinovlarining muhuti
 - title: Concurrent Mode (Experimental)
   isOrdered: true
@@ -149,6 +150,10 @@
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
 - title: Hissa qoʻshish
+=======
+      title: Testing Environments
+- title: Contributing
+>>>>>>> f3baa6d075c8de475b688abf035d7054bc8a9606
   items:
   - id: how-to-contribute
     title: Qanday hissa qoʻshish kerak
