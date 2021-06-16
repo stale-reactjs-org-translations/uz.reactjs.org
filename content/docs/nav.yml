@@ -28,7 +28,7 @@
     - id: conditional-rendering
       title: Shartli Renderlash
     - id: lists-and-keys
-      title: Roʻyxatlar va kalitlar(Keys) 
+      title: Roʻyxatlar va kalitlar(Keys)
     - id: forms
       title: Formalar
     - id: lifting-state-up
@@ -135,19 +135,6 @@
       title: Test sinovlarining retseptlari
     - id: testing-environments
       title: Test sinovlarining muhuti
-- title: Concurrent Mode (Experimental)
-  isOrdered: true
-  items:
-    - id: concurrent-mode-intro
-      title: Introducing Concurrent Mode
-    - id: concurrent-mode-suspense
-      title: Suspense for Data Fetching
-    - id: concurrent-mode-patterns
-      title: Concurrent UI Patterns
-    - id: concurrent-mode-adoption
-      title: Adopting Concurrent Mode
-    - id: concurrent-mode-reference
-      title: Concurrent Mode API Reference
 - title: Hissa qoʻshish
   items:
   - id: how-to-contribute
