@@ -233,7 +233,7 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-Komponentlarni ajratish boshida mayda ishga o'xshab tuyilishi mumkin, lekin katta ilovalarda qayta ishlatiladigan komponentlar to'plamiga ega bo'lish ko'p yengilliklar tug'diradi. Agarda sizning UI'ingizdagi qism bir necha marta ishlatiladigan bo'lsa (`Button`, `Panel`, `Avatar`) yoki o'z o'zidan murakkab bo'lsa (`App`, `FeedStory`, `Comment`), komponentga ajratish uchun yaxshi nomzod bo'ladi. 
+Komponentlarni ajratish boshida mayda ishga o'xshab tuyilishi mumkin, lekin katta ilovalarda qayta ishlatiladigan komponentlar to'plamiga ega bo'lish ko'p yengilliklarni yaratadi. Agarda sizning UI'ingizdagi qaysidir bo'lak bir necha marta ishlatiladigan bo'lsa (`Button`, `Panel`, `Avatar`) yoki o'z o'zidan murakkab bo'lsa (`App`, `FeedStory`, `Comment`), shu bo'lakni komponentga ajratish yaxshi nomzod bo'ladi. 
 
 ## Props Faqat O'qish Uchun {#props-are-read-only}
 
