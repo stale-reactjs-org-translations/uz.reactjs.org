@@ -60,7 +60,7 @@ Ammo, React elementlar dasturchi tomonidan yaratilgan komponentlarni ham o'z ich
 const element = <Welcome name="Sara" />;
 ```
 
-Agarda React dasturchi yaratgan komponentni element orqali uchratsa, JSX attributlari va bolalarini shu komponentga bir dona obyekt sifatida uzatadi. Biz bu obyektni "props" deb ataymiz.
+Qachonki React dasturchi yaratgan komponentni element ko'rinishida uchratsa, JSX attributlari va bolalarini shu komponentga bir dona obyekt sifatida uzatadi. Biz bu obyektni "props" deb ataymiz.
 
 Masalan, Ushbu kod sahifada "Salom, Sara" deb chiziladi:
 
