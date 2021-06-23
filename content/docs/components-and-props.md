@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-Bu esa `Comment` qismini bundanda soddalashtirishga imkon beradi:
+Bu esa `Comment` ni bundanda soddalashtirishga imkon beradi:
 
 ```js{4}
 function Comment(props) {
