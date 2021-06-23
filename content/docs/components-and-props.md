@@ -259,4 +259,4 @@ React juda moslashuvchan lekin bitta qat'iy qoidasi bor:
 
 **Hamma React komponentlari kiritmalariga nisbatan toza funksiya sifatida yozilishi kerak**
 
-Albatta, ilova UI'lari dinamik hisoblanadi va vaqt o'tgan sari o'zgarishi mumkin. [Keyingi bo'limda](/docs/state-and-lifecycle.html), biz "holat" (state) mavzusiga kirish qilamiz. Holat React komponentlariga vaqt o'tgan sari foydalanuvchi harakatlari, tarmoq javoblari, va boshqa holatlar orqali bu qoidani buzmagan holda reaksiya qilib o'zining qaytarmalarini o'zgartirishga imkon beradi.
+Albatta, ilova UI'lari dinamik hisoblanadi va vaqt o'tgan sari o'zgarishi mumkin. [Keyingi bo'limda](/docs/state-and-lifecycle.html), biz "holat" (state) tushunchasi bilan tanishib chiqamiz. Holat React komponentlariga vaqt o'tgan sari foydalanuvchi harakatlari, tarmoq javoblari, va boshqa holatlar orqali bu qoidani buzmagan holda reaksiya qilib o'zining qaytarmalarini o'zgartirishga imkon beradi.
