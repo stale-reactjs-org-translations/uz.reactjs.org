@@ -48,7 +48,7 @@ Yuqoridagi ikki komponentlar React nuqtai nazaridan bir biriga teng.
 
 ## Komponentlarni Chizish {#rendering-a-component}
 
-Bundan oldin biz faqat HTML teglariga ega bo'lgan React elementlarini ko'rib chiqgan edik:
+Bundan oldin biz faqat DOM teglariga ega bo'lgan React elementlarini ko'rib chiqgan edik:
 
 ```js
 const element = <div />;
