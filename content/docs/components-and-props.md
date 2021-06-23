@@ -87,7 +87,7 @@ Keling bu misolda nimalar bo'lishini xulosa qilamiz:
 >**Eslatma:** Komponent nomini doim katta harfdan boshlang.
 >
 >React kichik harf bilan boshlangan komponentlarni DOM teglari sifatida ko'radi.   
-Masalan,`<div />` HTML div teg ni belgilaydi, lekin `<Welcome />` esa komponentni belgilaydi va kod qamrovida bo'lishini talab qiladi.
+Masalan,`<div />` HTML div teg ni ifodalaydi, lekin `<Welcome />` esa komponentni ifodalaydi va `Welcome` ni shu kodning qamrovida bo'lishini talab qiladi.
 >
 >Bu konvensiyaga sabab nima ekanligini bilish uchun [JSX haqida batafsil](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) o'qishingiz mumkin.
 
