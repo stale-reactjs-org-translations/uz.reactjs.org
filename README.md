@@ -36,13 +36,8 @@ The documentation is divided into several sections with a different tone and pur
 
 ### Create a branch
 
-<<<<<<< HEAD
-1. `git checkout master` from any folder in your local `uz.reactjs.org` repository
-1. `git pull origin master` to ensure you have the latest main code
-=======
-1. `git checkout main` from any folder in your local `reactjs.org` repository
+1. `git checkout main` from any folder in your local `uz.reactjs.org` repository
 1. `git pull origin main` to ensure you have the latest main code
->>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 1. `git checkout -b the-name-of-my-branch` (replacing `the-name-of-my-branch` with a suitable name) to create a branch
 
 ### Make the change
