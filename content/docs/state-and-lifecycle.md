@@ -1,6 +1,6 @@
 ---
 id: state-and-lifecycle
-title: State and Lifecycle
+title: Holat va hayotiy ketma-ketlik
 permalink: docs/state-and-lifecycle.html
 redirect_from:
   - "docs/interactivity-and-dynamic-uis.html"
@@ -8,16 +8,16 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+Bu sahifa React komponentidagi holat(state) va hayotiy ketma-ketlik(lifecycle) tushunchalarini tanishtiradi.Bu yerda [batafsil API komponentiga havolani](/docs/react-component.html) topa olasiz.
 
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
+[Oldingi bo'limlarning bir namunasidagi](/docs/rendering-elements.html#updating-the-rendered-element) soatga e'tibor bering. [Elementlarni chizishda](/docs/rendering-elements.html#rendering-an-element-into-the-dom), Biz faqat foydalanuvchi interfeysini(UI) yangilashni bir yo'lini o'rgandik. Biz chizilgan natijani o'zgartirish uchun `ReactDOM.render()`ni chaqiramiz:
 
 ```js{8-11}
 function tick() {
   const element = (
     <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      <h1>Salom, dunyo!</h1>
+      <h2>Hozir soat {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
   ReactDOM.render(
@@ -29,18 +29,18 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
-
-We can start by encapsulating how the clock looks:
+Bu bo'limda, biz qanday qilib `Clock` komponentini rostdan ham qayta ishlaydigan va jamlangan qilishni o'rganamiz. Soat komponenti hozirgi vaqtni o'rnatadi va har sekundda o'zini yangilaydi.
+ 
+Biz soat qanday ko'rinishini yig'ishdan boshlaymiz:
 
 ```js{3-6,12}
 function Clock(props) {
   return (
     <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+      <h1>Salom, dunyo!</h1>
+      <h2>Hozir soat {props.date.toLocaleTimeString()}.</h2>
     </div>
   );
 }
@@ -55,11 +55,11 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
+Ammo, u muhim talabni bajarmadi: bu fakt shuki `Clock` taymerni o'rnatadi va foydalanuvchi interfeysini har soniyada yangilaydi, bu `Clock` ning amalga oshirish tafsilotlari bo'lishi kerak.
 
-Ideally we want to write this once and have the `Clock` update itself:
+Ideal holda biz bu `Clock` komponentini bir marta yozishni va o'zi yangilanishini hohlaymiz:
 
 ```js{2}
 ReactDOM.render(
@@ -68,63 +68,63 @@ ReactDOM.render(
 );
 ```
 
-To implement this, we need to add "state" to the `Clock` component.
+Buni amalga oshirish uchun, biz `Clock` komponentiga "holat(state)" ni qo'shishimiz kerak.
 
-State is similar to props, but it is private and fully controlled by the component.
+Holat(State) kiritmalarga(props) o'xshash, lekin u shaxsiy va komponent tomonidan to'liq nazorat qilinadi.
 
-## Converting a Function to a Class {#converting-a-function-to-a-class}
+## Funksiyani klassga aylantirish {#converting-a-function-to-a-class}
 
-You can convert a function component like `Clock` to a class in five steps:
+Siz `Clock` o'xshash funksional komponentni besh qadamda klass komponentiga aylantira olasiz:
 
-1. Create an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), with the same name, that extends `React.Component`.
+1. Bir xil nom bilan `React.Component`dan vorislik oladigan [ES6 klassni](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) yarating.
 
-2. Add a single empty method to it called `render()`.
+2. Klassga bitta bo'sh `render()` deb nomlangan metod qo'shing.
 
-3. Move the body of the function into the `render()` method.
+3. Funksiyaning tanasini `render()` metodiga ko'chiring.
 
-4. Replace `props` with `this.props` in the `render()` body.
+4. `render()` metodi tanasidagi `props` parameterdan olingan o'zgaruvchini `this.props` bilan o'zgartiring.
 
-5. Delete the remaining empty function declaration.
+5. Qolgan bo'sh funksiya chaqiruvlarini o'chiring.
 
 ```js
 class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir soat {this.props.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
 
-`Clock` is now defined as a class rather than a function.
+`Clock` hozir funksiya sifatida emas klass sifatida belgilangan.
 
-The `render` method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the `Clock` class will be used. This lets us use additional features such as local state and lifecycle methods.
+Har doim yangilanish sodir bo'lganida `render` metodi chaqiriladi, lekin agarda biz `<Clock />` komponentini bir DOM tuguniga(node) chizsak, `Clock` klassining faqat bir modeli(instance) foydalaniladi. Bu bizga qo'shimcha imkoniyatlar jumladan lokal holat va hayotiy ketma-ketlik metodlaridan foydalanishga ruhsat beradi.
 
-## Adding Local State to a Class {#adding-local-state-to-a-class}
+## Lokal holatni klassga qo'shish {#adding-local-state-to-a-class}
 
-We will move the `date` from props to state in three steps:
+Biz `date` xususiyatini kiritmalardan(props) holatga(state) uch qadamda ko'chiramiz:
 
-1) Replace `this.props.date` with `this.state.date` in the `render()` method:
+1) `render()` metodidagi `this.props.date` ni `this.state.date` bilan almashtiring:
 
 ```js{6}
 class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir soat {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
 }
 ```
 
-2) Add a [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
+2) Boshlang'ich `this.state`ni tayinlaydigan [klass konstruktorini](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) qo'shing:
 
 ```js{4}
 class Clock extends React.Component {
@@ -136,15 +136,15 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir soat {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
 }
 ```
 
-Note how we pass `props` to the base constructor:
+Qnaday qilib `props`ni asosiy konstruktorga o'tkazganimizni eslab qoling:
 
 ```js{2}
   constructor(props) {
@@ -153,9 +153,9 @@ Note how we pass `props` to the base constructor:
   }
 ```
 
-Class components should always call the base constructor with `props`.
+Klass komponentlari har doim asosiy konstruktorni `props` bilan chaqirishi kerak.
 
-3) Remove the `date` prop from the `<Clock />` element:
+3) `<Clock />` elementidan `date` xususiyatini o'chiring:
 
 ```js{2}
 ReactDOM.render(
@@ -164,9 +164,9 @@ ReactDOM.render(
 );
 ```
 
-We will later add the timer code back to the component itself.
+Keyinchalik taymer kodini komponentning o'ziga qaytaramiz.
 
-The result looks like this:
+Natija shunday ko'rinadi:
 
 ```js{2-5,11,18}
 class Clock extends React.Component {
@@ -178,8 +178,8 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir soat {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
@@ -191,19 +191,20 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
-Next, we'll make the `Clock` set up its own timer and update itself every second.
+Keyin, biz `Clock` komponenti o'zi taymer o'rnatatadigan va har soniyada yangilaydigan qilamiz.
 
 ## Adding Lifecycle Methods to a Class {#adding-lifecycle-methods-to-a-class}
 
-In applications with many components, it's very important to free up resources taken by the components when they are destroyed.
+Ko'p komponentlarga ega ilovalarda, komponentlar yo'q qilinganda ular tomonidan olingabn joy va resurslarni
+bo'shatish juda muhim.
 
-We want to [set up a timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) whenever the `Clock` is rendered to the DOM for the first time. This is called "mounting" in React.
+Biz [taymer o'rnatishni](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) hohlaymiz qachonki `Clock` komponenti DOMga birinchi marta chizilganda va bu Reactda "mounting" deb ataladi.
 
-We also want to [clear that timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) whenever the DOM produced by the `Clock` is removed. This is called "unmounting" in React.
+Shuningdek, biz [taymerni to'xtatishni](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) hohlaymiz qachonki `Clock` komponenti tomonidan yaratilgan DOM olib tashlanganda va bu Reactda "unmounting" deb nomlanadi.
 
-We can declare special methods on the component class to run some code when a component mounts and unmounts:
+Biz komponent o'rnatilganda(mount) va tozalanganda(unmount) biror kod bajarish uchun klass komponentida maxsus metodlarni e'lon qilishimiz mumkin:
 
 ```js{7-9,11-13}
 class Clock extends React.Component {
@@ -223,17 +224,17 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir vaqt {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
 }
 ```
 
-These methods are called "lifecycle methods".
+Bu metodlar hayotiy ketma-ketlik metodlari("lifecycle methods") deb ataladi.
 
-The `componentDidMount()` method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+`componentDidMount()` metodi komponent natijasi DOMga chizilgandan keyin ishlaydi. Bu taymer o'rnatish uchun juda yacshi joy:
 
 ```js{2-5}
   componentDidMount() {
@@ -244,11 +245,11 @@ The `componentDidMount()` method runs after the component output has been render
   }
 ```
 
-Note how we save the timer ID right on `this` (`this.timerID`).
+Taymer IDni qanday saqlaganimizga e'tibor bering (`this.timerID`).
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+`this.props` React o'zi tomonidan o'rnatilgan va `this.state` maxsus ma'noga ega paytda, agar siz ma'lumot oqimida qatnashmaydigan narsalarni (masalan, taymer identifikatori) saqlashingiz kerak bo'lsa, siz qo'lda klassga qo'shimcha maydonlarni qo'shishingiz mumkin..
 
-We will tear down the timer in the `componentWillUnmount()` lifecycle method:
+Taymerni `componentWillUnmount()` hayotiy ketma-ketlik metodida yo'q qilamiz:
 
 ```js{2}
   componentWillUnmount() {
@@ -256,9 +257,9 @@ We will tear down the timer in the `componentWillUnmount()` lifecycle method:
   }
 ```
 
-Finally, we will implement a method called `tick()` that the `Clock` component will run every second.
+Va nihoyat, biz `Clock` komponentini har soniyada ishlatadigan `tick()` metodini qo'llaymiz.
 
-It will use `this.setState()` to schedule updates to the component local state:
+Komponent lokal holatiga yangilanishlarni rejalashtirish uchun u `this.setState ()` dan foydalanadi:
 
 ```js{18-22}
 class Clock extends React.Component {
@@ -287,8 +288,8 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Salom, dunyo!</h1>
+        <h2>Hozir vaqt {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
@@ -300,51 +301,51 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
-Now the clock ticks every second.
+Endi soat har soniyada ishlaydi.
 
-Let's quickly recap what's going on and the order in which the methods are called:
+Keling, nima bo'layotganini va metodlar chaqirilish tartibini tezlik bilan takrorlaylik:
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+1) `<Clock />` komponenti `ReactDOM.render ()` ga o'tkazilganda, React `Clock` komponentining konstruktorini chaqiradi. `Clock` joriy vaqtni ko'rsatishi kerak bo'lganligi sababli, u "this.state" ni joriy vaqtni o'z ichiga olgan ob'ekt bilan boshlaydi. Keyinchalik bu holatni yangilaymiz.
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+2) React keyin `Clock` komponentining `render()` metodini chaqiradi. Shunday qilib, React ekranda nimani ko'rsatish kerakligini bilib oladi. React keyin DOMni `Clock` komponenti ko'rsatuviga mos keladigan tarzda yangilaydi.
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle method. Inside it, the `Clock` component asks the browser to set up a timer to call the component's `tick()` method once a second.
+3) DOMga `Clock` natijasi kiritilganda, React `componentDidMount()` hayotiy ketma-ketlik metodini chaqiradi. Uning ichida `Clock` komponenti brauzerdan sekundiga bir marta `tick()` metodini chaqirish uchun taymerni o'rnatishni so'raydi.
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+4) Har soniyada brauzer `tick()` metodini chaqiradi. Uning ichida `Clock` komponenti joriy vaqtni o'z ichiga olgan ob'ekt bilan `setState()`ni chaqirib, UI yangilanishini rejalashtiradi. `SetState()` chaqiruvi tufayli React holat o'zgarganini biladi va ekranda nima bo'lishi kerakligini bilish uchun `render()` usulini qayta chaqiradi. Bu safar `render()` usulidagi `this.state.date` har xil bo'ladi, shuning uchun render chiqishi yangilangan vaqtni o'z ichiga oladi. React DOMni shunga mos ravishda yangilaydi.
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
+5) Agar `Clock` komponenti DOMdan o'chirilsa, React `componentWillUnmount()` hayotiy ketma-ketlik metodini chaqiradi, shuning uchun taymer to'xtatiladi.
 
-## Using State Correctly {#using-state-correctly}
+## Holatdan to'g'ri foydalanish {#using-state-correctly}
 
-There are three things you should know about `setState()`.
+`setState()` haqida siz bilishingiz kerak bo'lgan uchta narsa bor.
 
-### Do Not Modify State Directly {#do-not-modify-state-directly}
+### Holatni to'g'ridan to'g'ri o'zgartirmang {#do-not-modify-state-directly}
 
-For example, this will not re-render a component:
+Masalan, bu komponentni qaytadan chizmaydi:
 
 ```js
 // Wrong
-this.state.comment = 'Hello';
+this.state.comment = 'Salom';
 ```
 
-Instead, use `setState()`:
+Uning o'rniga `setState()`dan foydalaning:
 
 ```js
 // Correct
-this.setState({comment: 'Hello'});
+this.setState({comment: 'Salom'});
 ```
 
-The only place where you can assign `this.state` is the constructor.
+siz `this.state`ni tayinlay oladigan yagona joy bu konstruktor.
 
-### State Updates May Be Asynchronous {#state-updates-may-be-asynchronous}
+### Holat yangilanishlari asinxron bo'lishi mumkin {#state-updates-may-be-asynchronous}
 
-React may batch multiple `setState()` calls into a single update for performance.
+React ko'p `setState()` chaqiruvlarini bittaga tezkorlik uchun guruhlashi mumkin.
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+Chunki `this.props` va `this.state` asinxron tarzda yangilanishi mumkin, keyingi holatni hisoblashda ularning qiymatlariga tayanmaslik kerak.
 
-For example, this code may fail to update the counter:
+Misol uchun, bu kod hisoblagichni yangilay olmasligi mumkin:
 
 ```js
 // Wrong
@@ -353,7 +354,7 @@ this.setState({
 });
 ```
 
-To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+Buni tuzatish uchun ob'ektni emas, funktsiyani qabul qiladigan `setState()` ning ikkinchi shaklidan foydalaning. Bu funktsiya "oldingi holat"ni birinchi argument sifatida va yangilanishlar bo'lganda "props"ni ikkinchi argument sifatida qabul qiladi:
 
 ```js
 // Correct
@@ -362,7 +363,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-We used an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) above, but it also works with regular functions:
+Biz yuqorida [ko'rsatkich funksiyadan](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) foydalandik, lekin u oddiy funktsiyalar bilan ham ishlaydi:
 
 ```js
 // Correct
@@ -373,11 +374,11 @@ this.setState(function(state, props) {
 });
 ```
 
-### State Updates are Merged {#state-updates-are-merged}
+### Holat yangilanishlari birlashtiriladi {#state-updates-are-merged}
 
-When you call `setState()`, React merges the object you provide into the current state.
+Qachonki siz `setState()`ni chaqirganingizda, React obyektni siz taqdim qilgan hozirgi holatga birlashtiradi.
 
-For example, your state may contain several independent variables:
+Masalan, sizning statetingiz bir nechta mustaqil o'zgaruvchilarni o'z ichiga olishi mumkin:
 
 ```js{4,5}
   constructor(props) {
@@ -389,7 +390,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+Keyin siz mustaqil ravishda alohida `setState()` chaqiruvlari bilan yangilay olasiz:
 
 ```js{4,10}
   componentDidMount() {
@@ -407,35 +408,35 @@ Then you can update them independently with separate `setState()` calls:
   }
 ```
 
-The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+Birlashish sayoz, shuning uchun `this.setState ({comments})` `this.state.posts` 'ni buzmasdan qoldiradi, lekin `this.state.comments` ni to'liq almashtiradi.
 
-## The Data Flows Down {#the-data-flows-down}
+## Ma'lumotlar pastga qarab oqadi {#the-data-flows-down}
 
-Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether it is defined as a function or a class.
+Ota(parent) ham, bola(children) komponentlari biror maxsus komponentning holatli(stateful) yoki holatsiz(stateless) ekanligini bila olmaydi va ular maxsus komponentning funktsiya yoki klass sifatida belgilanishi haqida o'ylamaydi.
 
-This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+Shuning uchun holat ko'pincha loakl yoki birlashgan deb nomlanadi. Unga egalik qiladigan va o'rnatgan komponentdan boshqa hech qaysi komponent kira olmaydi.
 
-A component may choose to pass its state down as props to its child components:
+Komponent o'z holatini bola komponentlariga kiritmalar sifatida o'tkazishni tanlashi mumkin:
 
 ```js
 <FormattedDate date={this.state.date} />
 ```
 
-The `FormattedDate` component would receive the `date` in its props and wouldn't know whether it came from the `Clock`'s state, from the `Clock`'s props, or was typed by hand:
+`FormattedDate` komponenti `date` ni kiritmalarda oladi va u `Clock` holatidan, `Clock` kiritmalaridan kelganini yoki qo'lda yozilganligini bilmaydi:
 
 ```js
 function FormattedDate(props) {
-  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+  return <h2>Hozir soat {props.date.toLocaleTimeString()}.</h2>;
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
-This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
+Bu odatda "yuqoridan pastga" yoki "bir tomonlama" ma'lumotlar oqimi deb ataladi. Har qanday holat har doim ma'lum bir komponentga tegishli va bu holatdan olingan har qanday ma'lumotlar yoki foydalanuvchi interfeysi faqat daraxtda(tree) undan "pastda" joylashgan komponentlarga ta'sir qilishi mumkin.
 
-If you imagine a component tree as a waterfall of props, each component's state is like an additional water source that joins it at an arbitrary point but also flows down.
+Agar siz komponent daraxtni kiritmalar sharsharasi deb tasavvur qilsangiz, har bir komponentning holati qo'shimcha suv manbaiga o'xshaydi, u o'zboshimchalik bilan birlashadi, lekin u pastga qarab harkatlanadi.
 
-To show that all components are truly isolated, we can create an `App` component that renders three `<Clock>`s:
+Barcha komponentalar chindan ham izolyatsiya qilinganligini ko'rsatish uchun biz uchta `Clock` ni ko'rsatadigan `App` komponentini yaratishimiz mumkin:
 
 ```js{4-6}
 function App() {
@@ -454,8 +455,8 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
+[**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
-Each `Clock` sets up its own timer and updates independently.
+Har bir `Clock` o'z taymerini o'rnatadi va mustaqil ravishda yangilanadi.
 
-In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+React ilovalarida komponentning holatli yoki holatsiz ekanligi vaqt o'tishi bilan o'zgarishi mumkin bo'lgan komponentni amalga oshirish tafsiloti hisoblanadi. Holatsiz bo'lgan komponentlarni holatli komponentlar ichida ishlatishingiz mumkin va aksincha.
