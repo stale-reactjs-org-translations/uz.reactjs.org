@@ -293,7 +293,7 @@ const EnhancedComponent = enhance(WrappedComponent)
 
 ## Konvensiya: osonlikcha ekran nomini qo'shing {#convention-wrap-the-display-name-for-easy-debugging}
 
-Yaratilgan HOC konteyner komponentlari [React ishlab chiqish asboblari konsoli](https://github.com/facebook/react-devtools) da boshqa komponentlar bilan birga namoyish etiladi. Nosozliklarni tuzatishni osonlashtirish uchun ma'lum bir komponent HOC yordamida yaratilganligini aytadigan ismni belgilashingiz mumkin.
+Yaratilgan HOC konteyner komponentlari [React ishlab chiqish asboblari konsoli](https://github.com/facebook/react/tree/main/packages/react-devtools) da boshqa komponentlar bilan birga namoyish etiladi. Nosozliklarni tuzatishni osonlashtirish uchun ma'lum bir komponent HOC yordamida yaratilganligini aytadigan ismni belgilashingiz mumkin.
 
 Eng keng tarqalgan usul - o'ralgan komponent nomini o'rash. Masalan, agar siz `Subscription` bilan yuqori darajadagi komponentni nomlagan bo'lsangiz va o'ralgan komponent nomi `CommentList` bo'lsa, u holda ekran nomi `WithSubscription (CommentList)` bo'ladi:
 
