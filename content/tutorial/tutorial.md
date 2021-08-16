@@ -236,7 +236,7 @@ Keling Square komponentini bosganimizda "X" harfi bilan to'ldiramiz. Birinchi, S
 class Square extends React.Component {
   render() {
     return (
-      <button className="square" onClick={function() { alert('click'); }}>
+      <button className="square" onClick={function() { console.log('click'); }}>
         {this.props.value}
       </button>
     );
@@ -244,7 +244,7 @@ class Square extends React.Component {
 }
 ```
 
-Agar hozir kvadratni bossangiz, brauzeringizda ogohlantirish(alert)ni ko'rasiz.
+Agar hozir kvadratni bossangiz, brauzerning Devtools konsolida 'click' degan so'zni ko'rasiz.
 
 Kamiroq yozish va chalkash xatti-harakatlarning oldini olish uchun biz bu erda va quyida voqea ishlovchilari uchun strelka funktsiyasi sintaksisidan foydalanamiz:
 >Eslatma
@@ -255,7 +255,7 @@ Kamiroq yozish va chalkash xatti-harakatlarning oldini olish uchun biz bu erda v
 >class Square extends React.Component {
 >  render() {
 >    return (
->      <button className="square" onClick={() => alert('click')}>
+>      <button className="square" onClick={() => console.log('click')}>
 >        {this.props.value}
 >      </button>
 >    );
@@ -263,7 +263,7 @@ Kamiroq yozish va chalkash xatti-harakatlarning oldini olish uchun biz bu erda v
 >}
 >```
 >
->Qanday qilib biz `onClick={() => alert('click')}` orqali biz button bosilganda funktsiyadan foydalanayotganimizga e'tibor bering. React bu tugmachani bosgandan keyingina bu funktsiyani ishga tushiradi. `() =>` unutish va `onClick={() => alert('click')}` ni yozish odatiy xatodir va bizning komponent yangilanganda bu funktsiyani qayta-qayta ishga tushiradi.
+>Qanday qilib biz `onClick={() => console.log('click')}` orqali biz button bosilganda funktsiyadan foydalanayotganimizga e'tibor bering. React bu tugmachani bosgandan keyingina bu funktsiyani ishga tushiradi. `() =>` unutish va `onClick={() => console.log('click')}` ni yozish odatiy xatodir va bizning komponent yangilanganda bu funktsiyani qayta-qayta ishga tushiradi.
 
 As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
 
@@ -282,7 +282,7 @@ class Square extends React.Component {
 
   render() {
     return (
-      <button className="square" onClick={() => alert('click')}>
+      <button className="square" onClick={() => console.log('click')}>
         {this.props.value}
       </button>
     );
