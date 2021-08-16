@@ -1,6 +1,6 @@
 ---
 id: rendering-elements
-title: Rendering Elements
+title: Elementlarni Chizish
 permalink: docs/rendering-elements.html
 redirect_from:
   - "docs/displaying-data.html"
@@ -8,68 +8,68 @@ prev: introducing-jsx.html
 next: components-and-props.html
 ---
 
-Elements are the smallest building blocks of React apps.
+Elementlar React ilovalarining eng kichik qurish bloklari hisoblanadi.
 
-An element describes what you want to see on the screen:
+Element siz ekranda ko'rmoqchi bo'lgan narsangizni tasvirlaydi.
 
 ```js
-const element = <h1>Hello, world</h1>;
+const element = <h1>Salom Dunyo!</h1>;
 ```
 
-Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
+Brauzer DOM elementlaridan farqli o'laroq, React elementlari oddiy obyektlar hisoblanadi va ularni yaratish katta kompyuter resurslarini talab qilmaydi. React DOM esa DOM ni React elementlariga mos ravishda yangilashni o'z zimmasiga oladi.
 
->**Note:**
+>**Eslatma:**
 >
->One might confuse elements with a more widely known concept of "components". We will introduce components in the [next section](/docs/components-and-props.html). Elements are what components are "made of", and we encourage you to read this section before jumping ahead.
+>Kimdir elementlarni keng tarqalgan konsepsiya - "komponent" lar bilan adashtirishi mumkin. Komponentlar [keyingi bo'limda](/docs/components-and-props.html) tanishtiriladi. Komponentlar o'zi elementlardan iborat, biz sizga boshqa mavzularga o'tishdan oldin, bu bo'limni yakunlashingizni maslahat beramiz.
 
-## Rendering an Element into the DOM {#rendering-an-element-into-the-dom}
+## Elementni DOM ga Chizish {#rendering-an-element-into-the-dom}
 
-Let's say there is a `<div>` somewhere in your HTML file:
+Aytaylik HTML faylimizni qayeridadir `<div>` bor:
 
 ```html
 <div id="root"></div>
 ```
 
-We call this a "root" DOM node because everything inside it will be managed by React DOM.
+Buni biz "ildiz" DOM tugunimiz deb ataymiz, chunki ichidagi hamma narsa React DOM orqali boshqariladi.
 
-Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
+React bilan qurilgan ilovalar odatda faqat bir dona ildiz DOM tuguni bo'ladi. Agar siz React ni boshqa ishlab turgan ilovaga biriktirmoqchi bo'lsangiz, siz bir biridan alohida bo'lgan bir nechta o'zak DOM elementlarini yaratishingiz mumkin.
 
-To render a React element into a root DOM node, pass both to [`ReactDOM.render()`](/docs/react-dom.html#render):
+React elementini asosiy DOM elementi ichiga chizish uchun, bu ikkisini [`ReactDOM.render()`](/docs/react-dom.html#render) ichiga tashlang:
 
 `embed:rendering-elements/render-an-element.js`
 
 [](codepen://rendering-elements/render-an-element)
 
-It displays "Hello, world" on the page.
+Bu sahifada "Hello, world" deb ko'rsatadi.
 
-## Updating the Rendered Element {#updating-the-rendered-element}
+## Chizilgan Elementni Yangilash {#updating-the-rendered-element}
 
-React elements are [immutable](https://en.wikipedia.org/wiki/Immutable_object). Once you create an element, you can't change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir kadrga o'xshaydi: u ma'lum bir vaqtdagi UI ni tasvirlaydi.
 
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to [`ReactDOM.render()`](/docs/react-dom.html#render).
+Bizni bilishimizcha, UI ni yangilashning birdan bir yo'li yangi element hosil qilib uni [`ReactDOM.render()`](/docs/react-dom.html#render) ga uzatishdir.
 
-Consider this ticking clock example:
+Mana bu soat misoliga e'tibor bering:
 
 `embed:rendering-elements/update-rendered-element.js`
 
 [](codepen://rendering-elements/update-rendered-element)
 
-It calls [`ReactDOM.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
 
->**Note:**
+>**Eslatma:**
 >
->In practice, most React apps only call [`ReactDOM.render()`](/docs/react-dom.html#render) once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+>React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kodni qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar orqali yozishni oʻrganamiz.
 >
->We recommend that you don't skip topics because they build on each other.
+>Mavzularni sakrab ketmasligingizni maslahat beramiz, chunki bular bir biriga bog'liq.
 
-## React Only Updates What's Necessary {#react-only-updates-whats-necessary}
+## React Faqat Zarur Narsalarni Yangilaydi {#react-only-updates-whats-necessary}
 
-React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+React DOM element va uni bolalarini eskisi bilan solishtirib, DOM ni kerakli holatga keltirish uchun faqat zarur bo'lgan joylarini yangilaydi.
 
-You can verify by inspecting the [last example](codepen://rendering-elements/update-rendered-element) with the browser tools:
+Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni brauzer vositalari orqali ko'zdan kechirishingiz mumkin:
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
-Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.
+Har bir soniyada biz butun bir UI daraxtini tasvirlaydigan element hosil qilishimizga qaramasdan, React DOM faqatgina oʻzgargan matnli elementlarnigina yangilaydi.
 
-In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
+Tajribamizdan kelib chiqib aytish mumkinki, UIʼni qanday qilib o'zgartirishdan ko'ra, UI qanday ko'rinishga ega bo'lishi kerakligi haqida o'ylash, anchagina xatolarni bartaraf qiladi.

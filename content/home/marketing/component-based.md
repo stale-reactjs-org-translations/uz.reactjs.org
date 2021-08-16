@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: Komponentga-Asoslangan
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+O'zining holatini boshqaradigan, keyin ularni murakkab UI ni yaratishda ishlatadigan enkapsulyatsiya qilingan komponentlar quring.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+Kopmonent logikasi shablonlarda emas balki JavaSciptda yozilgani sababli, ilovangizdagi boy ma'lumotlarni osongina uzatish va DOM ning holatini dahilsizligini ham saqlab qolasiz.

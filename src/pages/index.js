@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; A JavaScript library for building user interfaces"
+          title="React &ndash; Foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi"
           canonicalUrl={createCanonicalUrl('/')}
         />
         <div
@@ -141,7 +141,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    Foydalanuvchi interfeyslarini yaratish uchun JavaScript
+                    kutubxonasi
                   </p>
                   <Flex
                     valign="center"
@@ -159,12 +160,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        Boshlash
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        Qo'llanmadan foydalanish
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -302,12 +303,12 @@ class Home extends Component {
                 }}>
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    Boshlash
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    Qo'llanmadan foydalanish
                   </ButtonLink>
                 </CtaItem>
               </Flex>
