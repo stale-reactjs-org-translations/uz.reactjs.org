@@ -6,7 +6,7 @@ prev: conditional-rendering.html
 next: forms.html
 ---
 
-Keling, avval roʻyxatlarni JavaScriptʼda qanday oʻzgartirni koʻramiz.
+Keling, avval roʻyxatlarni JavaScriptʼda qanday oʻzgartirishni koʻramiz.
 
 Quyidagi kodda, [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) funksiyasi yordamida `numbers` massivini olib, qiymatlarini ikkiga koʻpaytirib boshqa `doubled` oʻzgaruvchisiga oʻtkazyapmiz va loglayapmiz:
 
