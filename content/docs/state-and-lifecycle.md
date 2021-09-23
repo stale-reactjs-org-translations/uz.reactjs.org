@@ -82,7 +82,7 @@ Siz `Clock` o'xshash funksional komponentni besh qadamda klass komponentiga ayla
 
 3. Funksiyaning tanasini `render()` metodiga ko'chiring.
 
-4. `render()` metodi tanasidagi `props` parameterdan olingan o'zgaruvchini `this.props` bilan o'zgartiring.
+4. `render()` metodi tanasidagi `props` o'zgaruvchini `this.props` bilan o'zgartiring.
 
 5. Qolgan bo'sh funksiya chaqiruvlarini o'chiring.
 
