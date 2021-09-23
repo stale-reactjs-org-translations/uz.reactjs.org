@@ -31,7 +31,7 @@ setInterval(tick, 1000);
 
 [**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-Bu bo'limda, biz qanday qilib `Clock` komponentini rostdan ham qayta ishlaydigan va jamlangan qilishni o'rganamiz. Soat komponenti hozirgi vaqtni o'rnatadi va har sekundda o'zini yangilaydi.
+Bu bo'limda, biz qanday qilib `Clock` komponentini rostdan ham qayta ishlaydigan va jamlangan qilishni o'rganamiz. Soat komponenti o'zinig taymerini o'rnatadi va har sekundda o'zini yangilaydi.
  
 Biz soat qanday ko'rinishini yig'ishdan boshlaymiz:
 
