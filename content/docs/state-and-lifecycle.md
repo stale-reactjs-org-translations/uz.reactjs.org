@@ -197,7 +197,7 @@ Keyin, biz `Clock` komponenti o'zi taymer o'rnatatadigan va har soniyada yangila
 
 ## Adding Lifecycle Methods to a Class {#adding-lifecycle-methods-to-a-class}
 
-Ko'p komponentlarga ega ilovalarda, komponentlar yo'q qilinganda ular tomonidan olingabn joy va resurslarni
+Ko'p komponentlarga ega ilovalarda, komponentlar yo'q qilinganda ular tomonidan olingan resurslarni
 bo'shatish juda muhim.
 
 Biz [taymer o'rnatishni](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) hohlaymiz qachonki `Clock` komponenti DOMga birinchi marta chizilganda va bu Reactda "mounting" deb ataladi.
