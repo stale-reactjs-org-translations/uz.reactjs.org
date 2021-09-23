@@ -234,7 +234,7 @@ class Clock extends React.Component {
 
 Bu metodlar hayotiy ketma-ketlik metodlari("lifecycle methods") deb ataladi.
 
-`componentDidMount()` metodi komponent natijasi DOMga chizilgandan keyin ishlaydi. Bu taymer o'rnatish uchun juda yacshi joy:
+`componentDidMount()` metodi komponent natijasi DOMga chizilgandan keyin ishlaydi. Bu taymer o'rnatish uchun juda yaxshi joy:
 
 ```js{2-5}
   componentDidMount() {
