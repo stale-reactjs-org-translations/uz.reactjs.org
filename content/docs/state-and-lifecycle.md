@@ -84,7 +84,7 @@ Siz `Clock` o'xshash funksional komponentni besh qadamda klass komponentiga ayla
 
 4. `render()` metodi tanasidagi `props` o'zgaruvchini `this.props` bilan o'zgartiring.
 
-5. Qolgan bo'sh funksiya chaqiruvlarini o'chiring.
+5. Qolgan bo'sh funksiyani o'chiring.
 
 ```js
 class Clock extends React.Component {
