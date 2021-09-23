@@ -204,7 +204,7 @@ Biz [taymer o'rnatishni](https://developer.mozilla.org/en-US/docs/Web/API/Window
 
 Shuningdek, biz [taymerni to'xtatishni](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) hohlaymiz qachonki `Clock` komponenti tomonidan yaratilgan DOM olib tashlanganda va bu Reactda "unmounting" deb nomlanadi.
 
-Biz komponent o'rnatilganda(mount) va tozalanganda(unmount) biror kod bajarish uchun klass komponentida maxsus metodlarni e'lon qilishimiz mumkin:
+Biz komponent o'rnatilganda(mount) va yechilganda(unmount) biror kod bajarish uchun klass komponentida maxsus metodlarni e'lon qilishimiz mumkin:
 
 ```js{7-9,11-13}
 class Clock extends React.Component {
