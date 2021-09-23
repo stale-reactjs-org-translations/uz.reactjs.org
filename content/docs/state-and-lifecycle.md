@@ -313,7 +313,7 @@ Keling, nima bo'layotganini va metodlar chaqirilish tartibini tezlik bilan takro
 
 3) DOMga `Clock` natijasi kiritilganda, React `componentDidMount()` hayotiy ketma-ketlik metodini chaqiradi. Uning ichida `Clock` komponenti brauzerdan sekundiga bir marta `tick()` metodini chaqirish uchun taymerni o'rnatishni so'raydi.
 
-4) Har soniyada brauzer `tick()` metodini chaqiradi. Uning ichida `Clock` komponenti joriy vaqtni o'z ichiga olgan ob'ekt bilan `setState()`ni chaqirib, UI yangilanishini rejalashtiradi. `SetState()` chaqiruvi tufayli React holat o'zgarganini biladi va ekranda nima bo'lishi kerakligini bilish uchun `render()` usulini qayta chaqiradi. Bu safar `render()` usulidagi `this.state.date` har xil bo'ladi, shuning uchun render chiqishi yangilangan vaqtni o'z ichiga oladi. React DOMni shunga mos ravishda yangilaydi.
+4) Har soniyada brauzer `tick()` metodini chaqiradi. Uning ichida `Clock` komponenti joriy vaqtni o'z ichiga olgan ob'ekt bilan `setState()`ni chaqirib, UI yangilanishini rejalashtiradi. `setState()` chaqiruvi tufayli React holat o'zgarganini biladi va ekranda nima bo'lishi kerakligini bilish uchun `render()` usulini qayta chaqiradi. Bu safar `render()` usulidagi `this.state.date` har xil bo'ladi, shuning uchun renderning qaytargan natijasi yangilangan vaqtni o'z ichiga oladi. React DOMni shunga mos ravishda yangilaydi.
 
 5) Agar `Clock` komponenti DOMdan o'chirilsa, React `componentWillUnmount()` hayotiy ketma-ketlik metodini chaqiradi, shuning uchun taymer to'xtatiladi.
 
