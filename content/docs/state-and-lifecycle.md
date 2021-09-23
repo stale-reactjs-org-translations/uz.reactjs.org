@@ -57,7 +57,7 @@ setInterval(tick, 1000);
 
 [**CodePenda sinab ko'ring**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-Ammo, u muhim talabni bajarmadi: bu fakt shuki `Clock` taymerni o'rnatadi va foydalanuvchi interfeysini har soniyada yangilaydi, bu `Clock` ning amalga oshirish tafsilotlari bo'lishi kerak.
+Ammo, u muhim talabni bajarmadi: bu fakt shuki taymerni o'rnatish va foydalanuvchi interfeysini har soniyada yangilashini `Clock` komponenti o'zi amalga oshirish kerak.
 
 Ideal holda biz bu `Clock` komponentini bir marta yozishni va o'zi yangilanishini hohlaymiz:
 
