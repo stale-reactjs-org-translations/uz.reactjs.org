@@ -247,7 +247,7 @@ Bu metodlar hayotiy ketma-ketlik metodlari("lifecycle methods") deb ataladi.
 
 Taymer IDni qanday saqlaganimizga e'tibor bering (`this.timerID`).
 
-`this.props` React o'zi tomonidan o'rnatilgan va `this.state` maxsus ma'noga ega paytda, agar siz ma'lumot oqimida qatnashmaydigan narsalarni (masalan, taymer identifikatori) saqlashingiz kerak bo'lsa, siz qo'lda klassga qo'shimcha maydonlarni qo'shishingiz mumkin..
+`this.props` React o'zi tomonidan o'rnatilgan va `this.state` maxsus ma'noga ega. Agar siz ma'lumot oqimida qatnashmaydigan narsalarni (masalan, taymer identifikatori) saqlashingiz kerak bo'lsa, siz qo'lda klassga qo'shimcha maydonlarni qo'shishingiz mumkin..
 
 Taymerni `componentWillUnmount()` hayotiy ketma-ketlik metodida yo'q qilamiz:
 
