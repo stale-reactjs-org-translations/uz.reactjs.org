@@ -8,7 +8,7 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-Bu sahifa React komponentidagi holat(state) va hayotiy ketma-ketlik(lifecycle) tushunchalarini tanishtiradi.Bu yerda [batafsil API komponentiga havolani](/docs/react-component.html) topa olasiz.
+Bu sahifa React komponentidagi holat(state) va hayotiy ketma-ketlik(lifecycle) tushunchalarini tanishtiradi.Bu yerda [batafsil komponentinig API ma'lumotnomasini](/docs/react-component.html) topa olasiz.
 
 [Oldingi bo'limlarning bir namunasidagi](/docs/rendering-elements.html#updating-the-rendered-element) soatga e'tibor bering. [Elementlarni chizishda](/docs/rendering-elements.html#rendering-an-element-into-the-dom), Biz faqat foydalanuvchi interfeysini(UI) yangilashni bir yo'lini o'rgandik. Biz chizilgan natijani o'zgartirish uchun `ReactDOM.render()`ni chaqiramiz:
 
