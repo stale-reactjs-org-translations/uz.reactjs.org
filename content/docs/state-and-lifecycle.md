@@ -307,7 +307,7 @@ Endi soat har soniyada ishlaydi.
 
 Keling, nima bo'layotganini va metodlar chaqirilish tartibini tezlik bilan takrorlaylik:
 
-1) `<Clock />` komponenti `ReactDOM.render ()` ga o'tkazilganda, React `Clock` komponentining konstruktorini chaqiradi. `Clock` joriy vaqtni ko'rsatishi kerak bo'lganligi sababli, u "this.state" ni joriy vaqtni o'z ichiga olgan ob'ekt bilan boshlaydi. Keyinchalik bu holatni yangilaymiz.
+1) `<Clock />` komponenti `ReactDOM.render()` ga o'tkazilganda, React `Clock` komponentining konstruktorini chaqiradi. `Clock` joriy vaqtni ko'rsatishi kerak bo'lganligi sababli, u "this.state" ni joriy vaqtni o'z ichiga olgan ob'ekt bilan boshlaydi. Keyinchalik bu holatni yangilaymiz.
 
 2) React keyin `Clock` komponentining `render()` metodini chaqiradi. Shunday qilib, React ekranda nimani ko'rsatish kerakligini bilib oladi. React keyin DOMni `Clock` komponenti ko'rsatuviga mos keladigan tarzda yangilaydi.
 
