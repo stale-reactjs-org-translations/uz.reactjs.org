@@ -74,7 +74,7 @@ Holat(State) kiritmalarga(props) o'xshash, lekin u shaxsiy va komponent tomonida
 
 ## Funksiyani klassga aylantirish {#converting-a-function-to-a-class}
 
-Siz `Clock` o'xshash funksional komponentni besh qadamda klass komponentiga aylantira olasiz:
+Siz `Clock` ga o'xshash funksiyaviy komponentni besh qadamda klass komponentiga aylantira olasiz:
 
 1. Bir xil nom bilan `React.Component`dan vorislik oladigan [ES6 klassni](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) yarating.
 
