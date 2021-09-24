@@ -279,7 +279,7 @@ function NumberList(props) {
 }
 ```
 
-JSX [hohlagan ifodani](/docs/introducing-jsx.html#embedding-expressions-in-jsx) jingalak qavslar ichiga joylashga ruhsat beradi va `map()` qaytargan javobni bir qatorda yozib keta olamiz:
+JSX [hohlagan ifodani](/docs/introducing-jsx.html#embedding-expressions-in-jsx) jingalak qavslar ichiga joylashga ruxsat beradi va `map()` qaytargan javobni bir qatorda yozib keta olamiz:
 
 ```js{5-8}
 function NumberList(props) {
