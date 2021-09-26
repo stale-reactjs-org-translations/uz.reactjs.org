@@ -295,6 +295,6 @@ function NumberList(props) {
 }
 ```
 
-[**CodePenʼda ochish**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[**CodePenda ochish**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
 Baʼzida bu yaxshiroq kod yozishga yordam beradi, biroq bu yozuv uslubi ham suistemol qilinishi mumkin. JavaScriptʼdagidek, kod yaxshi oʻqilishi uchun alohida oʻzgaruvchi ishlatish sizga bogʻliq. Eslab qolingki, agar `map()` qaytaradigan element kattarib ketsa, yangi [komponent yaratish](/docs/components-and-props.html#extracting-components) yaxshi yechim boʻlishi mumkin.
