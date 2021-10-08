@@ -107,7 +107,7 @@ Har doim yangilanish sodir bo'lganida `render` metodi chaqiriladi, lekin agarda 
 
 ## Lokal holatni klassga qo'shish {#adding-local-state-to-a-class}
 
-Biz `date` xususiyatini kiritmalardan(props) holatga(state) uch qadamda ko'chiramiz:
+Biz `date`ni kiritmalardan(props) holatga(state) uch qadamda ko'chiramiz:
 
 1) `render()` metodidagi `this.props.date` ni `this.state.date` bilan almashtiring:
 
