@@ -458,4 +458,4 @@ ReactDOM.render(
 
 Har bir `Clock` o'z taymerini o'rnatadi va mustaqil ravishda yangilanadi.
 
-React ilovalarida komponentning holatli yoki holatsiz ekanligi vaqt o'tishi bilan o'zgarishi mumkin bo'lgan komponentni amalga oshirish tafsiloti hisoblanadi. Holatsiz bo'lgan komponentlarni holatli komponentlar ichida ishlatishingiz mumkin va aksincha.
+React ilovalarida komponentning holatli yoki holatsiz ekanligi komponentni amalga oshirish tafsiloti hisoblanadi va bu vaqt o'tishi bilan o'zgarishi mumkin. Holatsiz bo'lgan komponentlarni holatli komponentlar ichida ishlatishingiz mumkin va aksincha.
