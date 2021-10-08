@@ -259,7 +259,7 @@ Taymerni `componentWillUnmount()` hayotiy ketma-ketlik metodida yo'q qilamiz:
 
 Va nihoyat, biz `Clock` komponentini har soniyada ishlatadigan `tick()` metodini qo'llaymiz.
 
-Komponent lokal holatiga yangilanishlarni rejalashtirish uchun u `this.setState ()` dan foydalanadi:
+Komponent lokal holatiga yangilanishlarni rejalashtirish uchun u `this.setState()` dan foydalanadi:
 
 ```js{18-22}
 class Clock extends React.Component {
