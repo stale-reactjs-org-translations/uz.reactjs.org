@@ -93,6 +93,6 @@ https://github.com/reactjs/uz.reactjs.org/issues/1
 | snippet | parcha |
 | logging | loglash |
 | scope | qamrov |
-| run | yurgizish |
+| run | ishga tushirish |
 | browser | brauzer |
 | responsive | sezgir |
