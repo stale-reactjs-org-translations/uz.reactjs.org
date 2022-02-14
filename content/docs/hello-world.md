@@ -17,7 +17,7 @@ ReactDOM.render(
 
 Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Tepadagi havolaga bosib onlayn muharrirni ochishiz mumkin. Kodga o'zgartirishlar kiritib ko'ring va naitija qanday o'zgarishini ko'ring. Ushbu qo'llanmadagi ko'p sahifalarda shunga o'xshash tahrirlanadigan misollar mavjud.
 
