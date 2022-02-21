@@ -68,7 +68,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
 
 Biz JSX ni o'qish osonroq bo'lishi uchun bir nechta qatorlarga  ajratib qo'ydik. Bunday qilish aslida shart emas, agar ajratadigan bo'lsangiz, [avtomat ravishda nuqta-vergul qo'yish](https://stackoverflow.com/q/2846283) tuzog'ini oldini olish uchun, uni qavs ichiga joylashingizni ham maslahat beramiz.
 
@@ -92,7 +92,7 @@ function getGreeting(user) {
 Matnni atribut sifatida belgilash uchun qo'shtirnoq ishlatishingiz mumkin:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Atributga JavaScript ifodasini biriktirish uchun jingalak qavsdan foydalansangiz ham bo'ladi:
