@@ -76,7 +76,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 Keling bu misolda nimalar bo'lishini xulosa qilamiz:
 1. Biz `<Welcome name="Sara" />` elementini `ReactDOM.render()` orqali chaqiramiz.
@@ -118,7 +118,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 Odatda yangi React ilovalari eng yuqori qismida yagona `App` komponenti turadi. Ammo, siz React ni ishlab turgan ilovangizga qo'shmoqchi bo'lsangiz, siz eng pastdagi `Button` ga o'xshagan kichik bir komponent orqali boshlab, sekin asta ierarxiyani yuqori qismiga intilgan holda ishlashingiz mumkin.
 
@@ -152,7 +152,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 Bu komponent o'ziga `author` (obyekt), `text` (string) va `date` (date) larni props sifatida oladi va ijtimoiy tarmoq veb-saytidagi kommentni tasvirlaydi.
 
@@ -231,7 +231,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
 Komponentlarni ajratish boshida mayda ishga o'xshab tuyilishi mumkin, lekin katta ilovalarda qayta ishlatiladigan komponentlar to'plamiga ega bo'lish ko'p yengilliklarni yaratadi. Agarda sizning UI'ingizdagi qaysidir bo'lak bir necha marta ishlatiladigan bo'lsa (`Button`, `Panel`, `Avatar`) yoki o'z o'zidan murakkab bo'lsa (`App`, `FeedStory`, `Comment`), shu bo'lakni komponentga ajratish yaxshi nomzod bo'ladi. 
 
