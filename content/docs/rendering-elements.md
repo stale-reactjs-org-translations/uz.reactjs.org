@@ -38,7 +38,7 @@ React elementini asosiy DOM elementi ichiga chizish uchun, bu ikkisini [`ReactDO
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
 
 Bu sahifada "Hello, world" deb ko'rsatadi.
 
@@ -52,7 +52,7 @@ Mana bu soat misoliga e'tibor bering:
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
 Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
 
@@ -66,7 +66,11 @@ Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`se
 
 React DOM element va uni bolalarini eskisi bilan solishtirib, DOM ni kerakli holatga keltirish uchun faqat zarur bo'lgan joylarini yangilaydi.
 
+<<<<<<< HEAD
 Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni brauzer vositalari orqali ko'zdan kechirishingiz mumkin:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
