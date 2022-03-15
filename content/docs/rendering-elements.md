@@ -66,11 +66,7 @@ Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`se
 
 React DOM element va uni bolalarini eskisi bilan solishtirib, DOM ni kerakli holatga keltirish uchun faqat zarur bo'lgan joylarini yangilaydi.
 
-<<<<<<< HEAD
-Bundan [oldingi misol](codepen://rendering-elements/update-rendered-element) ni brauzer vositalari orqali ko'zdan kechirishingiz mumkin:
-=======
-You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
->>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
+Bundan [oldingi misol](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) ni brauzer vositalari orqali ko'zdan kechirishingiz mumkin:
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
