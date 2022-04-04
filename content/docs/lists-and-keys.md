@@ -33,13 +33,14 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<<<<<<< HEAD
 `listItems` massivini `<ul>` elementi ichiga joylab, [DOMʼda chizish](/docs/rendering-elements.html#rendering-an-element-into-the-dom) uchun yuboramiz:
+=======
+Then, we can include the entire `listItems` array inside a `<ul>` element:
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**CodePenʼda ochish**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -64,10 +65,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 Ushbu kodni ishga tushirganingizda, roʻyxat elementlari uchun kalit (key) berib yuborish kerakligi haqida ogohlantirish olasiz. "key" (kalit) - bu yozuv (`string`) qabul qiladigan maxsus kiritma (prop). Bu nima uchun kerakligi haqida keyingi boʻlimda oʻrganamiz.
@@ -86,12 +85,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePenʼda ochish**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -165,12 +158,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **Misol: Kalitni toʻgʻri ishlatilishi**
@@ -193,12 +180,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePenʼda ochish**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -239,10 +220,9 @@ const posts = [
   {id: 1, title: 'Salom dunyo', content: 'Reactʼni oʻrganishga xush kelibsiz!'},
   {id: 2, title: 'Oʻrnatish', content: 'Reactʼni npm orqali oʻrnata olasiz.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**CodePenʼda ochish**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)

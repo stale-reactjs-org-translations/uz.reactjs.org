@@ -35,11 +35,6 @@ Quyidagi misolda, biz `name` degan o'zgaruvchi hosil qilamiz va uni JSX ichida j
 ```js{1,2}
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
 JSX dagi jingalak qavslar ichida istalgan to'g'ri [JavaScript ifodas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)ini qo'yishingiz mumkin. Masalan, `2 + 2`, `user.firstName`, yoki `formatName(user)`, bu hammasi to'g'ri JavaScript ifodalari.
@@ -60,11 +55,6 @@ const element = (
   <h1>
     Hello, {formatName(user)}!
   </h1>
-);
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
 );
 ```
 
