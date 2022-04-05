@@ -33,11 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-<<<<<<< HEAD
-`listItems` massivini `<ul>` elementi ichiga joylab, [DOMʼda chizish](/docs/rendering-elements.html#rendering-an-element-into-the-dom) uchun yuboramiz:
-=======
-Then, we can include the entire `listItems` array inside a `<ul>` element:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+So'ngra, `listItems` massivini `<ul>` elementi ichiga joylashtiramiz:
 
 ```javascript{2}
 <ul>{listItems}</ul>

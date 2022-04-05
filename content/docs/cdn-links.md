@@ -20,12 +20,7 @@ Yuqoridagi versiyalar faqat dasturlash uchun mo'ljallangan va foydalanuv uchun m
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
-<<<<<<< HEAD
-=======
-To load a specific version of `react` and `react-dom`, replace `18` with the version number.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
-
-`React` va `React-dom` ning ma'lum bir versiyasini yuklash uchun `17` raqamini versiya raqami bilan almashtiring.
+`React` va `React-dom` ning ma'lum bir versiyasini yuklash uchun `18` raqamini versiya raqami bilan almashtiring.
 
 
 ### Nima uchun `crossorigin` Atributi? {#why-the-crossorigin-attribute}
