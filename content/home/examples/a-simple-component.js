@@ -1,10 +1,6 @@
 class HelloMessage extends React.Component {
   render() {
-    return (
-      <div>
-        Salom {this.props.name}
-      </div>
-    );
+    return <div>Salom {this.props.name}</div>;
   }
 }
 
