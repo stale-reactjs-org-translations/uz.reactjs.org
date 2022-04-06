@@ -10,11 +10,7 @@ next: handling-events.html
 
 Bu sahifa React komponentidagi holat(state) va hayotiy ketma-ketlik(lifecycle) tushunchalarini tanishtiradi.Bu yerda [batafsil komponentinig API ma'lumotnomasini](/docs/react-component.html) topa olasiz.
 
-<<<<<<< HEAD
-[Oldingi bo'limlarning namunalardan biridagi](/docs/rendering-elements.html#updating-the-rendered-element) soatga e'tibor bering. [Elementlarni chizish](/docs/rendering-elements.html#rendering-an-element-into-the-dom) bo'limida, biz faqat foydalanuvchi interfeysini(UI) yangilashni bir yo'lini o'rgandik. Biz chizilgan natijani o'zgartirish uchun `ReactDOM.render()`ni chaqiramiz:
-=======
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+[Oldingi bo'limlarning namunalardan biridagi](/docs/rendering-elements.html#updating-the-rendered-element) soatga e'tibor bering. [Elementlarni chizish](/docs/rendering-elements.html#rendering-an-element-into-the-dom) bo'limida, biz faqat foydalanuvchi interfeysini(UI) yangilashni bir yo'lini o'rgandik. Biz chizilgan natijani o'zgartirish uchun `root.render()`ni chaqiramiz:
 
 ```js{10}
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -298,11 +294,7 @@ Endi soat har soniyada ishlaydi.
 
 Keling, nima bo'layotganini va metodlar chaqirilish tartibini tezlik bilan takrorlaylik:
 
-<<<<<<< HEAD
-1) `<Clock />` komponenti `ReactDOM.render()` ga o'tkazilganda, React `Clock` komponentining konstruktorini chaqiradi. `Clock` joriy vaqtni ko'rsatishi kerak bo'lganligi sababli, u "this.state" ni joriy vaqtni o'z ichiga olgan ob'ekt bilan boshlaydi. Keyinchalik bu holatni yangilaymiz.
-=======
-1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+1) `<Clock />` komponenti `root.render()` ga o'tkazilganda, React `Clock` komponentining konstruktorini chaqiradi. `Clock` joriy vaqtni ko'rsatishi kerak bo'lganligi sababli, u `this.state` ni joriy vaqtni o'z ichiga olgan ob'ekt bilan boshlaydi. Keyinchalik bu holatni yangilaymiz.
 
 2) React keyin `Clock` komponentining `render()` metodini chaqiradi. Shunday qilib, React ekranda nimani ko'rsatish kerakligini bilib oladi. React keyin DOMni `Clock` komponenti ko'rsatuviga mos keladigan tarzda yangilaydi.
 

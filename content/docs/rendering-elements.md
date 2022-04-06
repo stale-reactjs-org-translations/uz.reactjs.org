@@ -34,11 +34,7 @@ Buni biz "ildiz" DOM tugunimiz deb ataymiz, chunki ichidagi hamma narsa React DO
 
 React bilan qurilgan ilovalar odatda faqat bir dona ildiz DOM tuguni bo'ladi. Agar siz React ni boshqa ishlab turgan ilovaga biriktirmoqchi bo'lsangiz, siz bir biridan alohida bo'lgan bir nechta o'zak DOM elementlarini yaratishingiz mumkin.
 
-<<<<<<< HEAD
-React elementini asosiy DOM elementi ichiga chizish uchun, bu ikkisini [`ReactDOM.render()`](/docs/react-dom.html#render) ichiga tashlang:
-=======
-To render a React element, first pass the DOM element to [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot), then pass the React element to `root.render()`:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+React elementni chizish uchun, birinchi bo'lib DOM elementni [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot) ga yuboring so'ngra React elementni `root.render()` ga yuboring:
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -50,11 +46,7 @@ Bu sahifada "Hello, world" deb ko'rsatadi.
 
 React elementlari [o'zgarmas](https://en.wikipedia.org/wiki/Immutable_object) hisoblanadi. Bir marta yaratilgandan keyin, uni bolalari yoki atributlarini o'zgartirolmaysiz. Element kino lentasigadagi bir kadrga o'xshaydi: u ma'lum bir vaqtdagi UI ni tasvirlaydi.
 
-<<<<<<< HEAD
-Bizni bilishimizcha, UI ni yangilashning birdan bir yo'li yangi element hosil qilib uni [`ReactDOM.render()`](/docs/react-dom.html#render) ga uzatishdir.
-=======
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `root.render()`.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Bizni bilishimizcha, UI ni yangilashning birdan bir yo'li yangi element hosil qilib uni `root.render()` ga uzatishdir.
 
 Mana bu soat misoliga e'tibor bering:
 
@@ -62,19 +54,11 @@ Mana bu soat misoliga e'tibor bering:
 
 **[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
-<<<<<<< HEAD
-Bu misol [`ReactDOM.render()`](/docs/react-dom.html#render) ni har soniyada [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
-=======
-It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Bu misol [`root.render()`](/docs/react-dom.html#render) ni har soniyada [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) kolbek orqali chaqiradi.
 
 >**Eslatma:**
 >
-<<<<<<< HEAD
->React ilovalari amalda [`ReactDOM.render()`](/docs/react-dom.html#render)ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kodni qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar orqali yozishni oʻrganamiz.
-=======
->In practice, most React apps only call `root.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+>React ilovalari amalda  `root.render()`ni faqat bir marta chaqiradi. Keyingi bo'limlarda shunday kodni qanday qilib [holatli komponent](/docs/state-and-lifecycle.html)lar orqali yozishni oʻrganamiz.
 >
 >Mavzularni sakrab ketmasligingizni maslahat beramiz, chunki bular bir biriga bog'liq.
 
