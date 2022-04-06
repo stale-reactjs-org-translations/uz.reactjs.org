@@ -8,11 +8,10 @@ next: introducing-jsx.html
 
 Reactdagi eng kichik namuna shu kabi ko'rinadi:
 
-```js
-ReactDOM.render(
-  <h1>Salom, dunyo!</h1>,
-  document.getElementById('root')
-);
+```jsx
+ReactDOM
+  .createRoot(document.getElementById('root'))
+  .render(<h1>Salom, dunyo!</h1>);
 ```
 
 Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi

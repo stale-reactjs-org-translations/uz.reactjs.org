@@ -70,10 +70,8 @@ function Welcome(props) {
 }
 
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
 ```
 
 **[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
@@ -85,7 +83,7 @@ Keling bu misolda nimalar bo'lishini xulosa qilamiz:
 4. React DOM esa DOMni samarali ravishda `<h1>Salom, Sara</h1>` deb yangilaydi.
 
 >**Eslatma:** Komponent nomini doim katta harfdan boshlang.
->
+
 >React kichik harf bilan boshlangan komponentlarni DOM teglari sifatida ko'radi.   
 Masalan,`<div />` HTML div teg ni ifodalaydi, lekin `<Welcome />` esa komponentni ifodalaydi va `Welcome` ni shu kodning qamrovida bo'lishini talab qiladi.
 >
@@ -111,11 +109,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 **[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
