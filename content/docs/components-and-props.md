@@ -64,13 +64,13 @@ Qachonki React dasturchi yaratgan komponentni element ko'rinishida uchratsa, JSX
 
 Masalan, Ushbu kod sahifada "Salom, Sara" deb chiziladi:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Salom, {props.name}</h1>;
 }
 
-const element = <Welcome name="Sara" />;
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <Welcome name="Sara" />;
 root.render(element);
 ```
 
