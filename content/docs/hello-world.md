@@ -10,8 +10,8 @@ Reactdagi eng kichik namuna shu kabi ko'rinadi:
 
 ```jsx
 ReactDOM
-  .createRoot(document.getElementById('root'))
-  .render(<h1>Salom, dunyo!</h1>);
+    .createRoot(document.getElementById('root'))
+    .render(<h1>Hello, world!</h1>);
 ```
 
 Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
