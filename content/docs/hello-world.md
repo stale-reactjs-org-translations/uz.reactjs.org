@@ -9,14 +9,9 @@ next: introducing-jsx.html
 Reactdagi eng kichik namuna shu kabi ko'rinadi:
 
 ```jsx
-<<<<<<< HEAD
 ReactDOM
-  .createRoot(document.getElementById('root'))
-  .render(<h1>Salom, dunyo!</h1>);
-=======
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<h1>Hello, world!</h1>);
->>>>>>> 26a870e1c6e232062b760d37620d85802750e985
+    .createRoot(document.getElementById('root'))
+    .render(<h1>Hello, world!</h1>);
 ```
 
 Bu kod sahifada "Salom, dunyo" sarlovhasini ko'rsatadi
