@@ -33,8 +33,13 @@ Ushbu yangi `useState` funksiyasi Ho'k haqida o'rganmoqchi bo'lgan birinchi "Ho'
 
 >Eslatma
 >
+<<<<<<< HEAD
 >React 16.8.0 Ho'kni qo'llab-quvvatlaydigan birinchi release dir. Yangilaganizda, hamma paketlarini yangilashni unutmang, shu qatori React DOM ni ham. 
 >React Native Ho'kni [0.59 versiyasidan](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059) boshlab qo'llab quvvatlaydi.
+=======
+>React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
+>React Native has supported Hooks since [the 0.59 release of React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+>>>>>>> df2673d1b6ec0cc6657fd58690bbf30fa1e6e0e6
 
 ## Video Tanishtiruv {#video-introduction}
 
@@ -100,7 +105,11 @@ Ushbu muammolarni hal qilish uchun, **Ho'klar sizga Reactning ko'pgina classlars
 
 Biz Reakt dasturchilari mahsulotlarni etkazib berishga yo'naltirilganligini bilamiz va ular chiqarilayotgan har qanday yangi APIni ko'rib chiqish uchun vaqt topa olmaydilar. Ho'klar hali juda yangi va  o'rganish yoki ularni qabul qilishdan avval ko'proq misollarni va darslarni kutish yaxshiroq bo'lishi mumkin.
 
+<<<<<<< HEAD
 Biz shuni ham tushunishimiz kerakki, Reactga yangi primitiv qo'shish uchun katta-talab juda yuqori bo'ladi. Qiziquvchan o'quvchilar uchun, [batafsil qilingan RFC](https://github.com/reactjs/rfcs/pull/68)ni tayyorladik, qaysiki motivatsiyaga ko'proq tafsilotlari bilan kiradigan va o'ziga xos dizayn qarorlarida va ilgarigi sanat bilan bog'liqlikdagi qo'shimcha perspektiva lar bilan ta'minlaydigan.
+=======
+We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a [detailed RFC](https://github.com/reactjs/rfcs/pull/68) that dives into the motivation with more details, and provides extra perspective on the specific design decisions and related prior art.
+>>>>>>> df2673d1b6ec0cc6657fd58690bbf30fa1e6e0e6
 
 **Eng muhimi, Ho'k lar mavjud kod bilan yonma-yon ishlaydi, shuning uchun aste-sekinlik bilan moslashib borasiz.** Ho'klarga o'tkazib chiqishga shoshish shartmas. Biz, har qanday "keng ko'lamda qayta yozishlar"dan(big rewrites) qochishingizni tavsiya qilamiz, ayniqsa mavjud, murakkab class komponentlar uchun. "Ho'klarda o'ylash"ni boshlashga biroz fikr-mulohaza qilib olish kerak. Bizning tajribamizda, Ho'klardan foydalanishda birinchi yangi va juda muhim bo'lmagan komponentlarda tajriba qilib ko'rish yaxshiroqdir, va jamoangizdagi hamma Ho'klar bilan yaxshi ishlay olishini ta'minlashingiz kerak. Ho'klarni sinab ko'rganingizda keyin, iltimos [fikr-mulohazalaringizni bizga jo'nating](https://github.com/facebook/react/issues/new), ijobiy yoki salbiy bo'lsa ham.
 
