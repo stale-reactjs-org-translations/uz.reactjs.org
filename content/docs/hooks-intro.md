@@ -82,7 +82,11 @@ Buni hal qilish uchun, **Ho'klar bitta koponentni ko'proq qaysi qismlarga bog'li
 
 Biz bu haqida batafsil [Ho'k Effektlardan Foydalanish](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) da muhokama qilamiz.
 
+<<<<<<< HEAD
 ### Class lar odamlarni ham, mashinalarni ham chalg'itadi {#classes-confuse-both-people-and-machines}
+=======
+In addition to making code reuse and code organization more difficult, we've found that classes can be a large barrier to learning React. You have to understand how `this` works in JavaScript, which is very different from how it works in most languages. You have to remember to bind the event handlers. Without [ES2022 public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields), the code is very verbose. People can understand props, state, and top-down data flow perfectly well but still struggle with classes. The distinction between function and class components in React and when to use each one leads to disagreements even between experienced React developers.
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 Kodni qayta foydalanish va kodni yanada qiyinroq tashkil qilinishiga qo'shimcha tarzda, class lar React ni o'rganishda kattagina to'siq bo'layotganini aniqladik. Siz JavaScriptda `this` qanday ishlashini tushunishingiz kerak, qaysiki u ko'p tillarda qanday ishlatilishiga ko'ra anchagina farq qiladi. Event hendler larni ham biriktirishni(bind) unutmasligingiz kerak. Beqaror(unstable) [takliflar sintaksis](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/)isiz, kod juda cho'zilib ketgan. Odamlar props, state va yuqoridan-pastga ma'lumotlar oqimini ancha yaxshi tushuna oladi, lekin hanuzgacha class lar kurashishyapti. React da funksiya va class komponentlari orasidagi farq va ularni qachon ishlatilishi hatto tajribali React dasturchilari orasida ham qarama-qarshiliklarga olib keladi. 
 
