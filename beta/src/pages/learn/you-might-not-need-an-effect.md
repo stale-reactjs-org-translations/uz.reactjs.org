@@ -232,9 +232,11 @@ function List({ items }) {
 }
 ```
 
-**This pattern can be hard to understand, but it’s better than updating state in an Effect.** In the above example, `setSelection` is called directly during a render. React will re-render the `List` *immediately* after it exits with a `return` statement. By that point, React hasn't rendered the `List` children or updated the DOM yet, so this lets the `List` children skip rendering the stale `selection` value. [Read more about using this pattern correctly.](/apis/usestate#storing-information-from-previous-renders)
+[Storing information from previous renders](/apis/usestate#storing-information-from-previous-renders) like this can be hard to understand, but it’s better than updating the same state in an Effect. In the above example, `setSelection` is called directly during a render. React will re-render the `List` *immediately* after it exits with a `return` statement. By that point, React hasn't rendered the `List` children or updated the DOM yet, so this lets the `List` children skip rendering the stale `selection` value.
 
-Before moving on, consider whether you can further simplify the requirements to calculate everything during rendering. For example, instead of storing (and resetting) the selected *item*, you can store the selected *item ID:*
+When you update a component during rendering, React throws away the returned JSX and immediately retries rendering. To avoid very slow cascading retries, React only lets you update the *same* component's state during a render. If you update another component's state during a render, you'll see an error. A condition like `items !== prevItems` is necessary to avoid loops. You may adjust state like this, but any other side effects (like changing the DOM or setting a timeout) should remain in event handlers or Effects to [keep your components predictable](/learn/keeping-components-pure).
+
+**Although this pattern is more efficient than an Effect, most components shouldn't need it either.** No matter how you do it, adjusting state based on props or other state makes your data flow more difficult to understand and debug. Always check whether you can [reset all state with a key](#resetting-all-state-when-a-prop-changes) or [calculate everything during rendering](#updating-state-based-on-props-or-state) instead. For example, instead of storing (and resetting) the selected *item*, you can store the selected *item ID:*
 
 ```js {3-5}
 function List({ items }) {
@@ -355,6 +357,98 @@ function Form() {
 ```
 
 When you choose whether to put some logic into an event handler or an Effect, the main question you need to answer is _what kind of logic_ it is from the user's perspective. If this logic is caused by a particular interaction, keep it in the event handler. If it's caused by the user _seeing_ the component on the screen, keep it in the Effect.
+
+### Chains of computations {/*chains-of-computations*/}
+
+Sometimes you might feel tempted to chain Effects that each adjust a piece of state based on other state:
+
+```js {7-29}
+function Game() {
+  const [card, setCard] = useState(null);
+  const [goldCardCount, setGoldCardCount] = useState(0);
+  const [round, setRound] = useState(1);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  // 🔴 Avoid: Chains of Effects that adjust the state solely to trigger each other
+  useEffect(() => {
+    if (card !== null && card.gold) {
+      setGoldCardCount(c => c + 1);
+    }
+  }, [card]);
+
+  useEffect(() => {
+    if (goldCardCount > 3) {
+      setRound(r => r + 1)
+      setGoldCardCount(0);
+    }
+  }, [goldCardCount]);
+
+  useEffect(() => {
+    if (round > 5) {
+      setIsGameOver(true);
+    }
+  }, [round]);
+
+  useEffect(() => {
+    alert('Good game!');
+  }, [isGameOver]);
+
+  function handlePlaceCard(nextCard) {
+    if (isGameOver) {
+      throw Error('Game already ended.');
+    } else {
+      setCard(nextCard);
+    }
+  }
+
+  // ...
+```
+
+There are two problems with this code.
+
+One problem is that it is very inefficient: the component (and its children) have to re-render between each `set` call in the chain. In the example above, in the worst case (`setCard` → render → `setGoldCardCount` → render → `setRound` → render → `setIsGameOver` → render) there are three unnecessary re-renders of the tree below.
+
+Even if it weren't slow, as your code evolves, you will run into cases where the "chain" you wrote doesn't fit the new requirements. Imagine you are adding a way to step through the history of the game moves. You'd do it by updating each state variable to a value from the past. However, setting the `card` state to a value from the past would trigger the Effect chain again and change the data you're showing. Code like this is often rigid and fragile.
+
+In this case, it's better to calculate what you can during rendering, and adjust the state in the event handler:
+
+```js {6-7,14-26}
+function Game() {
+  const [card, setCard] = useState(null);
+  const [goldCardCount, setGoldCardCount] = useState(0);
+  const [round, setRound] = useState(1);
+
+  // ✅ Calculate what you can during rendering
+  const isGameOver = round > 5;
+
+  function handlePlaceCard(nextCard) {
+    if (isGameOver) {
+      throw Error('Game already ended.');
+    }
+
+    // ✅ Calculate all the next state in the event handler
+    setCard(nextCard);
+    if (nextCard.gold) {
+      if (goldCardCount <= 3) {
+        setGoldCardCount(goldCardCount + 1);
+      } else {
+        setGoldCardCount(0);
+        setRound(round + 1);
+        if (round === 5) {
+          alert('Good game!');
+        }
+      }
+    }
+  }
+
+  // ...
+```
+
+This is a lot more efficient. Also, if you implement a way to view game history, now you will be able to set each state variable to a move from the past without triggering the Effect chain that adjusts every other value. If you need to reuse logic between several event handlers, you can [extract a function](#sharing-logic-between-event-handlers) and call it from those handlers.
+
+Remember that inside event handlers, [state behaves like a snapshot](/learn/state-as-a-snapshot). For example, even after you call `setRound(round + 1)`, the `round` variable will reflect the value at the time the user clicked the button. If you need to use the next value for calculations, define it manually like `const nextRound = round + 1`.
+
+In some cases, you *can't* calculate the next state directly in the event handler. For example, imagine a form with multiple dropdowns where the options of each next dropdown depend on the selected value of the previous dropdown. Then, a chain of Effects fetching data is appropriate because you are synchronizing with network.
 
 ### Initializing the application {/*initializing-the-application*/}
 
@@ -664,21 +758,21 @@ function SearchResults({ query }) {
 }
 
 function useData(url) {
-  const [result, setResult] = useState(null);
+  const [data, setData] = useState(null);
   useEffect(() => {
     let ignore = false;
     fetch(url)
       .then(response => response.json())
       .then(json => {
         if (!ignore) {
-          setResult(json);
+          setData(json);
         }
       });
     return () => {
       ignore = true;
     };
   }, [url]);
-  return result;
+  return data;
 }
 ```
 
