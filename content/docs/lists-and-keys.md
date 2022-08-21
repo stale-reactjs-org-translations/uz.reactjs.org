@@ -119,11 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-<<<<<<< HEAD
-Narsalarni joyi oʻzgarishi mumkin boʻlgan hollarda, turgan oʻrnini sonini (index) ishlatishni maslahat bermaymiz. Bu chaqqonlikka (performance) yomon taʼsir koʻrsatishi yoki komponent holatlari bilan muammo kelib chiqishi mumkin. Robin Pokorni tomonidan yozilgan maqolada, [turgan oʻrni sonini kalit sifatida ishlatishni yomon tomonlari](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) haqida chquur yoritilgan. Agar biror kalit berib yubormasangiz, React oʻzi ham turgan oʻrnini kalit sifatida ishlatadi.
-=======
-We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
->>>>>>> 5fed75dac5f4e208369b102a1337d76944111b33
+Narsalarni joyi oʻzgarishi mumkin boʻlgan hollarda, turgan oʻrnini sonini (index) ishlatishni maslahat bermaymiz. Bu chaqqonlikka (performance) yomon taʼsir koʻrsatishi yoki komponent holatlari bilan muammo kelib chiqishi mumkin. Robin Pokorni tomonidan yozilgan maqolada, [turgan oʻrni sonini kalit sifatida ishlatishni yomon tomonlari](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) haqida chquur yoritilgan. Agar biror kalit berib yubormasangiz, React oʻzi ham turgan oʻrnini kalit sifatida ishlatadi.
 
 Agar qiziqsangiz, bu yerda [kalitlar nima uchun kerakligi haqida chuqurroq](/docs/reconciliation.html#recursing-on-children) koʻproq narsa oʻqishingiz mumkin.
 
