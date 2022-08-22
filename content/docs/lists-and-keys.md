@@ -119,7 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Narsalarni joyi oʻzgarishi mumkin boʻlgan hollarda, turgan oʻrnini sonini (index) ishlatishni maslahat bermaymiz. Bu chaqqonlikka (performance) yomon taʼsir koʻrsatishi yoki komponent holatlari bilan muammo kelib chiqishi mumkin. Robin Pokorni tomonidan yozilgan maqolada, [turgan oʻrni sonini kalit sifatida ishlatishni yomon tomonlari](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) haqida chquur yoritilgan. Agar biror kalit berib yubormasangiz, React oʻzi ham turgan oʻrnini kalit sifatida ishlatadi.
+Narsalarni joyi oʻzgarishi mumkin boʻlgan hollarda, turgan oʻrnini sonini (index) ishlatishni maslahat bermaymiz. Bu chaqqonlikka (performance) yomon taʼsir koʻrsatishi yoki komponent holatlari bilan muammo kelib chiqishi mumkin. Robin Pokorni tomonidan yozilgan maqolada, [turgan oʻrni sonini kalit sifatida ishlatishni yomon tomonlari](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) haqida chquur yoritilgan. Agar biror kalit berib yubormasangiz, React oʻzi ham turgan oʻrnini kalit sifatida ishlatadi.
 
 Agar qiziqsangiz, bu yerda [kalitlar nima uchun kerakligi haqida chuqurroq](/docs/reconciliation.html#recursing-on-children) koʻproq narsa oʻqishingiz mumkin.
 
