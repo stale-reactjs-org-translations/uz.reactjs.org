@@ -135,7 +135,7 @@ const MarkdownPage = ({
                     <a
                       css={sharedStyles.articleLayout.editLink}
                       href={`https://github.com/reactjs/reactjs.org/tree/main/${markdownRemark.fields.path}`}>
-                      Edit this page
+                      Bu Sahifani tahrirlash
                     </a>
                   </div>
                 )}
