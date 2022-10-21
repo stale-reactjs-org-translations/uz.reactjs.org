@@ -9,7 +9,7 @@
     - id: cdn-links
       title: CDN zanjirlar
     - id: release-channels
-      title: Release Channels
+      title: Reliz Kanallar
 - title: Asosiy tushunchalar
   isOrdered: true
   items:

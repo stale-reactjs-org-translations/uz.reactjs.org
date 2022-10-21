@@ -8,9 +8,9 @@ import {ExternalLink} from './ExternalLink';
 
 // TODO: Unify with the old site settings.
 // Turning this off also requires changing the Page top value to pull up the sidebar.
-const bannerText = 'Support Ukraine 🇺🇦';
+const bannerText = 'Ukraine ni qo\'llab quvvatlang';
 const bannerLink = 'https://opensource.fb.com/support-ukraine';
-const bannerLinkText = 'Help Provide Humanitarian Aid to Ukraine.';
+const bannerLinkText = 'Ukrainaga gumanitar yordam bering.';
 
 export default function SocialBanner() {
   return (
