@@ -16,7 +16,20 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+<<<<<<< HEAD
 Komponentlar sizga UI'ni qayta ishlatiladigan, mustaqil qismlarga bo'lish va har bir qism haqida yakka holda o'ylashingizga imkoniyat beradi. Bu sahifa komponentlar haqida boshlang'ich ma'lumot beradi. Komponent API haqida batafsil ma'lumotni esa [bu yerdan](/docs/react-component.html) topishingiz mumkin. 
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 Tushuncha jihatdan, komponentlar huddi JavaScript funksiyalariga o'xshaydi. Ular ("props" deb atalgan) qandaydir kiritmalarni qabul qiladi va ekranda nima chiqishini tasvirlaydigan React elementlarini qaytaradi.
 
