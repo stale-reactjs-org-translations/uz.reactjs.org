@@ -15,6 +15,10 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
+> Try the new React documentation for [`Component`](https://beta.reactjs.org/reference/react/Component).
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 This page contains a detailed API reference for the React component class definition. It assumes you're familiar with fundamental React concepts, such as [Components and Props](/docs/components-and-props.html), as well as [State and Lifecycle](/docs/state-and-lifecycle.html). If you're not, read them first.
 
 ## Overview {#overview}
@@ -125,7 +129,7 @@ When called, it should examine `this.props` and `this.state` and return one of t
 - **Arrays and fragments.** Let you return multiple elements from render. See the documentation on [fragments](/docs/fragments.html) for more details.
 - **Portals**. Let you render children into a different DOM subtree. See the documentation on [portals](/docs/portals.html) for more details.
 - **String and numbers.** These are rendered as text nodes in the DOM.
-- **Booleans or `null`**. Render nothing. (Mostly exists to support `return test && <Child />` pattern, where `test` is boolean.)
+- **Booleans or `null` or `undefined`**. Render nothing. (Mostly exists to support `return test && <Child />` pattern, where `test` is boolean).
 
 The `render()` function should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked, and it does not directly interact with the browser.
 
