@@ -14,7 +14,11 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 Agar oddiy komponent propsni UI ga aylantirsa, unda yuqori darajadagi komponent komponentni boshqa komponentga o'zgartiradi.
 
+<<<<<<< HEAD
 HOC ko'pincha Redux-da [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) va Relay-da [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) kabi uchinchi tomon kutubxonalarida uchraydi.
+=======
+HOCs are common in third-party React libraries, such as Redux's [`connect`](https://react-redux.js.org/api/connect) and Relay's [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer).
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Ushbu bobda biz nima uchun yuqori darajadagi komponentlar foydali ekanligini va ularni qanday yaratishni muhokama qilamiz.
 
